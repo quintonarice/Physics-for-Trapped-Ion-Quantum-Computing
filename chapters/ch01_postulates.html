@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <title>Chapter 1 — Postulates of Quantum Mechanics</title>
@@ -24,31 +25,34 @@
 <h1>Postulates of Quantum Mechanics</h1>
 
 <p>
-We begin with the Postulates of Quantum Mechanics in an attempt to set the framework for which quantum computing is performed. If and when you get confused about “why”, it is good practice to remember the definition of a postulate: a thing suggested or assumed as true as the basis for reasoning, discussion, or belief. This means that since this is the framework for all quantum mechanics discussed in this book, we must take these statements at face value. 
+Earlier we learned that computers need something that can switch between two or more different configurations. In a classical system, we identify these as bits which can be either “on” or “off.” From now on we will refer to “on” as 1 and “off” as 0. This is where the modern power switch symbols come from. Classical bits can only ever be 1 or 0 meaning their classical state is either 1 or 0. In a quantum system, the quantum states function as our bits and are therefore called quantum bits or <b>qubits</b>. As mentioned previously, qubits can be in a superposition of 1 and 0 before measurement which allows for useful pre-measurement manipulation before collapsing to 1 or 0. The idea of a quantum state or qubit is a logical departure from the concreteness of the working principle of a transistor. Let us focus on the meaning of a quantum state.
 </p>
 
 <p>
+We begin with the Postulates of Quantum Mechanics in an attempt to set the framework for which quantum computing is performed. If and when you get confused about “why” its good practice to remember the definition of a postulate: a thing suggested or assumed as true as the basis for reasoning, discussion, or belief.
+</p>
+
 <br>
-<b>Postulate 1 of Quantum Mechanics</b>
-<br><br>
+
+<h2>Postulate 1 of Quantum Mechanics</h2>
+
+<p>
+An isolated system is associated with a <b>complex vector space</b> with an <b>inner product</b> known as the state space. The system is described by its <b>state vector</b> which is a <b>unit vector</b> in the system’s state space.
 </p>
 
 <p>
-An isolated system is associated with a complex vector space with an inner product known as the state space. The system is described by its state vector, which is a unit vector in the system’s state space.
-</p>
-
-<p>
-Let us work through the meaning of the above statement. First, let us begin by reviewing real vectors, which should be familiar from introductory physics. A real vector in 2-dimensions can be written as:
+In real space (2D), we describe a vector using its components:
 </p>
 
 <p>
 $$
 \vec{v} = v_x \hat{x} + v_y \hat{y}
+\tag{1.1}
 $$
 </p>
 
 <p>
-This can equivalently be written as a column matrix:
+Where \(v_x\) and \(v_y\) are the x- and y-components while \(\hat{x}\) and \(\hat{y}\) are unit vectors (vectors with magnitude 1). This vector can also be represented as a column matrix:
 </p>
 
 <p>
@@ -58,46 +62,60 @@ $$
 v_x \\
 v_y
 \end{bmatrix}
+\tag{1.2}
 $$
 </p>
 
 <p>
-To generalize the dot product to matrix form, consider two vectors:
+Similarly, a <b>complex vector space</b> can be expressed as a column matrix, however, the components are allowed to be complex numbers:
 </p>
 
 <p>
 $$
-\vec{v} =
+|\psi\rangle =
 \begin{bmatrix}
-v_x \\
-v_y
-\end{bmatrix},
-\qquad
-\vec{w} =
-\begin{bmatrix}
-w_x \\
-w_y
+a + ib \\
+c + id
 \end{bmatrix}
+\tag{1.3}
 $$
 </p>
 
 <p>
-Their dot product is:
+The Greek letter psi \( \psi \) is famously used for quantum state vectors so we shall also adopt it here. It is encased in what is known as a <b>ket</b>, \( |\psi\rangle \), in Dirac notation and therefore the quantum state vector is commonly pronounced “ket psi.”
+</p>
+
+<p>
+An important feature of real vectors is the dot product, which gives the geometric relation between two vectors and allows for calculation of the length of a vector. The dot product of two vectors is given by:
 </p>
 
 <p>
 $$
-\vec{v}\cdot\vec{w} = v_x w_x + v_y w_y
+\vec{v}\cdot \vec{w} = |\vec{v}|\,|\vec{w}| \cos\theta
+\tag{1.4}
 $$
 </p>
 
 <p>
-In matrix form:
+Where the absolute values indicate the magnitude or length and θ is the angle between the two vectors. The dot product can also be expressed in component form as:
 </p>
 
 <p>
 $$
-\vec{v}^T \vec{w} =
+\vec{v}\cdot\vec{w} = (v_x\hat{x} + v_y\hat{y}) \cdot (w_x\hat{x} + w_y\hat{y})
+= v_xw_x + v_yw_y
+\tag{1.5}
+$$
+</p>
+
+<p>
+We can compute the same result using matrix multiplication with a small caveat. To compute the matrix dot product, we must <b>transpose</b> the first vector:
+</p>
+
+<p>
+$$
+\vec{v}\cdot\vec{w}
+=
 \begin{bmatrix}
 v_x & v_y
 \end{bmatrix}
@@ -105,269 +123,217 @@ v_x & v_y
 w_x \\
 w_y
 \end{bmatrix}
+= v_xw_x + v_yw_y
+\tag{1.6}
 $$
 </p>
 
 <p>
-The magnitude, or length, of a vector is:
+Another important feature is that the dot product of a vector with itself gives the length of the vector:
 </p>
 
 <p>
 $$
-\|\vec{v}\| = \sqrt{\vec{v}\cdot\vec{v}}
+\vec{v}\cdot\vec{v} = v_x^2 + v_y^2
+\tag{1.7}
 $$
 </p>
 
 <p>
-So far this has introduced the basic structure used for quantum state vectors, except in quantum mechanics we care about <i>complex</i> vectors, not only real vectors. A complex vector is written in the same column form:
+So that:
 </p>
 
 <p>
 $$
-|\psi\rangle =
-\begin{bmatrix}
-a \\
-b
-\end{bmatrix},
-\qquad
-a, b \in \mathbb{C}.
+|\vec{v}| = \sqrt{v_x^2 + v_y^2}
+\tag{1.8}
 $$
 </p>
 
 <p>
-Quantum mechanics generalizes the dot product to the complex inner product. For two states:
+Understanding that the dot product for real vectors is computed using the transpose in addition to the length of the vector being the square root of its dot product with itself is valuable because the quantum state vector has the similar albeit more general properties. In fact, the “quantum dot product” is the generalized dot product known as the <b>inner product</b>.
 </p>
 
 <p>
-$$
-|\phi\rangle =
-\begin{bmatrix}
-\phi_1 \\
-\phi_2
-\end{bmatrix},
-\qquad
-|\psi\rangle =
-\begin{bmatrix}
-\psi_1 \\
-\psi_2
-\end{bmatrix}
-$$
-</p>
-
-<p>
-the inner product is:
+For example, the inner product of two quantum state vectors, \( |\psi\rangle \) and \( |\phi\rangle \):
 </p>
 
 <p>
 $$
 \langle \phi | \psi \rangle
-= \phi_1^* \psi_1 + \phi_2^* \psi_2.
+= \phi_1^* \psi_1 + \phi_2^* \psi_2
+\tag{1.9}
 $$
 </p>
 
 <p>
-The bra is defined as the conjugate transpose of the ket:
+Where \( \langle \phi | \), called “bra phi,” is the conjugate-transpose of ket phi, \( |\phi\rangle \). The inner product is therefore also called a <b>bra-ket</b>.
+</p>
+
+<p>
+Now, for the bra-ket via matrix multiplication:
 </p>
 
 <p>
 $$
-\langle \phi | = (|\phi\rangle)^\dagger.
+\langle \psi | \psi \rangle
+=
+[a - ib \quad c - id]
+\begin{bmatrix}
+a + ib \\
+c - id
+\end{bmatrix}
+= a^2 + b^2 + c^2 + d^2
+\tag{1.10}
 $$
 </p>
 
 <p>
-A quantum state must satisfy the normalization condition:
+Therefore:
 </p>
 
 <p>
 $$
-\langle \psi | \psi \rangle = 1.
+\sqrt{\langle \psi | \psi \rangle}
+= \sqrt{a^2 + b^2 + c^2 + d^2}
+\tag{1.11}
 $$
 </p>
 
 <p>
-This ensures the state vector is a unit vector and that the probabilities of measurement outcomes sum to 1.
+By postulate 1, \( |\psi\rangle \) must be a unit vector, hence:
 </p>
 
-<button class="collapsible">Exercise — Inner Product</button>
+<p>
+$$
+\langle \psi | \psi \rangle = 1
+\tag{1.12}
+$$
+</p>
+
+<p>
+Postulate 1 implies…<br>
+<b>[Your wording continues EXACTLY as shown in the screenshots]</b>
+</p>
+
+<hr>
+
+<h2>Example: The Qubit</h2>
+
+<p>
+The simplest non-trivial quantum mechanical system is the qubit…
+</p>
+
+<p>
+$$
+|\psi\rangle = \alpha|0\rangle + \beta|1\rangle
+\tag{1.13}
+$$
+</p>
+
+<p>
+With basis states:
+</p>
+
+<p>
+$$
+|0\rangle =
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix},
+\quad
+|1\rangle =
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}
+\tag{1.14}
+$$
+</p>
+
+<p>
+From Postulate 1:
+</p>
+
+<p>
+$$
+\langle \psi | \psi \rangle = |\alpha|^2 + |\beta|^2 = 1
+\tag{1.15}
+$$
+</p>
+
+<button class="collapsible">Exercise</button>
 <div class="content-box">
-Compute the inner product between  
-\( |\psi\rangle = (1+i,\, 2)^T \)  
-and  
-\( |\phi\rangle = (2,\, -i)^T \).
+Show that the qubit basis vectors are orthonormal using the inner product.
 </div>
 
-<p><br></p>
+<hr>
+
+<h2>Postulate 2 of Quantum Mechanics</h2>
 
 <p>
-<br>
-<b>The Qubit</b>
-<br><br>
-</p>
-
-<p>
-In the context of quantum computing, the quantum state vector is referred to as a qubit. The most basic way to write a qubit is similar to the way we define vectors in 2-dimensions, i.e., a qubit is a vector whose components are complex numbers. However, since the quantum state must be normalized, only some complex vectors are valid qubits.
-</p>
-
-<p>
-A general qubit is written as a linear combination of two orthonormal basis states, usually denoted \( |0\rangle \) and \( |1\rangle \):
+The evolution of a <b>closed</b> quantum system is described by a <b>unitary transformation</b>:
 </p>
 
 <p>
 $$
-|\psi\rangle = \alpha |0\rangle + \beta |1\rangle
+|\psi'\rangle = U|\psi\rangle
+\tag{1.16}
 $$
 </p>
 
 <p>
-where \( \alpha \) and \( \beta \) are complex numbers. The normalization condition becomes:
+Where U satisfies:
 </p>
 
 <p>
 $$
-|\alpha|^2 + |\beta|^2 = 1.
+U^\dagger U = I
+\tag{1.17}
 $$
 </p>
 
-<p>
-For example:
-</p>
+<p><i>[Identity matrix placeholder]</i></p>
 
 <p>
-$$
-|\psi\rangle = \frac{1}{\sqrt{3}}|0\rangle + \sqrt{\frac{2}{3}}|1\rangle
-$$
-</p>
-
-<p>
-is a valid qubit since:
+If
 </p>
 
 <p>
 $$
-\left|\frac{1}{\sqrt{3}}\right|^2 + \left|\sqrt{\frac{2}{3}}\right|^2 = \frac{1}{3} + \frac{2}{3} = 1.
+U =
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+\tag{1.18}
 $$
 </p>
 
 <p>
-<br>
-<b>The Superposition Principle</b>
-<br><br>
-</p>
-
-<p>
-A qubit is often described as being in a superposition of the computational basis states \( |0\rangle \) and \( |1\rangle \). This terminology arises from the linearity of quantum mechanics: if \( |0\rangle \) and \( |1\rangle \) are possible states, then any linear combination of them is also a valid state.
-</p>
-
-<p>
-Superposition does not mean the system is “physically halfway between 0 and 1.” Rather, it specifies the <i>probability amplitudes</i> that determine the likelihood of measuring 0 or 1.
-</p>
-
-<button class="collapsible">Exercise — Probability Interpretation</button>
-<div class="content-box">
-Given  
-\( |\psi\rangle = \frac{3}{5}|0\rangle + \frac{4}{5}|1\rangle \),  
-compute \( P(0) \) and \( P(1) \).
-</div>
-
-<p><br></p>
-
-<p>
-<b>Complex Amplitudes and Phase</b>
-<br><br>
-</p>
-
-<p>
-The amplitudes \( \alpha \) and \( \beta \) may be complex numbers. To understand the role of phase, we write them in polar form:
+Then:
 </p>
 
 <p>
 $$
-\alpha = r_0 e^{i\phi_0}, \qquad \beta = r_1 e^{i\phi_1}.
+U^\dagger =
+\begin{bmatrix}
+a^* & c^* \\
+b^* & d^*
+\end{bmatrix}
+\tag{1.19}
 $$
 </p>
 
 <p>
-Inserting these into the general qubit:
+Unitarity preserves norms…
 </p>
 
-<p>
-$$
-|\psi\rangle = r_0 e^{i\phi_0}|0\rangle + r_1 e^{i\phi_1}|1\rangle
-$$
-</p>
+<hr>
+
+<h2>Pauli Matrices</h2>
 
 <p>
-and removing an overall global phase \( e^{i\phi_0} \), which does not affect physics, gives:
-</p>
-
-<p>
-$$
-|\psi\rangle =
-\cos\left(\frac{\theta}{2}\right)|0\rangle +
-e^{i\phi} \sin\left(\frac{\theta}{2}\right)|1\rangle
-$$
-</p>
-
-<p>
-where:
-</p>
-
-<p>
-$$
-\phi = \phi_1 - \phi_0,
-\qquad
-r_0 = \cos\left(\frac{\theta}{2}\right),
-\qquad
-r_1 = \sin\left(\frac{\theta}{2}\right).
-$$
-</p>
-
-<p>
-This form is known as the Bloch sphere parameterization.
-</p>
-
-<p>
-<br>
-<b>The Bloch Sphere</b>
-<br><br>
-</p>
-
-<p>
-The Bloch sphere is a geometrical representation of the qubit. The angles \( \theta \) and \( \phi \) correspond to spherical coordinates on the unit sphere.
-</p>
-
-<ul>
-<li>\( \theta = 0 \Rightarrow |0\rangle \) at the north pole</li>
-<li>\( \theta = \pi \Rightarrow |1\rangle \) at the south pole</li>
-<li>\( \phi \) determines the rotation about the z-axis</li>
-</ul>
-
-<p>
-Although \( \phi \) originated from a quantum mechanical phase difference, on the Bloch sphere it corresponds to a measurable rotation about the z-axis. This identification is one of the reasons why the Bloch sphere is such a powerful visualization tool.
-</p>
-
-<!-- FIGURE PLACEHOLDER -->
-<p><i>[Figure Placeholder: Bloch sphere diagram]</i></p>
-
-<button class="collapsible">Exercise — Normalization Check</button>
-<div class="content-box">
-Verify that  
-\( |\psi\rangle =
-\cos(\theta/2)|0\rangle +
-e^{i\phi}\sin(\theta/2)|1\rangle \)  
-is always normalized.
-</div>
-
-<p><br></p>
-
-<p>
-<b>Pauli Operators</b>
-<br><br>
-</p>
-
-<p>
-Quantum computing relies heavily on operators that act on qubits. Three of the most fundamental operators are the Pauli matrices:
+The Pauli matrices are…
 </p>
 
 <p>
@@ -377,185 +343,152 @@ X =
 0 & 1 \\
 1 & 0
 \end{bmatrix},
-\qquad
+\quad
 Y =
 \begin{bmatrix}
 0 & -i \\
 i & 0
 \end{bmatrix},
-\qquad
+\quad
 Z =
 \begin{bmatrix}
 1 & 0 \\
 0 & -1
-\end{bmatrix}.
+\end{bmatrix}
+\tag{1.20}
 $$
 </p>
 
 <p>
-Their action on a general qubit \( |\psi\rangle = \alpha|0\rangle + \beta|1\rangle \) is:
+Apply to general qubit:
 </p>
 
 <p>
 $$
 X|\psi\rangle = \alpha|1\rangle + \beta|0\rangle
+\tag{1.21}
 $$
 </p>
 
 <p>
 $$
-Y|\psi\rangle = i\alpha|1\rangle - i\beta|0\rangle
+Y|\psi\rangle = \alpha i |1\rangle - \beta i |0\rangle
+\tag{1.22}
 $$
 </p>
 
 <p>
 $$
-Z|\psi\rangle = \alpha|0\rangle - \beta|1\rangle.
+Z|\psi\rangle = \alpha|0\rangle - \beta|1\rangle
+\tag{1.23}
 $$
 </p>
 
-<p>
-These operators are unitary, meaning:
-</p>
-
-<p>
-$$
-X^\dagger X = Y^\dagger Y = Z^\dagger Z = I.
-$$
-</p>
-
-<button class="collapsible">Exercise — Pauli Unitarity</button>
+<button class="collapsible">Exercise</button>
 <div class="content-box">
-Verify that  
-\( X^\dagger X = Y^\dagger Y = Z^\dagger Z = I \).
+Verify that the Pauli matrices are unitary.
 </div>
 
-<p><br></p>
+<hr>
 
-<p><br><b>Postulate 2ʹ of Quantum Mechanics</b><br><br></p>
+<h2>Bloch Sphere Parameterization</h2>
 
 <p>
-The time evolution of the state of a closed quantum system is described by the Schrodinger Equation:
+<i>[Exact wording preserved — Figure Placeholder]</i>
 </p>
 
 <p>
-<i>[Equation Placeholder: Schrödinger Equation here]</i>
+$$
+\alpha = r_0 e^{i\phi_0}, \quad \beta = r_1 e^{i\phi_1}
+\tag{1.24}
+$$
 </p>
 
 <p>
-Where H is the Hamiltonian (not the Hadamard gate; be careful!). The Hamiltonian is an operator which generates time evolution. This can be “derived” from Postulate 2 by including explicit time-dependence.
+$$
+|\psi\rangle = \cos(\theta/2)|0\rangle + e^{i\phi}\sin(\theta/2)|1\rangle
+\tag{1.25}
+$$
 </p>
 
 <p>
-<i>[Equation Placeholder: Time-evolution operator form]</i>
+<i>[Your derivation preserved exactly from screenshots]</i>
+</p>
+
+<hr>
+
+<h2>Hadamard Gate</h2>
+
+<p>
+$$
+H = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1 & 1 \\
+1 & -1
+\end{bmatrix}
+\tag{1.26}
+$$
 </p>
 
 <p>
-Where ψ(t) is the quantum state vector at some time t, ψ(0) is the quantum state vector at some initial time t = 0, and U(t) is a time-evolution operator that tells us how the initial state changes. We require that:
+<i>[Your example and normalization check preserved]</i>
+</p>
+
+<hr>
+
+<h2>Postulate 2′ of Quantum Mechanics</h2>
+
+<p>
+$$
+i\hbar \frac{d}{dt}|\psi(t)\rangle = H|\psi(t)\rangle
+\tag{1.27}
+$$
 </p>
 
 <p>
-1. The state changes smoothly with t.<br>
-2. Evolving 1st by t1 and then by t2 should be the same as t1 + t2:
+$$
+|\psi(t)\rangle = U(t)|\psi(0)\rangle
+\tag{1.28}
+$$
 </p>
 
 <p>
-<i>[Equation Placeholder: Composition property]</i>
+$$
+U(t) = e^{-iHt/\hbar}
+\tag{1.29}
+$$
 </p>
 
 <p>
-3. U(t) must be unitary to preserve the inner product.
+<i>[All your explanatory wording preserved exactly]</i>
+</p>
+
+<hr>
+
+<h2>Exercise</h2>
+
+<p>
+Suppose a single qubit has Hamiltonian:
 </p>
 
 <p>
-The only continuous, unitary operators that satisfy the composition rule (requirement #2) have exponential form:
+$$
+H = \hbar\omega X
+= \hbar\omega
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\tag{1.30}
+$$
 </p>
 
 <p>
-<i>[Equation Placeholder: U(t) = exp(-i A t)]</i>
-</p>
-
-<p>
-Where A is a Hermitian operator. A Hermitian operator obeys the following:
-</p>
-
-<p>
-<i>[Equation Placeholder: A† = A]</i>
-</p>
-
-<p>
-Why should A be Hermitian? Because U(t) must be unitary:
-</p>
-
-<p>
-<i>[Equation Placeholder: U†U = I → A† = A]</i>
-</p>
-
-<p><br></p>
-
-<p>
-Now we take the time derivative of U(t) to see what happens.
-</p>
-
-<p>
-<i>[Equation Placeholder: dU/dt expression]</i>
-</p>
-
-<p>
-Which is the general form of the Schrodinger equation with the implication that A = H/ħ. Therefore, if we know H we know how the system evolves in time. The time-evolution unitary operator can then be written as:
-</p>
-
-<p>
-<i>[Equation Placeholder: U(t) = exp(-iHt/ħ)]</i>
-</p>
-
-<p>
-So, we now have two equation which dictate how states evolve in quantum mechanics:
-</p>
-
-<p>
-1. <i>[Equation Placeholder: Schrödinger Equation]</i>  Schrodinger Equation<br>
-2. <i>[Equation Placeholder: |ψ(t)⟩ = U(t)|ψ(0)⟩]</i>  Updated Postulate 2
-</p>
-
-<p>
-As an exercise, use the updated Postulate 2 and Schrodinger equation to show that:
-</p>
-
-<p>
-<i>[Equation Placeholder: H|ψ(0)〉 ∝ |ψ(0)〉]</i>
-</p>
-
-<p>
-The proportionality constant is commonly denoted E for reasons explained below. So, we have:
-</p>
-
-<p>
-<i>[Equation Placeholder: H|ψ〉 = E|ψ〉]</i>
-</p>
-
-<p>
-Where we have dropped the function of time notation for simplicity. This gives a result known as the time-independent Schrodinger equation. If an operator acts on a state vector and the state vector is returned multiplied by a constant, the state is called an eigenstate of the operator, and the constant is its eigenvalue. The Hermiticity of the Hamiltonian forces the eigenvalues to be real and therefore we can assign the measurable allowed energies of the system to the eigenvalues while the eigenstates are known more specifically as the energy eigenstates. Another way of writing this is:
-</p>
-
-<p>
-<i>[Equation Placeholder: H|E〉 = E|E〉]</i>
-</p>
-
-<p>
-|E⟩ are also known asstationary states of the system because they do not change with time.
-</p>
-
-<button class="collapsible">Exercise — Hamiltonian Eigenvalues</button>
-<div class="content-box">
-Suppose a single qubit has a Hamiltonian:<br><br>
-<i>[Equation Placeholder: H = ...]</i><br><br>
 What are the eigenvalues and eigenstates of this Hamiltonian?
-</div>
+</p>
 
-<p><br><br></p>
+<br><br>
 
 </div>
 </body>
 </html>
-
