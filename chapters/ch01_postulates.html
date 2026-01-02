@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Postulates</title>
+<title>Chapter 1 — Postulates of Quantum Mechanics</title>
+
 <link rel="stylesheet" href="../css/style.css">
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="../js/collapsible.js"></script>
+
 </head>
 
 <body>
+
+<!-- SIDEBAR -->
 <div class="sidebar">
   <h2>Navigation</h2>
   <a href="../index.html">Home</a>
@@ -19,18 +23,306 @@
   <a href="ch05_hamiltonian.html">Example Hamiltonian</a>
 </div>
 
+<!-- CONTENT -->
 <div class="content">
 
-<h1>Postulates of Quantum Mechanics</h1>
-<p>This chapter introduces the fundamental framework of quantum theory, including state vectors and unitary evolution.</p>
+<h1>Chapter 1: Postulates of Quantum Mechanics</h1>
 
-<h2>Exercise</h2>
-<button class="collapsible">Show Exercise</button>
+<hr>
+
+<h2>1. Motivation: Why Quantum?</h2>
+
+<p>
+You may recall images of the earliest classical computers—refrigerator-sized machines built from thousands of vacuum tubes.
+Each vacuum tube functioned as a simple on/off switch: electrons flowed to the anode (“on”) or were blocked (“off”). 
+Later, transistors replaced vacuum tubes, shrinking switching elements from inches, to millimeters, to nanometers.
+</p>
+
+<p>
+As transistor dimensions approached the scale of only a few dozen atoms, unavoidable quantum effects—tunneling, interference, 
+and discrete energy levels—began to dominate. At that point, it became clear that classical on/off logic would no longer scale cleanly.
+Instead of fighting quantum mechanics, physicists embraced it as a resource.  
+Thus began the modern pursuit of quantum computation.
+</p>
+
+<p>
+Classical bits take definite values 0 or 1.  
+Quantum bits (qubits) may exist in superpositions of 0 and 1 prior to measurement.  
+Understanding what “state,” “superposition,” and “measurement” mean requires the formal structure of quantum mechanics.
+We begin with the Postulates.
+</p>
+
+<hr>
+
+<h2>2. Postulate 1 — Quantum States</h2>
+
+<p>
+Postulate 1 states:
+</p>
+
+<blockquote>
+<i>An isolated physical system is associated with a complex vector space with an inner product (the Hilbert space).  
+The state of the system is represented by a unit vector in this space.</i>
+</blockquote>
+
+<h3>2.1 Vectors, inner products, and quantum states</h3>
+
+<p>
+In ordinary 2D real space, a vector is written using components
+</p>
+
+$$ \vec{v} = v_x \hat{x} + v_y \hat{y}. $$
+
+<p>
+As a column matrix:
+</p>
+
+$$
+\vec{v} = 
+\begin{bmatrix}
+v_x \\
+v_y
+\end{bmatrix}.
+$$
+
+<p>
+Quantum states use the same idea, but now the components may be complex numbers.  
+The state vector is written using Dirac notation:
+</p>
+
+$$ |\psi\rangle = 
+\begin{bmatrix}
+a \\
+b
+\end{bmatrix},
+$$
+
+with \(a, b \in \mathbb{C}\).
+
+<h3>2.2 The inner product (bra–ket)</h3>
+
+<p>
+The quantum inner product is the generalization of the dot product.  
+For two states \( |\phi\rangle \) and \( |\psi\rangle \),
+</p>
+
+$$
+\langle \phi | \psi \rangle
+= 
+\phi_1^* \psi_1 + \phi_2^* \psi_2.
+$$
+
+<p>
+Here, the “bra” \( \langle \phi | \) is the conjugate-transpose of the ket \( |\phi\rangle \):
+</p>
+
+$$
+\langle \phi | = 
+(|\phi\rangle)^\dagger.
+$$
+
+<p>
+The normalization condition from Postulate 1 is:
+</p>
+
+$$
+\langle \psi | \psi \rangle = 1.
+$$
+
+<p>
+This guarantees that quantum states are unit vectors, preserving probabilistic interpretation.
+</p>
+
+<button class="collapsible">Exercise 1 — Compute a bra–ket inner product</button>
 <div class="content-box">
-<p>Verify that $|0\rangle$ and $|1\rangle$ are orthonormal basis states.</p>
+Compute  
+\( |\psi\rangle = (1+i,\, 2)^T \)  
+and  
+\( |\phi\rangle = (2,\, -i)^T \).  
+Find \( \langle \phi | \psi \rangle \).
 </div>
 
+<hr>
+
+<h2>3. Example: The Qubit</h2>
+
+<p>
+A qubit is a two-dimensional quantum system with orthonormal basis states:
+</p>
+
+$$ |0\rangle = \begin{bmatrix}1 \\ 0\end{bmatrix}, \qquad
+   |1\rangle = \begin{bmatrix}0 \\ 1\end{bmatrix}. $$
+
+<p>
+A general qubit is written as:
+</p>
+
+$$
+|\psi\rangle = \alpha |0\rangle + \beta |1\rangle,
+$$
+
+with normalization:
+
+$$
+|\alpha|^2 + |\beta|^2 = 1.
+$$
+
+<p>
+Because \( \alpha \) and \( \beta \) may be complex, the qubit has richer structure than a classical bit.
+</p>
+
+<button class="collapsible">Exercise 2 — Valid or invalid qubit?</button>
+<div class="content-box">
+Determine whether  
+\( |\psi\rangle = 3|0\rangle + 4|1\rangle \)  
+is a valid quantum state.
 </div>
 
+<hr>
+
+<h2>4. Complex Amplitudes and the Bloch Parameterization</h2>
+
+<p>
+Write the amplitudes in polar form:
+</p>
+
+$$
+\alpha = r_0 e^{i\phi_0}, \qquad
+\beta = r_1 e^{i\phi_1}.
+$$
+
+<p>
+After factoring out a global phase (physically irrelevant), the qubit becomes:
+</p>
+
+$$
+|\psi\rangle
+= 
+\cos\!\left(\frac{\theta}{2}\right)|0\rangle
++
+e^{i\phi}
+\sin\!\left(\frac{\theta}{2}\right)|1\rangle,
+$$
+
+where
+
+$$
+\phi = \phi_1 - \phi_0.
+$$
+
+<p>
+This form corresponds to spherical coordinates on the Bloch sphere.  
+The angles have the conventional meaning:
+</p>
+
+<ul>
+<li>\(\theta = 0\) → north pole → \( |0\rangle \)</li>
+<li>\(\theta = \pi\) → south pole → \( |1\rangle \)</li>
+<li>\(\phi\) → rotation around the z-axis</li>
+</ul>
+
+<p>
+Although \(\phi\) originates from a complex phase difference, it corresponds physically to a rotation about the z-axis.  
+This is what makes the Bloch sphere a powerful visualization tool.
+</p>
+
+<button class="collapsible">Exercise 3 — Show normalization in Bloch form</button>
+<div class="content-box">
+Verify that  
+\( |\psi\rangle =
+\cos(\theta/2)|0\rangle +
+e^{i\phi}\sin(\theta/2)|1\rangle \)  
+is automatically normalized.
+</div>
+
+<hr>
+
+<h2>5. Postulate 2 — Unitary Time Evolution</h2>
+
+<p>
+Postulate 2 states:
+</p>
+
+<blockquote>
+<i>The evolution of a closed quantum system is described by a unitary operator.</i>
+</blockquote>
+
+<p>
+If the system starts in \( |\psi(0)\rangle \), then after time \(t\):
+</p>
+
+$$
+|\psi(t)\rangle = U(t)\,|\psi(0)\rangle.
+$$
+
+<p>
+Unitarity preserves the inner product:
+</p>
+
+$$
+U^\dagger U = I.
+$$
+
+<h3>5.1 Pauli matrices as basic unitary operations</h3>
+
+<p>
+Three fundamental unitaries are the Pauli operators:
+</p>
+
+$$
+X = \begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}, \quad
+Y = \begin{bmatrix}0 & -i \\ i & 0\end{bmatrix}, \quad
+Z = \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix}.
+$$
+
+<p>
+Their actions on a general qubit \( |\psi\rangle = \alpha|0\rangle + \beta|1\rangle \) are:
+</p>
+
+$$
+X|\psi\rangle = \alpha|1\rangle + \beta|0\rangle,
+$$
+
+$$
+Y|\psi\rangle = i\alpha|1\rangle - i\beta|0\rangle,
+$$
+
+$$
+Z|\psi\rangle = \alpha|0\rangle - \beta|1\rangle.
+$$
+
+<ul>
+<li>X performs a bit flip.</li>
+<li>Y performs a bit + phase flip.</li>
+<li>Z performs a phase flip.</li>
+</ul>
+
+<button class="collapsible">Exercise 4 — Show Pauli unitarity</button>
+<div class="content-box">
+Verify that  
+\(X^\dagger X = Y^\dagger Y = Z^\dagger Z = I\).
+</div>
+
+<hr>
+
+<h2>6. Summary</h2>
+
+<p>
+In this chapter, we introduced:
+</p>
+
+<ul>
+<li>The meaning of a quantum state and the inner-product structure behind it.</li>
+<li>The qubit as the simplest quantum system.</li>
+<li>The Bloch-sphere parameterization and its geometric interpretation.</li>
+<li>Unitary evolution and the fundamental role of operators such as the Pauli matrices.</li>
+</ul>
+
+<p>
+These ingredients are essential for understanding how trapped-ion qubits behave and how they are manipulated in real quantum computers.  
+In the next chapters, we will build step-by-step toward full single- and two-qubit control.
+</p>
+
+</div>
 </body>
 </html>
