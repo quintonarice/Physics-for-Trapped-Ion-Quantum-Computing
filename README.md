@@ -9,6 +9,7 @@ Part I: Essential Physics for Quantum Computing
   •	Postulates of QM
   
 3. Trapping Ions
+
   •	Paul Traps
 
   •	RF fields (Ions vs. Dust)
