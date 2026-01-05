@@ -44,55 +44,116 @@ An isolated system is associated with a complex vector space with an inner produ
 In real space (2D), we describe a vector using its components:
 </p>
 
-<p><span class="eq-placeholder">(1.1) [Insert Equation Here — vector components]</span></p>
+<p>
+\[
+\vec{v} = v_x \hat{x} + v_y \hat{y}
+\tag{1.1}
+\]
+</p>
 
 <p>
 Where and are the x- and y-components while  and  are unit vectors (vectors with magnitude 1). This vector can also be represented as a column matrix:
 </p>
 
-<p><span class="eq-placeholder">(1.2) [Insert Equation Here — column vector]</span></p>
+<p>
+\[
+\vec{v} =
+\begin{pmatrix}
+v_x \\
+v_y
+\end{pmatrix}
+\tag{1.2}
+\]
+</p>
 
 <p>
 Similarly, a complex vector space can be expressed as a column matrix, however, the components are allowed to be complex by numbers.
 </p>
 
-<p><span class="eq-placeholder">(1.3) [Insert Equation Here — complex column vector]</span></p>
+<p>
+\[
+\psi =
+\begin{pmatrix}
+\alpha \\
+\beta
+\end{pmatrix},
+\quad \alpha,\beta \in \mathbb{C}
+\tag{1.3}
+\]
+</p>
 
 <p>
 The Greek letter psi () is famously used for quantum state vectors so we shall also adopt it here. It is encased in what is known as a ket, |ψ⟩, in Dirac notation and therefore the quantum state vector is commonly pronounced “ket psi.” An important feature of real vectors is the dot product, which gives the geometric relation between two vectors and allows for calculation of the length of a vector. The dot product of two vectors is given by:
 </p>
 
-<p><span class="eq-placeholder">(1.4) [Insert Equation Here — dot product]</span></p>
+<p>
+\[
+\vec{v}\cdot\vec{w} = |\vec{v}||\vec{w}|\cos\theta
+\tag{1.4}
+\]
+</p>
 
 <p>
 Where the absolute values indicate the magnitude or length and θ is the angle between the two vectors. The dot product can also be expressed in component form as:
 </p>
 
-<p><span class="eq-placeholder">(1.5) [Insert Equation Here — component dot product]</span></p>
+<p>
+\[
+\vec{v}\cdot\vec{w} = v_x w_x + v_y w_y
+\tag{1.5}
+\]
+</p>
 
 <p>
 Where the unit vectors vanish using the first definition of the dot product given. Notice the dot product is a scalar quantity. We can compute the same result using the matrix multiplication with a small caveat. To compute the matrix dot product, we must transpose the first vector so that the number of columns in the 1st matrix equals the number of rows in the 2nd matrix. So that:
 </p>
 
-<p><span class="eq-placeholder">(1.6) [Insert Equation Here — matrix dot product]</span></p>
+<p>
+\[
+\vec{v}\cdot\vec{w} =
+\begin{pmatrix}
+v_x & v_y
+\end{pmatrix}
+\begin{pmatrix}
+w_x \\
+w_y
+\end{pmatrix}
+\tag{1.6}
+\]
+</p>
 
 <p>
 Another important feature is that the dot product of a vector with itself gives the length of the vector:
 </p>
 
-<p><span class="eq-placeholder">(1.7) [Insert Equation Here — v·v]</span></p>
+<p>
+\[
+\vec{v}\cdot\vec{v} = v_x^2 + v_y^2
+\tag{1.7}
+\]
+</p>
 
 <p>
 Or
 </p>
 
-<p><span class="eq-placeholder">(1.8) [Insert Equation Here — |v|]</span></p>
+<p>
+\[
+|\vec{v}| = \sqrt{\vec{v}\cdot\vec{v}}
+\tag{1.8}
+\]
+</p>
 
 <p>
 Understanding that the dot product for real vectors is computed using the transpose in addition to the length of the vector being the square root of its dot product with itself is valuable because the quantum state vector has the similar albeit more general properties. In fact, the “quantum dot product” is the generalized dot product known as the inner product. For example, the inner product of two quantum state vectors, and :
 </p>
 
-<p><span class="eq-placeholder">(1.9) [Insert Equation Here — inner product definition]</span></p>
+<p>
+\[
+\langle \phi | \psi \rangle
+\tag{1.9}
+\]
+</p>
 
 <p>
 Where ⟨ϕ|, called “bra phi,” is the conjugate-transpose of ket phi, |ϕ⟩. The inner product is therefore also called a bra-ket.
@@ -102,25 +163,52 @@ Where ⟨ϕ|, called “bra phi,” is the conjugate-transpose of ket phi, |ϕ�
 Now, for the bra-ket via matrix multiplication:
 </p>
 
-<p><span class="eq-placeholder">(1.10) [Insert Equation Here — bra-ket matrix multiplication]</span></p>
+<p>
+\[
+\langle \phi | \psi \rangle =
+\begin{pmatrix}
+\phi_1^* & \phi_2^*
+\end{pmatrix}
+\begin{pmatrix}
+\psi_1 \\
+\psi_2
+\end{pmatrix}
+\tag{1.10}
+\]
+</p>
 
 <p>
 So that:
 </p>
 
-<p><span class="eq-placeholder">(1.11) [Insert Equation Here — magnitude squared]</span></p>
+<p>
+\[
+\langle \psi | \psi \rangle = |\psi_1|^2 + |\psi_2|^2
+\tag{1.11}
+\]
+</p>
 
 <p>
 Therefore,
 </p>
 
-<p><span class="eq-placeholder">(1.12) [Insert Equation Here — length of |ψ⟩]</span></p>
+<p>
+\[
+|\psi| = \sqrt{\langle \psi | \psi \rangle}
+\tag{1.12}
+\]
+</p>
 
 <p>
 By postulate 1, |ψ⟩ must be a unit vector, hence:
 </p>
 
-<p><span class="eq-placeholder">(1.13) [Insert Equation Here — ⟨ψ|ψ⟩ = 1]</span></p>
+<p>
+\[
+\langle \psi | \psi \rangle = 1
+\tag{1.13}
+\]
+</p>
 
 <p>
 The conjugate-transpose of the inner product is what keeps postulate 1 intact. That is why we use it rather than just the regular transpose.
@@ -145,37 +233,77 @@ Use the inner product to show orthonormality of |0⟩ and |1⟩.
 The state vector of a qubit is commonly written as:
 </p>
 
-<p><span class="eq-placeholder">(1.14) [Insert Equation Here — |ψ⟩ = α|0⟩ + β|1⟩]</span></p>
+<p>
+\[
+|\psi\rangle = \alpha|0\rangle + \beta|1\rangle
+\tag{1.14}
+\]
+</p>
 
 <p>
 The qubit states |0⟩ and |1⟩ can be expressed as column vectors:
 </p>
 
-<p><span class="eq-placeholder">(1.15) [Insert Equation Here — basis column vectors]</span></p>
+<p>
+\[
+|0\rangle =
+\begin{pmatrix}
+1 \\
+0
+\end{pmatrix},
+\quad
+|1\rangle =
+\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}
+\tag{1.15}
+\]
+</p>
 
 <p>
 From Postulate 1, normalization requires that the qubit state vector’s inner product with itself is equal to 1.
 </p>
 
-<p><span class="eq-placeholder">(1.16) [Insert Equation Here — normalization condition]</span></p>
+<p>
+\[
+\langle \psi | \psi \rangle = 1
+\tag{1.16}
+\]
+</p>
 
 <p>
 Which implies that:
 </p>
 
-<p><span class="eq-placeholder">(1.17) [Insert Equation Here — |α|² + |β|² = 1]</span></p>
+<p>
+\[
+|\alpha|^2 + |\beta|^2 = 1
+\tag{1.17}
+\]
+</p>
 
 <p>
 Again, the qubit is state is a linear combination. In general, any linear combination is a superposition of the states:
 </p>
 
-<p><span class="eq-placeholder">(1.18) [Insert Equation Here — Σ cᵢ|ψᵢ⟩]</span></p>
+<p>
+\[
+|\psi\rangle = \sum_i c_i |\psi_i\rangle
+\tag{1.18}
+\]
+</p>
 
 <p>
 <b>Example:</b>
 </p>
 
-<p><span class="eq-placeholder">(1.19) [Insert Equation Here — example qubit state]</span></p>
+<p>
+\[
+|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)
+\tag{1.19}
+\]
+</p>
 
 <p>
 This state is a superposition with amplitudes of   and  , respectively and is a valid quantum state according to postulate 1.
@@ -197,7 +325,12 @@ The fact that the state vector is a unit vector has enormous implications for th
 The evolution of a closed quantum system is described by a unitary transformation.
 </p>
 
-<p><span class="eq-placeholder">(1.20) [Insert Equation Here — |ψ′⟩ = U|ψ⟩]</span></p>
+<p>
+\[
+|\psi'\rangle = U|\psi\rangle
+\tag{1.20}
+\]
+</p>
 
 <p>
 Where |ψ⟩ is the initial state, U is a unitary operator, and |ψ′⟩ is the final state. Note that this postulate explicitly describes closed systems, which do not interact with any external environment. Technically, there are no true closed systems in nature (unless you count the entire universe itself which may also not be closed), however, unitary operators can describe real-world quantum system dynamics.
@@ -207,25 +340,57 @@ Where |ψ⟩ is the initial state, U is a unitary operator, and |ψ′⟩ is the
 An operator is unitary if:
 </p>
 
-<p><span class="eq-placeholder">(1.21) [Insert Equation Here — U†U = I]</span></p>
+<p>
+\[
+U^\dagger U = I
+\tag{1.21}
+\]
+</p>
 
 <p>
 Where † (pronounced dagger) indicates the conjugate-transpose from earlier and I is the identity matrix:
 </p>
 
-<p><span class="eq-placeholder">(1.22) [Insert Equation Here — Identity Matrix]</span></p>
+<p>
+\[
+I =
+\begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}
+\tag{1.22}
+\]
+</p>
 
 <p>
 So that if:
 </p>
 
-<p><span class="eq-placeholder">(1.23) [Insert Equation Here — General Operator Matrix]</span></p>
+<p>
+\[
+U =
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\tag{1.23}
+\]
+</p>
 
 <p>
 Then,
 </p>
 
-<p><span class="eq-placeholder">(1.24) [Insert Equation Here — U† Expression]</span></p>
+<p>
+\[
+U^\dagger =
+\begin{pmatrix}
+a^* & c^* \\
+b^* & d^*
+\end{pmatrix}
+\tag{1.24}
+\]
+</p>
 
 <p>
 Unitarity preserves norms in accordance with Postulate 1. For example, we cannot have an operator which acts on a quantum state such that its inner product with itself (after the operation) does not equal 1 for that violates Postulate 1.
@@ -235,7 +400,12 @@ Unitarity preserves norms in accordance with Postulate 1. For example, we cannot
 In general, the inner product of ⟨ϕ| and |ψ⟩ is:
 </p>
 
-<p><span class="eq-placeholder">(1.25) [Insert Equation Here — Inner Product]</span></p>
+<p>
+\[
+\langle \phi | \psi \rangle
+\tag{1.25}
+\]
+</p>
 
 <hr>
 
@@ -541,16 +711,16 @@ So, we now have two equations which dictate how states evolve in quantum mechani
 </p>
 
 <p>
-As an exercise, use the updated Postulate 2 and Schrodinger equation to show that:
+In the next exercise, use the updated Postulate 2 and the Schrodinger equation to show that the:
 </p>
-
+    
+<p><span class="eq-placeholder">(1.63) [Insert Equation Here — H|ψ(0)⟩ ∝ |ψ(0)⟩]</span></p>
+    
 <button class="collapsible">Exercise 1.7</button>
 <div class="content-box">
 Show that:
 <p><span class="eq-placeholder">(1.63) [Insert Equation Here — H|ψ(0)⟩ ∝ |ψ(0)⟩]</span></p>
 </div>
-    
-<p><span class="eq-placeholder">(1.63) [Insert Equation Here — H|ψ(0)⟩ ∝ |ψ(0)⟩]</span></p>
 
 <p>
 The proportionality constant is commonly denoted E for reasons explained below. So, we have:
@@ -749,10 +919,9 @@ These results indicate we cannot distinguish states which are not orthonormal to
 
 <button class="collapsible">Exercise 1.10</button>
 <div class="content-box">
-Using the computational basis measurement operators  
-M₀ = |0⟩⟨0| and M₁ = |1⟩⟨1|,  
-verify explicitly that  
-M₀†M₀ + M₁†M₁ = I.
+Compute the inner product ⟨ψ₁|ψ₂⟩ for the two states given above.  
+Explain why a nonzero inner product prevents perfect distinguishability
+using quantum measurements.
 </div>
 
 <p>
