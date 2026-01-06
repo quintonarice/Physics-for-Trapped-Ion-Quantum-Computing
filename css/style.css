@@ -50,4 +50,19 @@ body { margin:0; font-family:Georgia,serif; background:#f8f8f8; }
 .nav-section.open .nav-children {
   display: block;
 }
+/* ===== Top-level navigation styling ===== */
+
+.sidebar > a {
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.4rem 0;
+  display: block;
+}
+
+/* Match accordion header style */
+.nav-header {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 
