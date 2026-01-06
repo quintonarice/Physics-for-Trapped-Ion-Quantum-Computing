@@ -9,3 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+document.querySelectorAll(".nav-header").forEach(header => {
+  header.addEventListener("click", () => {
+    header.parentElement.classList.toggle("open");
+  });
+});
