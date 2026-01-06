@@ -8,3 +8,46 @@ body { margin:0; font-family:Georgia,serif; background:#f8f8f8; }
 .active, .collapsible:hover { background:#1d466a; }
 .content-box { padding:0 15px; display:none; background:white; border-left:3px solid #235784; }
 
+/* ===== Sidebar Accordion Navigation ===== */
+
+.sidebar {
+  width: 240px;
+  padding: 1rem;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.4rem 0;
+  text-decoration: none;
+}
+
+.nav-section {
+  margin-top: 1rem;
+}
+
+.nav-header {
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+}
+
+.nav-arrow {
+  transition: transform 0.2s ease;
+}
+
+.nav-section.open .nav-arrow {
+  transform: rotate(90deg);
+}
+
+.nav-children {
+  display: none;
+  padding-left: 1rem;
+}
+
+.nav-section.open .nav-children {
+  display: block;
+}
+
