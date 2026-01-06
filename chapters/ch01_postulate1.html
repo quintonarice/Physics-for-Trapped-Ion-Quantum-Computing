@@ -1,1 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 1 — Postulates of Quantum Mechanics</title>
 
+<link rel="stylesheet" href="../css/style.css">
+  
+<script src="../js/collapsible.js"></script>
+  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+  
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+<style>
+.eq-placeholder {
+    font-style: italic;
+    color: #555;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>Navigation</h2>
+  <a href="../index.html">Home</a>
+  <a href="introduction.html">Introduction</a>
+  <a href="ch01_postulates.html">Postulates</a>
+</div>
+
+<div class="content">
+
+<h1>Postulates of Quantum Mechanics</h1>
+
+<p>
+We begin with the Postulates of Quantum Mechanics in an attempt to set the framework for which quantum computing is performed. If and when you get confused about “why” its good practice to remember the definition of a postulate: a thing suggested or assumed as true as the basis for reasoning, discussion, or belief.
+</p>
+
+<h2>Postulate 1 of Quantum Mechanics</h2>
+
+<p>
+An isolated system is associated with a <b>complex vector space</b> with an <b>inner product</b> known as the state space. The system is described by its <b>state vector</b> which is a <b>unit vector</b> in the system’s state space.
+</p>
+
+<p>
+In real space (2D), we describe a vector using its components:
+</p>
+
+<p>
+\[
+\vec{v} = v_x \hat{x} + v_y \hat{y}
+\tag{1.1}
+\]
+</p>
+
+<p>
+Where $v_x$ and $v_y$ are the x- and y-components while $\hat{x}$ and $\hat{y}$ are unit vectors (vectors with magnitude 1). This vector can also be represented as a column matrix:
+</p>
+
+<p>
+\[
+\vec{v} =
+\begin{pmatrix}
+v_x \\
+v_y
+\end{pmatrix}
+\tag{1.2}
+\]
+</p>
+
+<p>
+Similarly, a complex vector space can be expressed as a column matrix, however, the components are allowed to be complex by numbers.
+</p>
+
+<p>
+\[
+\|psi\rangle =
+\begin{pmatrix}
+\alpha \\
+\beta
+\end{pmatrix},
+\quad \alpha,\beta \in \mathbb{C}
+\tag{1.3}
+\]
+</p>
+
+<p>
+The Greek letter psi, $\psi$ is famously used for quantum state vectors so we shall also adopt it here. It is encased in what is known as a ket, $|\psi\rangle$, in Dirac notation and therefore the quantum state vector is commonly pronounced “ket psi.” An important feature of real vectors is the dot product, which gives the geometric relation between two vectors and allows for calculation of the length of a vector. The dot product of two vectors is given by:
+</p>
+
+<p>
+\[
+\vec{v}\cdot\vec{w} = |\vec{v}||\vec{w}|\cos\theta
+\tag{1.4}
+\]
+</p>
+
+<p>
+Where the absolute values indicate the magnitude or length and θ is the angle between the two vectors. The dot product can also be expressed in component form as:
+</p>
+
+<p>
+\[
+\vec{v}\cdot\vec{w} = v_x w_x + v_y w_y
+\tag{1.5}
+\]
+</p>
+
+<p>
+Where the unit vectors vanish using the first definition of the dot product given. Notice the dot product is a scalar quantity. We can compute the same result using the matrix multiplication with a small caveat. To compute the matrix dot product, we must <b>transpose</b> the first vector so that the number of columns in the 1st matrix equals the number of rows in the 2nd matrix. So that:
+</p>
+
+<p>
+\[
+\vec{v}^T\cdot\vec{w} =
+\begin{pmatrix}
+v_x & v_y
+\end{pmatrix}
+\begin{pmatrix}
+w_x \\
+w_y
+\end{pmatrix}
+\tag{1.6}
+\]
+</p>
+
+<p>
+Another important feature is that the dot product of a vector with itself gives the magnitude or length of the vector:
+</p>
+
+<p>
+\[
+\vec{v}\cdot\vec{v} = v_x^2 + v_y^2
+\tag{1.7}
+\]
+</p>
+
+<p>
+Or
+</p>
+
+<p>
+\[
+|\vec{v}| = \sqrt{\vec{v}\cdot\vec{v}}
+\tag{1.8}
+\]
+</p>
+
+<p>
+Understanding that the dot product for real vectors is computed using the transpose in addition to the length of the vector being the square root of its dot product with itself is valuable because the quantum state vector has similar albeit more general properties. In fact, the “quantum dot product” is the generalized dot product known as the inner product. For example, the inner product of two quantum state vectors, $|\phi\rangle$ and $|\psi\rangle$:
+</p>
+
+<p>
+\[
+\langle \phi | \psi \rangle
+\tag{1.9}
+\]
+</p>
+
+<p>
+Where, $\langle \phi|$, pronounced “bra phi,” is the conjugate-transpose of ket phi, $|\phi\rangle$. The inner product is therefore also called a bra-ket.
+</p>
+
+<p>
+Notice we are using the <b>conjugate-transpose</b> now as opposed to the transpose like we did for real vectors. The “bra” vector accomplishes both complex conjugation and transposition all in one notation and is required to ensure that the inner product is real and positive. Why should that matter? We already saw that Equation 1.8 gives the length of a real vector. Let us compare that result to quantum state vectors.
+</p>
+
+<p>
+\[
+\langle \phi | \psi \rangle =
+\begin{pmatrix}
+\phi_1^* & \phi_2^*
+\end{pmatrix}
+\begin{pmatrix}
+\psi_1 \\
+\psi_2
+\end{pmatrix}
+\tag{1.10}
+\]
+</p>
+
+<p>
+Where * represents the complex conjugate. So that the inner product of $\psi$ with itself gives:
+</p>
+<p>
+\[
+\langle \psi | \psi \rangle = |\alpha|^2 + |\beta|^2
+\tag{1.11}
+\]
+</p>
+
+<p>
+Where $\alpha^*\alpha = |\alpha|^2$ and $\beta^*\beta = |\beta|^2$ also known as the squared modulus.
+</p>
+
+<p>
+Therefore, analagously,
+</p>
+
+<p>
+\[
+\sqrt{\langle \psi | \psi \rangle} = \sqrt{|\alpha|^2 + |\beta|^2}
+\tag{1.12}
+\]
+</p>
+  
+<p>
+represents the length of the quantum state vector.
+</p>
+  
+<p>
+By Postulate 1, $|\psi\rangle$ must be a unit vector, hence:
+</p>
+
+<p>
+\[
+\langle \psi | \psi \rangle = 1
+\tag{1.13}
+\]
+</p>
+
+<p>
+The conjugate-transpose of the inner product is what keeps Postulate 1 intact. That is why we use it rather than just the regular transpose.
+</p>
+
+<p>
+Postulate 1 implies that the state of a quantum mechanical system, its quantum state (which includes all knowable information about the system), is represented by a <b>normalized</b> state vector known as ket psi, $|\psi\rangle$.
+</p>
+
+<h2>The Qubit</h2>
+
+<p>
+The simplest non-trivial quantum mechanical system is the <b>qubit</b> or quantum bit. A qubit has a two-dimensional state space namely, $|0\rangle$ and $|1\rangle$ which form an <b>orthonormal basis</b>. “Ortho” meaning orthogonal to each other and normal meaning normalized to 1.
+</p>
+    
+<p>
+The state vector of a qubit is commonly written as:
+</p>
+
+<p>
+\[
+|\psi\rangle = \alpha|0\rangle + \beta|1\rangle
+\tag{1.14}
+\]
+</p>
+
+<p>
+Where $\alpha$ and $\beta$ are complex numbers known as the <b>complex amplitudes</b> or just the amplitudes (we will see later why they are also called probability amplitudes). This is a <b>linear combination</b> of the states $|0\rangle$ and $1\rangle$ also known as a <b>superposition</b>.
+</p>
+  
+<p>
+The qubit states $|0\rangle$ and $|1\rangle$ can be expressed as column vectors:
+</p>
+
+<p>
+\[
+|0\rangle =
+\begin{pmatrix}
+1 \\
+0
+\end{pmatrix},
+\quad
+|1\rangle =
+\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}
+\tag{1.15}
+\]
+</p>
+
+<button class="collapsible">Exercise 1.1</button>
+<div class="content-box">
+Use the inner product to show orthonormality of $|0\rangle$ and $|1\rangle$ using the column vectors.
+</div>
+  
+<p>
+From Postulate 1, normalization requires that the qubit state vector’s inner product with itself is equal to 1.
+</p>
+
+<p>
+\[
+\langle \psi | \psi \rangle = 1
+\tag{1.16}
+\]
+</p>
+
+<p>
+Which implies that:
+</p>
+
+<p>
+\[
+|\alpha|^2 + |\beta|^2 = 1
+\tag{1.17}
+\]
+</p>
+
+<p>
+In general, any linear combination is a superposition of the states:
+</p>
+
+<p>
+\[
+|\psi\rangle = \sum_i c_i |\psi_i\rangle
+\tag{1.18}
+\]
+</p>
+
+<p>
+Where $c_i$ are the amplitudes of $|\psi_i\rangle$.
+  
+<p>
+<b>Example:</b>
+</p>
+  
+<p>
+The following state vector is a superposition with amplitudes of $\frac{1}{\sqrt{2}}$ and $-\frac{1}{\sqrt{2}}$ and is a valid quantum state according to Postulate 1.
+<p>
+\[
+|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)
+\tag{1.19}
+\]
+</p>
+
+<button class="collapsible">Exercise 1.2</button>
+<div class="content-box">
+Verify that Equation 1.19 is indeed a valid quantum state. Is the state $\psi\rangle = |0\rangle + |1\rangle$ a valid quantum state?
+</div>
+
+<p>
+The fact that the state vector is a unit vector has enormous implications for theoretical quantum mechanics to align with experimental reality.
+</p>
