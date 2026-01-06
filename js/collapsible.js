@@ -1,16 +1,26 @@
+// ===============================
+// Exercise collapsibles
+// ===============================
+document.addEventListener("click", function (e) {
+  const exerciseBtn = e.target.closest(".collapsible");
+  if (!exerciseBtn) return;
 
-document.addEventListener("DOMContentLoaded", function() {
-  var coll = document.getElementsByClassName("collapsible");
-  for (let c of coll) {
-    c.addEventListener("click", function() {
-      this.classList.toggle("active");
-      let content = this.nextElementSibling;
-      content.style.display = content.style.display === "block" ? "none" : "block";
-    });
-  }
+  exerciseBtn.classList.toggle("active");
+
+  const content = exerciseBtn.nextElementSibling;
+  if (!content) return;
+
+  content.style.display =
+    content.style.display === "block" ? "none" : "block";
 });
-document.querySelectorAll(".nav-header").forEach(header => {
-  header.addEventListener("click", () => {
-    header.parentElement.classList.toggle("open");
-  });
+
+// ===============================
+// Sidebar accordion navigation
+// ===============================
+document.addEventListener("click", function (e) {
+  const navHeader = e.target.closest(".nav-header");
+  if (!navHeader) return;
+
+  navHeader.parentElement.classList.toggle("open");
 });
+
