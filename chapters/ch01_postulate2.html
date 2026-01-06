@@ -131,11 +131,15 @@ In general, the inner product of $U|v\rangle$ and $U|w\rangle$ is:
 
 <p>
 \[
-\langle v |U^\daggerU | \w \rangle = \langle v |I| w\rangle = \langle v|w \rangle
+\langle v |U^dagger U | w \rangle = \langle v |I| w\rangle = \langle v|w \rangle
 \tag{1.25}
 \]
 </p>
 
+<p>
+There are some widely used unitary operators which are applicable to quantum computing and require our attention.
+</p>
+  
 <hr>
 
 <h2>Pauli Matrices</h2>
@@ -196,7 +200,7 @@ X|\psi\rangle = \alpha|1\rangle + \beta|0\rangle
 </p>
 <p>
 \[
-Y|\psi\rangle = i\alpha|1\rangle - i\beta|0\rangle
+Y|\psi\rangle = \alpha|1\rangle - \beta|0\rangle
 \tag{1.29}
 \]
 </p>
@@ -207,6 +211,10 @@ Z|\psi\rangle = \alpha|0\rangle - \beta|1\rangle
 \]
 </p>
 
+<p>
+Where we have dropped the a factor of $i$ from the Y-gate which is explained later in the section on global phase.
+</p>
+  
 <p>
 Comparing the results to the initial qubit state we can see that the X-gate causes a bit flip, the Y-gate yields a bit flip and a phase flip, and the Z-gate does a phase flip only.
 </p>
