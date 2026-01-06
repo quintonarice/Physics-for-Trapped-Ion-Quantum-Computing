@@ -1,1 +1,202 @@
 
+
+
+<h2>Postulate 4 of Quantum Mechanics</h2>
+
+<p>
+The state space of a composite physical system is the tensor product of the state space of the component physical systems. If we have systems numbered 1 through n and system i is prepared in the state |ψ<sub>i</sub>⟩, then the joint state of the total system is:
+</p>
+
+<p>
+\[
+|\Psi\rangle = |\psi_1\rangle \otimes |\psi_2\rangle \otimes \cdots \otimes |\psi_n\rangle
+\tag{1.99}
+\]
+</p>
+
+
+<p>
+Where ⊗ represents the tensor product. A tensor product is a vector space equipped with a bilinear map.
+</p>
+
+<p>
+To understand tensor products, we’ll start with a concrete example. Given that V and W are finite dimensional vector spaces where V belongs to ℝⁿ and W belongs to ℝᵐ for n and m as positive integers.
+</p>
+
+<p>
+Therefore, the vector v has n values while vector w has m values. We now examine V ⊗ W. This tensor product is an mn dimensional vector space where the elements are linear combinations of v ⊗ w.
+</p>
+
+<p>
+For example, if V is a 2-dimensional vector space with basis vectors |0⟩ and |1⟩ then |0⟩⊗|0⟩ + |1⟩⊗|1⟩ is an element of V ⊗ W.
+</p>
+
+<p>
+The tensor product satisfies the following properties from linear algebra:
+</p>
+
+<p>
+Property 1: z(v ⊗ w) = (zv) ⊗ w = v ⊗ (zw) for scalar z.
+</p>
+
+<p>
+Property 2: (v<sub>1</sub> + v<sub>2</sub>) ⊗ w = v<sub>1</sub> ⊗ w + v<sub>2</sub> ⊗ w.
+</p>
+
+<p>
+Property 3: v ⊗ (w<sub>1</sub> + w<sub>2</sub>) = v ⊗ w<sub>1</sub> + v ⊗ w<sub>2</sub>.
+</p>
+
+<button class="collapsible">Exercise 1.15</button>
+<div class="content-box">
+Using explicit vectors, verify Properties 2 and 3 of the tensor product
+by expanding both sides of each equation and showing they are equal.
+</div>
+
+<p>
+Now, if a system A is in |v⟩ and a system B is in |w⟩ then we may write the joint state as |v⟩|w⟩.
+</p>
+
+<p>
+But it is not clear what this notation implies just yet.
+</p>
+
+<p>
+First, notice that if |v⟩|w⟩ is a valid quantum mechanical state, then z|v⟩|w⟩ is also a valid state because we can always multiply state vectors by complex numbers.
+</p>
+
+<p>
+Additionally, Hilbert spaces (where the state vectors live) are linear vector spaces in which composite states must respect scalar multiplication in each vector space independently.
+</p>
+
+<p>
+\[
+z(|v\rangle \otimes |w\rangle) = (z|v\rangle)\otimes |w\rangle
+\tag{1.100}
+\]
+</p>
+
+
+<p>
+As well as:
+</p>
+
+<p>
+\[
+z(|v\rangle \otimes |w\rangle) = |v\rangle \otimes (z|w\rangle)
+\tag{1.101}
+\]
+</p>
+
+
+<p>
+So, if we were to define |v⟩|w⟩ ≡ |v⟩ ⊗ |w⟩ it would readily obey Property 1 by default.
+</p>
+
+<p>
+Now, let’s say that some states |v<sub>1</sub>⟩ and |v<sub>2</sub>⟩ are states of system A and are superposed such that:
+</p>
+
+<p>
+\[
+|v\rangle = |v_1\rangle + |v_2\rangle
+\tag{1.102}
+\]
+</p>
+
+
+<p>
+This is a valid state although it is unnormalized. The composite system would be:
+</p>
+
+<p>
+\[
+|v\rangle|w\rangle = |v_1\rangle|w\rangle + |v_2\rangle|w\rangle
+\tag{1.103}
+\]
+</p>
+
+
+<p>
+Which obeys Property 2 if |v⟩|w⟩ ≡ |v⟩ ⊗ |w⟩.
+</p>
+
+<p>
+It is beginning to look more and more like the object |v⟩|w⟩ is indeed a tensor product.
+</p>
+
+<p>
+Let’s finalize this result. We could of course say that system B has superposed states of |w<sub>1</sub>⟩ and |w<sub>2</sub>⟩ which are valid.
+</p>
+
+<p>
+Thus, the composite is:
+</p>
+
+<p>
+\[
+|v\rangle(|w_1\rangle + |w_2\rangle)
+= |v\rangle|w_1\rangle + |v\rangle|w_2\rangle
+\tag{1.104}
+\]
+</p>
+
+
+<p>
+Which is exactly Property 3 as long as |v⟩|w⟩ ≡ |v⟩ ⊗ |w⟩.
+</p>
+
+<p>
+Since the object |v⟩|w⟩ obeys all the properties of a tensor product we say that it is a tensor product (up to isomorphism).
+</p>
+
+<p>
+Operationally, the tensor product can be computed using the Kronecker Product for matrices.
+</p>
+
+<p>
+\[
+\begin{pmatrix}
+a \\
+b
+\end{pmatrix}
+\otimes
+\begin{pmatrix}
+c \\
+d
+\end{pmatrix}
+=
+\begin{pmatrix}
+ac \\
+ad \\
+bc \\
+bd
+\end{pmatrix}
+\tag{1.105}
+\]
+</p>
+
+
+<button class="collapsible">Exercise 1.16</button>
+<div class="content-box">
+Compute the tensor product |0⟩⊗|1⟩ and |1⟩⊗|0⟩ using the Kronecker
+product of column vectors.  
+Write each result as a 4-component column vector.
+</div>
+    
+<p>
+Lastly, here is common notation concerning tensor products:
+</p>
+
+<p>
+\[
+|\psi\rangle^{\otimes k}
+= \underbrace{|\psi\rangle \otimes \cdots \otimes |\psi\rangle}_{k\ \text{times}}
+\tag{1.106}
+\]
+</p>
+
+
+<p>
+Additionally, physicists commonly use the shorthand |vw⟩ = |v⟩⊗|w⟩ for more compact expression.
+</p>
