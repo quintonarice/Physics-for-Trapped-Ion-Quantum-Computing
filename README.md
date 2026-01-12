@@ -1,5 +1,5 @@
-# Quantum-Mechanics-for-Trapped-Ion-Quantum-Computing
-Introduction to QM for Trapped Ion Quantum Computing
+# Physics for Trapped Ion Quantum Computing
+Introduction to Trapped Ion Quantum Computing
 
 The course outline is provided here for you to follow:
 
