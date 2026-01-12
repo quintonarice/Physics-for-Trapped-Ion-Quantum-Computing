@@ -1,26 +1,25 @@
 # Physics for Trapped Ion Quantum Computing
-Introduction to Trapped Ion Quantum Computing
 
 The course outline is provided here for you to follow:
 
-Part I: Essential Physics for Quantum Computing
-1. Quantum Essentials
+Part I: Foundational Physics
+1. Quantum Mechanics
    
-     •	Postulates of QM
+     •	Postulates and Examples
   
-3. Trapping Ions
+3. Trapped Ion Systems
 
      •	Paul Traps
 
-     •	RF fields (Ions vs. Dust)
+     •	Radio Frequency Fields
   
      •	Micromotion vs. Secular Motion
   
-Part II: Computing with Trapped Ions
+Part II: Quantum Computing with Trapped Ions
 
 5. How an Ion Becomes a Qubit
 
-     •	Choosing levels for |0⟩ and |1⟩.
+     •	Choosing levels for $|0\rangle$ and $|1\rangle$.
   
      •	Coherence Time
   
@@ -28,7 +27,7 @@ Part II: Computing with Trapped Ions
   
 6. Single-Qubit Logic
    
-     •	Rabi oscillations (simple)
+     •	Rabi oscillations
   
      •	Laser pulses as rotations.
   
