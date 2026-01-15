@@ -42,7 +42,7 @@ fetch("/Physics-for-Trapped-Ion-Quantum-Computing/includes/sidebar.html")
 
 <div class="content">
 
-<h1>Trapped Ions</h1>
+<h1>2.1 Trapped Ions</h1>
 
 <p>
 In this section we transition to discuss the physical system that will ultimately serve as the platform for our quantum computer: trapped atomic ions.
@@ -98,12 +98,12 @@ While atomic ions satisfy the requirements for a physical implementation of a qu
 how can a device be constructed to exploit the quantum mechanical properties of atomic ions for computation?
 To begin, we must consider the following: Unlike neutral atoms, ions experience strong forces in electric fields and cannot simply be left free in vacuum.
 Therefore, confinement or trapping of a charged particle is critical for the physical aparatus based on atomic ions.
-In the remainder of this chapter, we develop the physical principles underlying trapped-ion systems returngin to DiVincenzo's criteria to come full circle.
+In the remainder of this chapter, we develop the physical principles underlying trapped-ion systems returning to DiVincenzo's criteria to come full circle.
 </p>
 
 <hr>
 
-<h2>Charge Trapping</h2>
+<h3>Earnshaw's Theorem</h3>
 
 <p>
 Since ions are charged particles confinement is both possible and nontrivial. To appreciate why ion trapping is subtle, we begin with an important limitation of classical electromagnetism known as <b>Earnshaw's Theorem</b>.
@@ -124,27 +124,44 @@ According to Gauss' Law, the divergence of an electrostatic field is proportiona
 
 <p>
 Since the electric field is minus the gradient of the electric potential, the potential satisfies Laplace's equation in regions with no charge. 
+</p>
 
+<p>
+\[
+\mathbf{E} = -\nabla\mathbf{E}
+\tag{2.2}
+\]
+</p>
+  
 <p>
 Stable confinement of a charged particle in three dimensions would require the electrostatic potential to exhibit positive curvature in all directions, 
 corresponding to restoring forces for small displacements. However, Laplace’s equation imposes no such condition: it requires only that the sum of the second derivatives of the potential vanish.
+</p>
+
+<p>
+\[
+\nabla \cdot \mathbf{E}
+=
+\nabla \cdot (-\nabla V)
+=
+-\left(
+\frac{\partial^2 V}{\partial x^2}
++
+\frac{\partial^2 V}{\partial y^2}
++
+\frac{\partial^2 V}{\partial z^2}
+\right)
+=
+-\nabla^2 V = 0
+\tag{2.3}
+\]
+</p>
+
+<p>
 As a result, if the curvature is positive in some directions, it must be negative in at least one other direction, leading to an instability along that direction.
 </p>
-
+<p>This means that purely static electric fields cannot trap ions in three dimensions.</p>
 <hr>
-
-
-
-
-<p>
-Earnshaw’s theorem states that it is impossible to achieve stable confinement of a charged particle using only static electric fields in free space.
-</p>
-
-
-
-<p>
-Because the electric potential must satisfy Laplace’s equation in regions without charge, any static equilibrium point must be unstable along at least one direction. This means that purely static electric fields cannot trap ions in three dimensions.
-</p>
 
 <button class="collapsible">Exercise 2.1</button>
 <div class="content-box">
@@ -157,7 +174,7 @@ If static electric fields cannot trap ions, we must look for an alternative.
 
 <hr>
 
-<h2>2.3 Time-Dependent Electric Fields</h2>
+<h2>Time-Dependent Electric Fields</h2>
 
 <p>
 The key insight behind ion trapping is that Earnshaw’s theorem applies only to static fields. By allowing the electric potential to vary in time, it becomes possible to achieve effective confinement.
