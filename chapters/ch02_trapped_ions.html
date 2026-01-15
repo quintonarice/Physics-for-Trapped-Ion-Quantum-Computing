@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Chapter 2 — Trapped Ions and RF Confinement</title>
+<title>Chapter 2 — Trapped Ionst</title>
 
 <link rel="stylesheet" href="../css/style.css">
 <script src="../js/collapsible.js"></script>
@@ -41,22 +41,24 @@ In 2000, D. P. DiVincenzo published, The physical implementation of quantum comp
 <p> <b>DiVicenzo's Criteria:</b>
 </p>
 <p>
-(1) (a) Qubits must be well characterized and easy to produce. (b) the system must be
-scalable, i.e. must be able to manage an arbitrary number of qubits.
+1.(a) Qubits must be well characterized and easy to produce.
+</p>
+<p>  
+(b) the system must be scalable, i.e. must be able to manage an arbitrary number of qubits.
 </p>
 <p>
-(2) It must be possible to reliably initialize a qubit to a fiducial state, e.g. |0⟩;
+2. It must be possible to reliably initialize a qubit to a fiducial state, e.g. $|0\rangle$;
 </p>
 <p>
-(3) A qubit must be stable over timescales larger than the typical time needed to operate
+3. A qubit must be stable over timescales larger than the typical time needed to operate
 on it. The lifespan of a qubit over which it can maintain its quantum information content (before noise starts to destroy it) is known as coherence time. For a viable QC
 system, the coherence time of the qubit must be greater than the computation time.
 </p>
 <p>
-(4) It must be possible to implement a universal set of quantum gates.
+4. It must be possible to implement a universal set of quantum gates.
 </p>
 <p>
-(5) A reliable procedure must exist to read out the state of a qubit.
+5. A reliable procedure must exist to read out the state of a qubit.
 </p>
 <p>
 While several physical platforms can, in principle, fulfill DiVincenzo’s criteria, we focus on atomic ions because many of these requirements are naturally satisfied by isolated atomic systems.
@@ -80,38 +82,53 @@ Lastly, atomic ions use state-dependent fluorescence for measurement which acts 
 </p>
 
 <p>
-In the remainder of this chapter, we examine how trapped-ion hardware realizes these criteria in practice.
-</p>
-
-<p>
-<b>How can a charged particle be confined in space at all?</b>
-</p>
-
-<hr>
-
-<h2>2.1 Why Ions?</h2>
-
-<p>
-Ions are attractive candidates for quantum computation because they combine long-lived internal quantum states with excellent isolation from the environment. Unlike solid-state systems, individual ions can be prepared, controlled, and measured with extremely high fidelity using electromagnetic fields and laser light.
-</p>
-
-<p>
-However, ions are charged particles, and charged particles respond strongly to electric fields. This makes confinement both possible and nontrivial. To appreciate why ion trapping is subtle, we begin with an important limitation of classical electromagnetism.
+While atomic ions satisfy the requirements for a physical implementation of a quantum computer, an immediate practical question remains:
+how can a device be constructed to exploit the quantum mechanical properties of atomic ions for computation?
+To begin, we must consider the following: Unlike neutral atoms, ions experience strong forces in electric fields and cannot simply be left free in vacuum.
+Therefore, confinement or trapping of a charged particle is critical for the physical aparatus based on atomic ions.
+In the remainder of this chapter, we develop the physical principles underlying trapped-ion systems returngin to DiVincenzo's criteria to come full circle.
 </p>
 
 <hr>
 
-<h2>2.2 Earnshaw’s Theorem and the Failure of Static Traps</h2>
+<h2>Charge Trapping</h2>
 
 <p>
-Consider an ion placed in a static electric potential. The force on the ion is determined by the gradient of the electric potential, while the stability of the equilibrium depends on the curvature of that potential.
+Since ions are charged particles confinement is both possible and nontrivial. To appreciate why ion trapping is subtle, we begin with an important limitation of classical electromagnetism known as <b>Earnshaw's Theorem</b>.
 </p>
+
+<p>
+Earnshaw's Theorem states that a charged particle cannot be maintained in a <b>stable</b> equilibrium configuration by electrostatic forces alone.
+Stable equilibrium implies that small perturbations on the charge do not break the equilibrium and the charge returns to its equilibrium position after perturbation.
+According to Gauss' Law, the divergence of an electrostatic field is proportional to the charge density in the region so in free space the E-field is divergenceless.
+</p>
+  
+<p>
+\[
+\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0} = 0
+\tag{2.1}
+\]
+</p>
+
+<p>
+Since the electric field is minus the gradient of the electric potential, the potential satisfies Laplace's equation in regions with no charge.Stable confinement of a 
+charged particle in three dimensions would require the electrostatic potential to exhibit positive curvature in all directions, corresponding to restoring forces 
+for small displacements. However, Laplace’s equation imposes no such condition: it requires only that the sum of the second derivatives of the potential vanish.
+As a result, if the curvature is positive in some directions, it must be negative in at least one other direction, leading to an instability along that direction.
+
+</p>
+
+
+<hr>
+
+
+
 
 <p>
 Earnshaw’s theorem states that it is impossible to achieve stable confinement of a charged particle using only static electric fields in free space.
 </p>
 
-<p><span class="eq-placeholder">(2.1) [Insert Laplace’s equation for electrostatic potential]</span></p>
+
 
 <p>
 Because the electric potential must satisfy Laplace’s equation in regions without charge, any static equilibrium point must be unstable along at least one direction. This means that purely static electric fields cannot trap ions in three dimensions.
