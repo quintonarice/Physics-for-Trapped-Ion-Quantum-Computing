@@ -128,7 +128,7 @@ Since the electric field is minus the gradient of the electric potential, the po
 
 <p>
 \[
-\mathbf{E} = -\nabla {V}
+\mathbf{E} = -\nabla \Phi
 \tag{2.2}
 \]
 </p>
@@ -142,17 +142,17 @@ corresponding to restoring forces for small displacements. However, Laplace’s 
 \[
 \nabla \cdot \mathbf{E}
 =
-\nabla \cdot (-\nabla V)
+\nabla \cdot (-\nabla \Phi)
 =
 -\left(
-\frac{\partial^2 V}{\partial x^2}
+\frac{\partial^2 \Phi}{\partial x^2}
 +
-\frac{\partial^2 V}{\partial y^2}
+\frac{\partial^2 \Phi}{\partial y^2}
 +
-\frac{\partial^2 V}{\partial z^2}
+\frac{\partial^2 \Phi}{\partial z^2}
 \right)
 =
--\nabla^2 V = 0
+-\nabla^2 \Phi = 0
 \tag{2.3}
 \]
 </p>
@@ -219,7 +219,7 @@ The full derivation involves multivariate Taylor expansion around the equilibriu
 </p>
 
 <p>
-where the $z^2$ term vanishes because the second derivative $\frac{\partial^2}{\partial z^2} \Phi(0,0,0,t)$ is zero. This is because the ideal RF quadrupole has no axial curvature. Meaning that the axial confinement is not a part of the RF quadrupole potential. It is provided separately by the static endcaps which we will account for later when we build the full potential.
+where the $z^2$ term vanishes because the second derivative $\frac{\partial^2}{\partial z^2} \Phi(0,0,0,t)$ is zero. This is because the ideal RF quadrupole has no axial curvature, meaning that the axial confinement is not a part of the RF quadrupole potential. It is provided separately by the static endcaps which we will account for later when we build the full potential.
 </p>
 <p>
 Now, applying this to Laplace's equation we get:
@@ -375,6 +375,79 @@ Finally, after plugging in $V_x(t)$ and $V_y(t)$ into equation 2.15 we have the 
 <p>
 This expression is commonly found in trapped-ion literature without explanation but now you understand its origin.
 </p>
+
+
+<p>
+<b>Equations of Motion</b>
+</p>
+
+<p>
+Now that we have the potential we can substitute it into the Newton's second law to reveal the equations of motion of the ion in the electric field. First recall that, $\mathbf{E} = -\nabla \Phi$, where $\Phi = \Phi(x,y,t) = \frac{\phi_0(t)}{2r_0^2} (x^2 - y^2). Therefore,
+</p>
+  
+<p>
+\[
+E_x = -\frac{\phi_0(t)}{r_0^2} x
+\tag{2.17}
+\]
+</p>
+  <p>
+\[
+E_y = \frac{\phi_0(t)}{r_0^2} y
+\tag{2.18}
+\]
+</p>
+<p>
+Newton's second law states:
+</p>
+<p>
+\[
+m\ddot {x} = QE_x = -Q\frac{\phi_0(t)}{r_0^2} x
+\tag{2.19}
+\]
+</p>
+<p>
+\[
+m\ddot {y} = QE_y = Q\frac{\phi_0(t)}{r_0^2} y
+\tag{2.20}
+\]
+</p>
+<p>
+Rearranging:
+</p>
+<p>
+\[
+\ddot {x} + \frac{Q}{mr_0^2} \phi_0(t) x = 0
+\tag{2.21}
+\]
+</p>
+<p>
+\[
+\ddot {y} - \frac{Q}{mr_0^2}\phi_0(t) y = 0
+\tag{2.22}
+\]
+</p>
+
+<p>
+Now plugging in $\phi_0(t)$ from equation 2.16:
+</p>
+
+<p>
+\[
+\ddot {x} + \frac{Q}{mr_0^2}[U + V_{RF} cos(\Omega t)] x = 0
+\tag{2.23}
+\]
+</p>
+
+<p>
+\[
+\ddot {y} - \frac{Q}{mr_0^2}[U + V_{RF} cos(\Omega t)] y = 0
+\tag{2.24}
+\]
+</p>
+
+
+
   
 <hr>
 
