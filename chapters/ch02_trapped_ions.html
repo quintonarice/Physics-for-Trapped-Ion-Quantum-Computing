@@ -192,42 +192,42 @@ In the next section we will explore the solution to Laplace's equation under our
 </p>
 
   
-<b>The Quadrupole Potential</b>
+<b>The RF Quadrupole Potential</b>
 <p>
-The quadrupole potential is the simplest nontrivial solution to Laplace’s equation that can produce an equilibrium point using external electrodes, 
-which is why it forms the basis of Paul traps. The quadrupole potential can be expressed in the form:
+The RF quadrupole potential of the linear Paul trap is the simplest nontrivial solution to Laplace’s equation that can produce an equilibrium point using external electrodes. The RF quadrupole potential only has radial components and therefore can be expressed in the form:
 
 <p>
 \[
-\Phi(x,y,z,t) \propto x^2 - y^2
+\Phi(x,y,t) \propto x^2 - y^2
 \tag{2.4}
 \]
 </p>
 
 <p>
-You can verify that a potential of this form satisfies Laplace's equation. This is why the linear Paul trap consists of 4 rods; it is the simplest electrode geometry which allows for charge trapping.
+You can verify that a potential of this form satisfies Laplace's equation. This is why the linear Paul trap consists of 4 rods; along with the axial static electrodes, it is the simplest electrode geometry which allows for charge trapping.
 </p>
 
 <p>
 The full deriviation involves multivariate Taylor expansion around the equilibrium position and is provided in the Appendix. Nonetheless, we provided some details to truly understand the machinery behind the scenes. After Taylor expansion around the center of the trap, we find that:
-
+</p>
+  
 <p>
 \[
-\Phi(x,y,z) \approx \Phi(0,0,0,0) + \frac{1}{2} \frac{\partial^2}{\partial x^2} \Phi(0,0,0,0) x^2 + \frac{1}{2} \frac{\partial^2}{\partial y^2} \Phi(0,0,0,0) y^2 + \frac{1}{2} \frac{\partial^2}{\partial z^2} \Phi(0,0,0,0) z^2
+\Phi(x,y,z,t) \approx \Phi(0,0,0,t) + \frac{1}{2} \frac{\partial^2}{\partial x^2} \Phi(0,0,0,t) x^2 + \frac{1}{2} \frac{\partial^2}{\partial y^2} \Phi(0,0,0,t) y^2 + \frac{1}{2} \frac{\partial^2}{\partial z^2} \Phi(0,0,0,t) z^2
 \tag{2.5}
 \]
 </p>
 
 <p>
-where $\frac{\partial^2}{\partial z^2} \Phi(0,0,0,0) z^2 = 0$ due to the neglible axial curvature.
+where $\frac{\partial^2}{\partial z^2} \Phi(0,0,0,t) z^2 = 0$ because the ideal RF quadrupole has no axial curvature. The axial confinement is provided by the separate static endcaps so that the second derivative $frac{\partial^2}{\partial z^2} \Phi(0,0,0,t)$ is zero for the RF quadrupole contribution.
 </p>
 <p>
-Now, Laplace says:
+Now, applying this to Laplace's equation we get:
 </p>
   
 <p>
 \[
-\frac{\partial^2}{\partial x^2} \Phi(0,0,0,0) = -\frac{\partial^2}{\partial y^2} \Phi(0,0,0,0)
+\frac{\partial^2}{\partial x^2} \Phi(0,0,0,t) = -\frac{\partial^2}{\partial y^2} \Phi(0,0,0,t)
 \tag{2.6}
 \]
 </p>
@@ -238,24 +238,26 @@ So that:
 
 <p>
 \[
-\Phi(x,y,z,t) \approx \Phi(0,0,0,0) + \frac{1}{2} \frac{\partial^2}{\partial x^2} \Phi(0,0,0,0) x^2 - \frac{1}{2} \frac{\partial^2}{\partial x^2} \Phi(0,0,0,0) y^2
+\Phi(x,y,t) \approx \Phi(0,0,t) + \frac{1}{2} \frac{\partial^2}{\partial x^2} \Phi(0,0,t) x^2 - \frac{1}{2} \frac{\partial^2}{\partial x^2} \Phi(0,0,t) y^2
 \tag{2.7}
 \]
 </p>
   
 <p>
-where we have plugged equation 2.6 into equation 2.5. If we now call $\Phi(0,0,0,0) = \Phi_0$, we have:
+where we have plugged equation 2.6 into equation 2.5. If we now call $\Phi(0,0,t) = \Phi_0(t)$, we have:
 </p>
 
 <p>
 \[
-\Phi(x,y,z,t) \approx \Phi_0 + \frac{1}{2} \frac{\partial^2}{\partial x^2} \Phi(0,0,0,0) (x^2 - y^2)
+\Phi(x,y,t) \approx \Phi_0 + \frac{1}{2} \frac{\partial^2}{\partial x^2} \Phi_0(t) (x^2 - y^2)
 \tag{2.8}
 \]
 </p>
+  
 <p>
-To clean up the notation even more, we call $\frac{1}{2} \frac{\partial^2}{\partial x^2} \Phi(0,0,0,0) \Rightarrow C(t)$ so that:
+To clean up the notation even more, we call $\frac{1}{2} \frac{\partial^2}{\partial x^2} \Phi_0(t) \Rightarrow C(t)$ so that:
 </p>
+  
 <p>
 \[
 \Phi(x,y,t) \approx C(t)(x^2 - y^2) + \Phi_0(t)
