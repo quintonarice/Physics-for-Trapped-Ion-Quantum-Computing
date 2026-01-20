@@ -741,7 +741,7 @@ Now we consider the kinetic energy of the ion:
 </p> 
 
 <p>
-where $\dot \xi = \epsilon [(\dot X cos(\Omega t) - X \Omega sin(\Omega t)]$. We have defined $\epislon \equiv -\frac{Q V_{RF}}{mr_0^2 \Omega^2}$ for notational convenience.
+where $\dot \xi = \epsilon [(\dot X cos(\Omega t) - X \Omega sin(\Omega t)]$. We have defined $\epsilon \equiv -\frac{Q V_{RF}}{mr_0^2 \Omega^2}$ for notational convenience.
 </p>
 
 <p>
@@ -760,7 +760,7 @@ Upon expanding:
 
 <p>
 \[
-\ T = \frac{1}{2} m (\dot X^2 + 2 \epsilon \dot X^2 cos(\Omega t) - 2 \epsilon \dot X X sin(\Omega t) + \epsilon^2 \dot X^2 cos^2(\Omega t) - 2 \epsilon^2 \dot X X \Omega sin(\Omega t) cos(\Omega t) + A^2 X^2 \Omega^2 sin^2(\Omega t))
+\ T = \frac{1}{2} m (\dot X^2 + 2 \epsilon \dot X^2 cos(\Omega t) - 2 \epsilon \dot X X sin(\Omega t) + \epsilon^2 \dot X^2 cos^2(\Omega t) - 2 \epsilon^2 \dot X X \Omega sin(\Omega t) cos(\Omega t) + \epsilon^2 X^2 \Omega^2 sin^2(\Omega t))
 \tag{2.53}
 \]
 </p>
@@ -769,8 +769,81 @@ Upon expanding:
 Phew! Don't worry, many of these terms will be dropped by considering the average kinetic energy!
 </p>
 <p>
-The average $\langle sin(\Omega t) \rangle = \langle cos(\Omega t) \langle = 0$ and $\langle sin^2(\Omega t) \rangle = \langle cos^2(\Omega t) \rangle = \frac{1}{2}$ we now have:
+The average $\langle sin(\Omega t) \rangle = \langle cos(\Omega t) \rangle = 0$, $\langle sin(\Omega t)cos(\Omega t) \rangle = 0$, and $\langle sin^2(\Omega t) \rangle = \langle cos^2(\Omega t) \rangle = \frac{1}{2}$ so that we now have the average kinetic energy:
 </p>
+
+<p>
+\[
+\ \langle T \rangle = \frac{1}{2} m (\dot X^2 + \frac{1}{2} \epsilon^2 \dot X^2 + \frac{1}{2} \epsilon^2 X^2 \Omega^2)
+\tag{2.54}
+\]
+</p>
+  
+<p>
+Notice that the second terms is suppressed because when compared with the first term, $\frac{\frac{1}{2} \epsilon^2 \dot X^2}{\dot X^2} = \frac{1}{2} \epsilon^2$ and since $\epsilon^2 \sim \frac{1}{\Omega^4}$ this term pales in comparison to $\dot X^2$.
+</p>
+<p>
+So after dropping the second term we have:
+</p>
+<p>
+\[
+\ \langle T \rangle = \frac{1}{2} m \dot X^2 +  \underbrace{\frac{1}{4} m \epsilon^2 X^2 \Omega^2}_textrm{Looks like potential energy!}
+\tag{2.55}
+\]
+</p>
+  
+<p>
+So we call it:
+</p>
+
+<p>
+\[
+\ U_{pseudo}(X) = \frac{1}{4} m \epsilon^2 \Omega^2 X^2
+\tag{2.56}
+\]
+</p>
+
+<p>
+Or more explicitly, plugging $\epsilon$:
+</p>
+
+<p>
+\[
+\ U_{pseudo}(X) = \frac{1}{4} m \frac{Q^2 V_{RF}^2}{m r_0^2 \Omega^2} X^2
+\tag{2.57}
+\]
+</p>
+<p>
+Recall that $\omega_{sec} = \frac{q}{2} \frac{\Omega}{\sqrt{2}}$ where $q = \frac{2 Q V_{RF}}{m r_0^2 \Omega^2}$ so that:
+</p>
+\[
+\ \omega_{sec} = \frac{Q V_{RF}}{m r_0^2 \Omega \sqrt{2}}
+\tag{2.58}
+\]
+</p>
+
+<p>
+So we may finally write the harmonic pseudopotential:
+</p>
+<p>
+\[
+\ U_{pseudo}(X) = \frac{1}{2} m \omega_{sec}^2 X^2
+\tag{2.59}
+\]
+</p>
+
+<p>
+Lastly, this can be extended to 2 dimensions yielding:
+</p>
+  
+<p>
+\[
+\ U_{pseudo}(X,Y) = \frac{1}{4} m \frac{Q^2 V_{RF}^2}{m r_0^2 \Omega^2} (X^2 + Y^2)
+\tag{2.57}
+\]
+</p>
+
+
 
 
 
