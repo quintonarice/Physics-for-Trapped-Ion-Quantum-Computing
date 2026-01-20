@@ -645,12 +645,12 @@ To simplify this, consider the micromotion of the form:
 \]
 </p>
 <p>
-where A(t) is the time-varying amplitude on the secular timescale. The second derivative yields:
+where $A(t)$ is the time-varying amplitude on the secular timescale. The second derivative yields:
 </p>
 
 <p>
 \[
-\ddot \xi = A(t) \Omega^2 cos(\Omega t) + terms involving \dot A, \ddot A
+\ddot \xi = A(t) \Omega^2 cos(\Omega t) + \text{terms involving, } \dot A, \ddot A
 \tag{2.43}
 \]
 </p>
@@ -663,10 +663,44 @@ The extra terms involve $\dot A$ and $\ddot A$ can be dropped because $\dot A \s
 \tag{2.44}
 \]
 </p>
+<p>
+Similarly, the secular motion varies as $\X(t) \sim X_0 cos(\omega_{sec} t)$ so that $\ddot X \sim \omega_{sec}^2 X. Again, since $\omega_{sec} \ll \Omega$ we have"
+</p>
+<p>
+\[
+\ddot \xi \gg \ddot X
+\tag{2.45}
+\]
+</p>
+<p>
+Therefore in equation 2.41 we have:
+</p>
+<p>
+\[
+\ddot \xi = -\frac{Q V_{RF}}{m r_0^2}[ X cos(\Omega t) - \xi cos(\Omega t) ]
+\tag{2.46}
+\]
+</p>
 
-
-
-
+<p>
+Now we eliminate the $\xi cos(\Omega t)$ term by considering the ratio with \ddot \xi using equation equation 2.44:
+</p>
+  
+<p>
+\[
+\frac{\xi}{\ddot \xi} = \frac{\xi}{\Omega^2 \xi} = \frac{1}{\Omega^2}
+\tag{2.47}
+\]
+</p> 
+<p>
+Meaning that $\xi \ll \ddot \xi$ and therefore can be dropped. Finally, we have:
+</p>
+<p>
+\[
+\ddot \xi = -\frac{Q V_{RF}}{m r_0^2} X cos(\Omega t)
+\tag{2.48}
+\]
+</p> 
   
   
 <hr>
