@@ -581,7 +581,7 @@ x(t) = A cos(\omega_{sec} t) [1 + \frac{q}{2} cos(\Omega t)]
 \]
 </p>
 <p>
-where $A$ is the amplitude, $\omega_{sec} = \frac{q \Omega}{2 \sqrt{2}}$ is the <b>secular frequency</b> and $\Omega$ is the driving frequency. The secular frequency is responsible for the slow, overarching oscillatory motion of the ion while the driving frequency causes higher frequency oscillation known as <b>micromotion</b>. Experimentally, the driving frequency, also known as the RF drive or RF frequency (yes, sort of like saying ATM machine) can typically be from 10 - 100 MHz while the secular frequency is much smaller from around several hundred kHz to a few MHz. In trapped-ion experiments, laser cooling techniques are used to reduce the energy associated with the secular motion, since this motion corresponds to true bound oscillations of the ion in the trap. Micromotion, by contrast, is phase-locked to the RF drive and cannot be eliminated by cooling alone. While intrinsic micromotion is an unavoidable feature of RF trapping, excess micromotion arising from stray electric fields or imperfect alignment can be minimized through careful experimental compensation. Achieving low secular motion and minimal excess micromotion is essential for high-fidelity quantum control.
+where $A$ is the amplitude, $\omega_{sec} = \frac{q}{2} \frac{\Omega}{\sqrt{2}}$ is the <b>secular frequency</b> and $\Omega$ is the driving frequency. The secular frequency is responsible for the slow, overarching oscillatory motion of the ion while the driving frequency causes higher frequency oscillation known as <b>micromotion</b>. Experimentally, the driving frequency, also known as the RF drive or RF frequency (yes, sort of like saying ATM machine) can typically be from 10 - 100 MHz while the secular frequency is much smaller from around several hundred kHz to a few MHz. In trapped-ion experiments, laser cooling techniques are used to reduce the energy associated with the secular motion, since this motion corresponds to true bound oscillations of the ion in the trap. Micromotion, by contrast, is phase-locked to the RF drive and cannot be eliminated by cooling alone. While intrinsic micromotion is an unavoidable feature of RF trapping, excess micromotion arising from stray electric fields or imperfect alignment can be minimized through careful experimental compensation. Achieving low secular motion and minimal excess micromotion is essential for high-fidelity quantum control.
 </p>
 
 <p>
@@ -838,7 +838,7 @@ Lastly, this can be extended to 2 dimensions yielding:
   
 <p>
 \[
-\ U_{pseudo}(X,Y) = \frac{1}{4} m \frac{Q^2 V_{RF}^2}{m r_0^2 \Omega^2} (X^2 + Y^2)
+\ U_{pseudo}(X,Y) = \frac{1}{4} m \omega_{sec}^2 (X^2 + Y^2)
 \tag{2.57}
 \]
 </p>
