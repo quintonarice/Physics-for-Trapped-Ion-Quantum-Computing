@@ -358,7 +358,7 @@ Experimentally, it is common to choose $V_x(t)$ and $V_y(t)$ such that their ave
 </p>
   
 <p>
-Here, $U$ is a DC offset parameter, $V_{RF}$ is the radio frequency voltage amplitude and $\Omega$ is the angular frequency.
+Here, $U$ is a DC offset parameter, $V_{RF}$ is the radio frequency voltage amplitude and $\Omega$ is the RF driving frequency.
 </p>
   
 <p>
@@ -368,7 +368,7 @@ Finally, after plugging in $V_x(t)$ and $V_y(t)$ into equation 2.15 we have the 
 <p>
 \[
 \Phi(x,y,t) = \frac{\phi_0(t)}{2r_0^2} (x^2 - y^2)
-\tag{2.16}
+\tag{2.17}
 \]
 </p>
   
@@ -388,13 +388,13 @@ Now that we have the potential we can substitute it into the Newton's second law
 <p>
 \[
 E_x = -\frac{\phi_0(t)}{r_0^2} x
-\tag{2.17}
+\tag{2.18}
 \]
 </p>
   <p>
 \[
 E_y = \frac{\phi_0(t)}{r_0^2} y
-\tag{2.18}
+\tag{2.19}
 \]
 </p>
 <p>
@@ -403,13 +403,13 @@ Newton's second law states:
 <p>
 \[
 m\ddot {x} = QE_x = -Q\frac{\phi_0(t)}{r_0^2} x
-\tag{2.19}
+\tag{2.20}
 \]
 </p>
 <p>
 \[
 m\ddot {y} = QE_y = Q\frac{\phi_0(t)}{r_0^2} y
-\tag{2.20}
+\tag{2.21}
 \]
 </p>
 <p>
@@ -418,13 +418,13 @@ Rearranging:
 <p>
 \[
 \ddot {x} + \frac{Q}{mr_0^2} \phi_0(t) x = 0
-\tag{2.21}
+\tag{2.22}
 \]
 </p>
 <p>
 \[
 \ddot {y} - \frac{Q}{mr_0^2}\phi_0(t) y = 0
-\tag{2.22}
+\tag{2.23}
 \]
 </p>
 
@@ -435,14 +435,14 @@ Now plugging in $\phi_0(t)$ from equation 2.16:
 <p>
 \[
 \ddot {x} + \frac{Q}{mr_0^2}[U + V_{RF} cos(\Omega t)] x = 0
-\tag{2.23}
+\tag{2.24}
 \]
 </p>
 
 <p>
 \[
 \ddot {y} - \frac{Q}{mr_0^2}[U + V_{RF} cos(\Omega t)] y = 0
-\tag{2.24}
+\tag{2.25}
 \]
 </p>
 
@@ -456,7 +456,7 @@ We define:
 <p>
 \[
 \tau = \frac{\Omega t}{2} \Rightarrow \Omega t = 2 \tau
-\tag{2.25}
+\tag{2.26}
 \]
 </p>
 
@@ -467,14 +467,14 @@ So now we have:
 <p>
 \[
 \ddot {x} + \frac{Q}{mr_0^2}[U + V_{RF} cos(2 \tau)] x = 0
-\tag{2.26}
+\tag{2.27}
 \]
 </p>
 
 <p>
 \[
 \ddot {y} - \frac{Q}{mr_0^2}[U + V_{RF} cos(2 \tau)] y = 0
-\tag{2.27}
+\tag{2.28}
 \]
 </p>
 <p>
@@ -483,7 +483,7 @@ Since we have essentially changed variables it is worthwhile to express the time
 <p>
 \[
 \frac{dx}{dt} = \frac{dx}{d\tau} \cdot \frac{d\tau}{dt}
-\tag{2.28}
+\tag{2.29}
 \]
 </p>
 <p>
@@ -494,7 +494,7 @@ Applying the chain rule again yields:
 <p>
 \[
 \frac{d^2 x}{dt^2} = \frac{\Omega^2}{4} \frac{d^2 x}{d\tau^2}
-\tag{2.29}
+\tag{2.30}
 \]
 </p>
 <p>
@@ -504,7 +504,7 @@ So the $x$ equation becomes:
 <p>
 \[
 \frac{\Omega^2}{4} \frac{d^2 x}{d\tau^2} + \frac{Q}{mr_0^2}[U + V_{RF} cos(2 \tau)] x = 0
-\tag{2.30}
+\tag{2.31}
 \]
 </p>
   
@@ -515,7 +515,7 @@ Multiplying through by $\frac{4}{\Omega^2}$ yields:
 <p>
 \[
 \frac{d^2 x}{d\tau^2} + [\frac{4QU}{mr_0^2 \Omega^2} + \frac{4QV_{RF}}{mr_0^2 \Omega^2} cos(2 \tau)] x = 0
-\tag{2.31}
+\tag{2.32}
 \]
 </p>
 
@@ -526,14 +526,14 @@ Now, we <b>define</b> the standard Mathieu parameters:
 <p>
 \[
 a \equiv \frac{4QU}{mr_0^2 \Omega^2}
-\tag{2.32}
+\tag{2.33}
 \]
 </p>
 
 <p>
 \[
 q \equiv \frac{2QV_{RF}}{mr_0^2 \Omega^2}
-\tag{2.33}
+\tag{2.34}
 \]
 </p>
 
@@ -544,7 +544,7 @@ So that:
 <p>
 \[
 \frac{d^2 x}{d\tau^2} + [a + 2q cos(2\tau)] x = 0
-\tag{2.34}
+\tag{2.35}
 \]
 </p>
   
@@ -555,7 +555,7 @@ It is strongle encouraged that the reader perform a similar procedure to show th
 <p>
 \[
 \frac{d^2 y}{d\tau^2} + [-a - 2q cos(2\tau)] y = 0
-\tag{2.35}
+\tag{2.36}
 \]
 </p>
 
@@ -576,13 +576,53 @@ After applying Floquet theory, the solution to the $x$ equation is found to be:
 </p>
 <p>
 \[
-x(t) = A cos(\omega_sec t) [1 + \frac{q}{2} cos(\Omega t)]
-\tag{2.36}
+x(t) = A cos(\omega_{sec} t) [1 + \frac{q}{2} cos(\Omega t)]
+\tag{2.37}
 \]
 </p>
 <p>
-where $\omega_sec = \frac{qOmega}{2 \sqrt{2}}$ is the <b>secular frequency</b> and $\Omega$ is the driving frequency. The secular frequency is responsible for the slow, overarching oscillatory motion of the ion while the driving frequency causes higher frequency oscillation known a <b>micromotion</b>.
+where $A$ is the amplitude, $\omega_sec = \frac{q \Omega}{2 \sqrt{2}}$ is the <b>secular frequency</b> and $\Omega$ is the driving frequency. The secular frequency is responsible for the slow, overarching oscillatory motion of the ion while the driving frequency causes higher frequency oscillation known as <b>micromotion</b>. Experimentally, the driving frequency, also known as the RF drive or RF frequency (yes, sort of like saying ATM machine) can typically be from 10 - 100 MHz while the secular frequency is much smaller from around several hundred kHz to a few MHz. In trapped-ion experiments, laser cooling techniques are used to reduce the energy associated with the secular motion, since this motion corresponds to true bound oscillations of the ion in the trap. Micromotion, by contrast, is phase-locked to the RF drive and cannot be eliminated by cooling alone. While intrinsic micromotion is an unavoidable feature of RF trapping, excess micromotion arising from stray electric fields or imperfect alignment can be minimized through careful experimental compensation. Achieving low secular motion and minimal excess micromotion is essential for high-fidelity quantum control.
 </p>
+
+<p>
+Note: A similar analysis leading to equation 2.37 can be done for the $y$ equation but as we shall see, we can extend the argument to $y$ without loss of generality at the end of the derivation.
+</p>
+<p>
+<b>The Psuedopotential</b>
+</p>
+<p>
+As we have shown in the sections above, the electric potential in a Paul trap is explicitly time-dependent, the resulting motion of a trapped ion naturally separates into fast micromotion and slow secular motion. When the RF drive frequency is much larger than the secular frequency, the rapid oscillations can be averaged over, yielding an effective time-independent potential that governs the secular dynamics. This effective potential is known as the <b>pseudopotential</b>. While it does not describe the full instantaneous motion of the ion, the pseudopotential provides a powerful and intuitive description of confinement, allowing the secular motion to be treated as that of a particle in a static harmonic trap. In the following section, we derive this effective potential and examine the conditions under which it is valid.
+</p>
+<p>
+We determined earlier that the equation of motion in the $x$ direction given by equation 2.24. Now we set $U = 0$ for convenience since $U$ is an experimentally controlled DC offeset parameter. (Consequently, the Mathieu parameter $a$ also becomes zero thus restricting the stability diagram to the horizontal axis). The result is:
+</p>
+  
+<p>
+\[
+\ddot {x} + \frac{Q}{mr_0^2}[V_{RF} cos(\Omega t)] x = 0
+\tag{2.38}
+\]
+</p>
+  
+<p>
+We can split he solution into the secular and micromotion:
+</p>
+  
+<p>
+\[
+x(t) = \underbrace{X(t)}_\textrm{secular} + \underbrace{\xi(t)}_\textrm{micromotion}
+\tag{2.39}
+\]
+</p>
+
+
+
+
+
+
+
+
+  
   
 <hr>
 
