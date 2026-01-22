@@ -55,7 +55,7 @@ fetch("/Physics-for-Trapped-Ion-Quantum-Computing/includes/sidebar.html")
 In the previous chapter, we described the motion of a trapped ion using classical mechanics. By introducing the pseudopotential approximation, we showed that the ion’s secular motion is well described by a harmonic potential with an experimentally tunable frequency.
 </p>
 <p>
-However, this description implicitly assumes that the ion’s position and momentum can take on arbitrary continuous values. Once the ion is sufficiently cold, such that its energy approaches the scale set by $\hbar \omega_{sec}$, this assumption breaks down. At that point, the ion’s motional degrees of freedom must be treated quantum mechanically.
+However, this description implicitly assumes that the ion’s position and momentum can take on arbitrary continuous values. When the thermal energy greatly exceeds the motional energy spacing $\hbar \omega_{sec}$, the discrete level structure is experimentally unresolved and the motion is well approximated as continuous. Once the ion is cooled such that $k_B T \leq \hbar \omega_{sec}$, this continuum approximation fails and the quantized nature of the motional degrees of freedom becomes essential. At that point, the ion’s motional degrees of freedom must be treated quantum mechanically.
 </p>
 <p>
 In this chapter, we apply the postulates of quantum mechanics to the motional degrees of freedom of a trapped ion. We will see that the classical harmonic motion derived previously naturally becomes a quantum harmonic oscillator, with discrete energy levels and quantized excitations known as phonons. 
@@ -180,19 +180,59 @@ m \omega_z \hat Z - i \hat P_Z
 </p>
 
 <p>
-The ladder operators are dimensionless, linear combinations of position and momentum constructed by P. A. M. Dirac to simplify the Hamilitonian. It should be noted and verified by the reader the $[\hat a, \hat a^\dagger] = 1 which follows from the canonical commutation relation $[\hat Z, \hat P_Z] = i \hbar$.
+The ladder operators are dimensionless, linear combinations of position and momentum constructed by P. A. M. Dirac to simplify the Hamilitonian. It should be noted and verified by the reader the $[\hat a, \hat a^\dagger] = 1$ which follows from the canonical commutation relation $[\hat Z, \hat P_Z] = i \hbar$.
 </p>  
 
 <p>
 The exercise below requires verification of the following:
 </p>
+  
 <p>
 \[
-\ \hat H = \frac{\hat P_Z^2}{2m} + \frac{1}{2} m \omega_z^2 \hat Z^2 = \hbar \omega_z (\hat a^\dagger \hat a + \frac{1}{2})
+\ \hat H = \frac{\hat P_Z^2}{2m} + \frac{1}{2} m \omega_z^2 \hat Z^2 = \hbar \omega_z \big (\hat a^\dagger \hat a + \frac{1}{2})
 \tag{3.10}
 \]
 </p>
+  
 <p>
 Perhaps the easiest way is to simply plug in the ladder operators and brute force the algebra keeping the commutation relation in mind.
 </p>
+
+<button class="collapsible">Exercise 3.1</button>
+<div class="content-box">
+Verify explicitly equation 3.10.
+</div>
+
+<p>
+Now following the standard approach, we define the <b>number operator</b>:
+</p>
+
+<p>
+\[
+\ \hat N = \equiv \hat a^\dagger a
+\tag{3.11}
+\]
+</p>
+
+<p>
+If we now compute the commutators $[\hat N, \hat a\$ and $[\hat N, \hat a^\dagger]$, we see that:
+</p>
+
+<p>
+\[
+\ [\hat N, \hat a] = -\hat a
+  [\hat N, \hat a^\dagger] = +\hat a^\dagger
+\tag{3.12}
+\]
+</p>
+
+
+
+
+
+
+
+
+
+
   
