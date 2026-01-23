@@ -941,8 +941,64 @@ Lastly, this can be extended to 2 dimensions yielding:
 <hr>
 <b>The Total Potential</b>
 <p>
-Now we add the end capps along the axial direction for confinement in all directions. We know the end cap electrostatic potential must satisfy Laplace's Equation. More Coming Soon!
+Now we add the end caps along the axial direction for confinement in all directions. We know the end cap electrostatic potential must satisfy Laplace's Equation, but additionally the potential must be quadratic near the trap center. The most general quadratic form is:
 </p>
+  
+<p>
+\[
+\ \Phi(X,Y,Z) = AX^2 + AY^2 + BZ^2
+\tag{2.58}
+\]
+</p>
+  
+<p>
+Where the coefficients of $X^2$ and $Y^2$ are the same because the trap is cylindrically symmetric. Taking the Laplacian and setting to zero gives:
+</p>
+
+<p>
+\[
+\ \nabla^2 Phi(X,Y,Z) = \frac{\partial^2}{\partial X^2} (AX^2) + \frac{\partial^2}{\partial Y^2} (AY^2) + \frac{\partial^2}{\partial Z^2} (BZ^2) = 0
+\tag{2.59}
+\]
+</p>
+
+<p>
+The result, as you should check, is that $B = -2A$, so that:
+</p>
+
+<p>
+\[
+\ \Phi(X,Y,Z) = A \big (X^2 + Y^2 - 2Z^2)
+\tag{2.60}
+\]
+</p>
+
+<p>
+After some rearranging and redefining:
+</p>
+
+<p>
+\[
+\ \Phi(X,Y,Z) = C \big (2Z^2 - X^2 - Y^2)
+\tag{2.61}
+\]
+</p>
+
+<p>
+where $C = -A$ for notational convenience. Now we determine $C$ by fixing the value of the potential at the endcaps along $z$.
+</p>
+
+<p>
+
+</p>
+
+
+
+
+
+
+
+  
 <hr>  
 <h2>Outlook: From Classical Motion to Quantum Mechanics</h2>
 
