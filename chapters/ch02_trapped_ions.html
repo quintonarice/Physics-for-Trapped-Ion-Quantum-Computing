@@ -993,9 +993,56 @@ where $C = -A$ for notational convenience. Now we determine $C$ by fixing the va
 </figure>
 
 <p>
-Along the $z$-axis, $X = Y = 0$ and at $\pm z_0$, $\Phi \Rightarrow V_{EC}$, where $V_{EC}$ is the endcap voltage.
+Along the $z$-axis, $X = Y = 0$ and at $\pm z_0$, $\Phi \Rightarrow V_{EC}$, where $V_{EC}$ is the endcap voltage. After applying these conditions to equation 2.61 we see that:
 </p>
 
+<p>
+\[
+\ C = \frac{V_{EC}}{2z_0^2}
+\tag{2.62}
+\]
+</p>
+  
+<p>
+We include a dimensionless geometry factor, $\kappa$ to account for the real electrode shape which may not be perfectly quadratic throughout the entire trap. The Taylor expansion from earlier is done about the center of the trap. So we have:
+</p>
+
+<p>
+\[
+\ C = \kappa \frac{V_{EC}}{2z_0^2}
+\tag{2.63}
+\]
+</p> 
+
+<p>
+In general, the potential is:
+</p>
+
+<p>
+\[
+\ \Phi(X,Y,Z) = \kappa \frac{V_{EC}}{2z_0^2} \big (2Z^2 - X^2 - Y^2)
+\tag{2.64}
+\]
+</p> 
+
+<p>
+where $0 \lt \kappa \lt 1$. We now proceed to determine the potential energy of a single with charge, $Q$.
+</p>
+
+<p>
+\[
+\begin{align}
+\ U_{EC}
+& = Q \Phi(X,Y,Z) \\
+& = \frac{Q \kappa V_{EC}}{2z_0^2} \big (2Z^2 - X^2 - Y^2) \\
+& = \frac{Q \kappa V_{EC}}{z_0^2} Z^2 - \frac{Q \kappa V_{EC}}{2z_0^2} \big (X^2 + Y^2)
+\tag{2.65}
+\end{align}
+\]
+</p> 
+<p>
+Notice that the first term in the last line looks like a restoring quadratic potential along the $z$-axis with $\omega_z = \sqrt{\frac{2 Q V_{EC}}{mz_0^2}}.
+</p>
 
 
 
