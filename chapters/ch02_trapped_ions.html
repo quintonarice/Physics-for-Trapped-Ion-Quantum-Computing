@@ -1034,8 +1034,8 @@ where $0 \lt \kappa \lt 1$. We now proceed to determine the potential energy of 
 \begin{align}
 \ U_{EC}
 & = Q \Phi(X,Y,Z) \\
-& = \frac{Q \kappa V_{EC}}{2z_0^2} \big (2Z^2 - X^2 - Y^2) \\
-& = \frac{Q \kappa V_{EC}}{z_0^2} Z^2 - \frac{Q \kappa V_{EC}}{2z_0^2} \big (X^2 + Y^2)
+& = \kappa \frac{Q V_{EC}}{2z_0^2} \big (2Z^2 - X^2 - Y^2) \\
+& = \kappa \frac{Q V_{EC}}{z_0^2} Z^2 - \kappa \frac{Q V_{EC}}{2z_0^2} \big (X^2 + Y^2)
 \tag{2.65}
 \end{align}
 \]
@@ -1044,6 +1044,27 @@ where $0 \lt \kappa \lt 1$. We now proceed to determine the potential energy of 
 Notice that the first term in the last line looks like a restoring quadratic potential along the $z$-axis with $\omega_z = \sqrt{\frac{2 Q V_{EC}}{mz_0^2}}$.
 </p>
 
+<p>
+So we may write more concisely:
+</p>
+
+<p>
+\[
+\ U_{EC} = \frac{1}{2} \kappa m \omega_z^2 - \kapp \frac{Q V_{EC}}{2z_0^2} \big (X^2 + Y^2)
+\tag{2.66}
+\]
+</p>
+
+<p>
+Now we finally combine the potential of the endcap with the pseudopotential of the rods to get the total potential:
+</p>
+
+<p>  
+\[
+\ \U_{EC} + U_{pseudo} = \frac{1}{2} \kappa m \omega_z^2 - \kapp \frac{Q V_{EC}}{2z_0^2} \big (X^2 + Y^2) + \frac{1}{2} m \omega_{sec}^2 (X^2 + Y^2)
+\tag{2.67}
+\]
+</p>
 
 
 
