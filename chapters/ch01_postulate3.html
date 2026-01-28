@@ -69,7 +69,7 @@ fetch("/Physics-for-Trapped-Ion-Quantum-Computing/includes/sidebar.html")
 <h2>Postulate 3 of Quantum Mechanics</h2>
 
 <p>
-Quantum measurements are described by a collection of measurement operators {M<sub>m</sub>}. These act on the state space of the system being measured. The index m refers to the measurement outcomes that may occur. If the state of the system is |ψ⟩ immediately before the measurement then the probability that result m occurs is given by:
+Quantum measurements are described by a collection of measurement operators {$M_m$}. These act on the state space of the system being measured. The index m refers to the measurement outcomes that may occur. If the state of the system is $|\psi\rangle$ immediately before the measurement then the probability that result m occurs is given by:
 </p>
 
 <p>
@@ -111,7 +111,7 @@ Which guarantees the probabilities must sum to one. Until now nothing about quan
 </p>
 
 <p>
-Let’s now explore the measurement operators M<sub>m</sub> in the computational basis. When a measurement operator acts on a qubit it returns an outcome according to Postulate 3. Two obvious outcomes would be either |0⟩ or |1⟩. Therefore,
+Let’s now explore the measurement operators {$M_m$} in the computational basis. When a measurement operator acts on a qubit it returns an outcome according to Postulate 3. Two obvious outcomes would be either $|0\rangle$ or $|1\rangle$. Therefore,
 </p>
 
 <p>
@@ -252,7 +252,7 @@ The final states after measurement are:
 
 
 <p>
-Given these measurement operators in the computational basis, show that the Completeness Relation is obeyed: Σₘ M†ₘMₘ = I.
+Given these measurement operators in the computational basis, show that the Completeness Relation is obeyed: $sum_m M_m^\dagger M_m = I$.
 </p>
 
 <button class="collapsible">Exercise 1.9</button>
@@ -280,7 +280,7 @@ M = \sum_i \lambda_i |a_i\rangle\langle a_i|
 
 
 <p>
-Where λ<sub>i</sub> are the eigenvalues of M and |a<sub>i</sub>⟩⟨a<sub>i</sub>| are the projectors onto the eigenspace of M.
+Where $\lambda_i$ are the eigenvalues of $M$ and $|a_i\rangle \langle a_i|$ are the projectors onto the eigenspace of $M$.
 </p>
 
 <p>
@@ -296,7 +296,7 @@ M = \sum_m m P_m
 
 
 <p>
-Where we now write $P_m = | m \rangle \langle m |$. In general, our set of measurement operators {$M_m$} may not be projectors of this form, but when they are we call them projective measurement operators. Therefore, when $M_m = P_m$ we have projective measurements.
+Where we now write $P_m = | m \rangle \langle m |$. In general, our set of measurement operators {$M_m$} may not be projectors of this form, but when they are we call them projective measurement operators. When $M_m = P_m$ we have projective measurements. A projective measurement is described by a Hermitian operator, $M$, which acts on the state space of a the system being observed and is therefore called an <b>observable</b>.
 </p>
 
 <p>
@@ -391,19 +391,28 @@ using quantum measurements.
 </div>
 
 <p>
-From probability theory, the average or expectation value of an outcome is given by:
+From probability theory, the average or expectation value of an outcome, $m$, is given by:
 </p>
 
 <p>
 \[
-\langle M \rangle = \sum_m m\,p(m)
+\begin{align}
+\langle m \rangle
+& = \sum_m m p(m) \\
+& = \sum_m m \langle \psi | P_m | \psi \rangle \\
+& = \langle | \sum_m m P_m | \psi \rangle \\
+& = \langle \psi | M | \psi \rangle = \langle M \rangle 
 \tag{1.88}
+\end{align}
 \]
 </p>
-
+  
+<p>
+where $p(m)$ is now given by equation 1.83. The term in the bra-kets is simply equation 1.80 whereby we can now compute the expectation value of an observable using the bra-ket notation.
+</p>
 
 <p>
-Which leads to the familiar expression of the standard deviation:
+The expectation value is related to the familiar expression of the standard deviation:
 </p>
 
 <p>
@@ -434,13 +443,13 @@ Where the commutator [C, D] = CD − DC.
 <div class="content-box">
 For an observable M with eigenvalues m₁ and m₂,  
 compute the expectation value ⟨M⟩ and the standard deviation ΔM  
-for a general qubit state |ψ⟩ = α|0⟩ + β|1⟩.
+for a general qubit state $| \psi \rangle = \alpha | 0 \rangle + \beta | 1 \rangle$.
 </div>
 
 <h3>Phase: Another Consequence of Postulate 3</h3>
 
 <p>
-We stated in previous sections that “we are free to multiply by a global phase factor because nothing physically changes upon doing so”. We will now prove this using Postulate 3. Consider the states |ψ⟩ and e<sup>iθ</sup>|ψ⟩. Now suppose M<sub>m</sub> is a measurement operator associated with a quantum measurement as before. According to Postulate 3:
+We stated in previous sections that “we are free to multiply by a global phase factor because nothing physically changes upon doing so”. We will now prove this using Postulate 3. Consider the states $|\psi\rangle$ and $e^{iθ} | \psi\rangle$. Now suppose $M_m$ is a measurement operator associated with a quantum measurement as before. According to Postulate 3:
 </p>
 
 <p>
@@ -464,7 +473,7 @@ p(m) = \langle \psi | e^{-i\theta} M_m^\dagger M_m e^{i\theta} | \psi \rangle
 
 
 <p>
-Because e<sup>−iθ</sup>e<sup>iθ</sup> = 1. So, from an observational standpoint these two states are identical. These are known as Global Phases and are irrelevant for the observed properties of the physical system.
+Because $e^{−i \theta}e^{i \theta} = 1$. So, from an observational standpoint these two states are identical. These are known as Global Phases and are irrelevant for the observed properties of the physical system.
 </p>
 
 <p>
@@ -488,8 +497,8 @@ We saw previously that orthogonal states have perfect distinguishability. In the
 <button class="collapsible">Exercise 1.12</button>
 <div class="content-box">
 Show explicitly that the two states  
-|ψ₊⟩ = (|0⟩ + |1⟩)/√2 and |ψ₋⟩ = (|0⟩ − |1⟩)/√2  
-are orthogonal by computing ⟨ψ₊|ψ₋⟩.
+$| \psi_+ \rangle = \frac{1}{\sqrt{2}} \big (| 0 \rangle + | 1 \rangle)$ and $| \psi_- \rangle = \frac{1}{\sqrt{2}} \big (| 0 \rangle - | 1 \rangle)$ 
+are orthogonal by computing $\langle \psi_+ | \psi_- \rangle$.
 </div>
     
 <p>
@@ -516,7 +525,7 @@ p_-(0) = \frac{1}{2}
 
 
 <p>
-Likewise for p(1). So, because of the ½ probabilities for each state we can’t distinguish them in the computational basis, however, since they are orthogonal they must be distinguishable. Therefore, we must use a different basis to see the effect of relative phase on measurement outcomes.
+Likewise for $p(1)$. So, because of the $\frac{1}{2}$ probabilities for each state we can’t distinguish them in the computational basis, however, since they are orthogonal they must be distinguishable. Therefore, we must use a different basis to see the effect of relative phase on measurement outcomes.
 </p>
 
 <p>
@@ -548,7 +557,7 @@ M = |\psi_+\rangle\langle \psi_+| - |\psi_-\rangle\langle \psi_-|
 
 
 <p>
-Conventionally, we choose λ = ±1. In the next exercise, verify the Completeness Relation M.
+Conventionally, we choose $\lambda = \pm 1$. In the next exercise, verify the Completeness Relation $M$.
 </p>
 
 <button class="collapsible">Exercise 1.13</button>
@@ -584,7 +593,7 @@ In the next exercise, show that in the Pauli-X basis the + and − states are no
 <button class="collapsible">Exercise 1.14</button>
 <div class="content-box">
 Using the Pauli-X operator, compute the measurement probabilities
-for the states |ψ₊⟩ and |ψ₋⟩.  
+for the states $|\psi_+\rangle$ and $|\psi_-\rangle$.  
 Show that the outcomes are now perfectly distinguishable.
 </div>
 
