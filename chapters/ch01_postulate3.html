@@ -258,13 +258,13 @@ Given these measurement operators in the computational basis, show that the Comp
 <button class="collapsible">Exercise 1.9</button>
 <div class="content-box">
 Using the computational basis measurement operators  
-M₀ = |0⟩⟨0| and M₁ = |1⟩⟨1|,  
+$M_0 = |0\rangle \langle 0|$ and $M_1 = |1\rangle \langle 1|$,  
 verify explicitly that  
-M₀†M₀ + M₁†M₁ = I.
+$M_0^\dagger M_0 + M_1^\dagger M_1 = I$.
 </div>
 
 <p>
-An important theorem known as Spectral Decomposition states that any normal operator which acts on a vector space, V, is diagonal with respect to some orthonormal basis for V. A normal operator obeys MM† = M†M and thus Hermitian operators, M = M† are normal. The full derivation is shown in the appendix.
+An important theorem known as Spectral Decomposition states that any normal operator which acts on a vector space, $V$, is diagonal with respect to some orthonormal basis for $V$. A normal operator obeys $MM^\dagger = M^\dagger M$ and thus Hermitian operators, $M = M^\dagger$ are normal. The full derivation is shown in the appendix.
 </p>
 
 <p>
@@ -296,7 +296,7 @@ M = \sum_m m P_m
 
 
 <p>
-In general, our set of measurement operators {M<sub>m</sub>} may not be projectors of this form, but when they are we call them projective measurement operators. Therefore, when M<sub>m</sub> = P<sub>m</sub> we have projective measurements.
+Where we now write $P_m = | m \rangle \langle m |$. In general, our set of measurement operators {$M_m$} may not be projectors of this form, but when they are we call them projective measurement operators. Therefore, when $M_m = P_m$ we have projective measurements.
 </p>
 
 <p>
@@ -324,7 +324,7 @@ That is projectors are Hermitian and idempotent. So, for projective measurements
 
 <p>
 \[
-p(m) = \langle \psi | P_m | \psi \rangle
+p(m) = \langle \psi | P_m | \psi \rangle = \langle \psi | m \rangle \langle m | \psi\rangle = | \langle m | \psi \rangle |^2
 \tag{1.83}
 \]
 </p>
@@ -361,7 +361,7 @@ Classically, distinct states of an object are usually distinguishable, however, 
 
 
 <p>
-The measurement operators in the computational basis are M<sub>0</sub> = |0⟩⟨0| and M<sub>1</sub> = |1⟩⟨1|. To distinguish the given states, we measure to see if the outcomes are different. The probability of getting outcome 0 is given by Postulate 3:
+The measurement operators in the computational basis are $M_0 = |0\rangle \lanlge 0|$ and $M_1 = |1\rangle \langle 1|$. To distinguish the given states, we measure to see if the outcomes are different. The probability of getting outcome $0$ is given by Postulate 3:
 </p>
 
 <p>
@@ -380,12 +380,12 @@ p_2(0) = \frac{1}{2}
 
 
 <p>
-These results indicate we cannot distinguish states which are not orthonormal to each other using quantum measurements. You can verify that ⟨ψ<sub>1</sub>|ψ<sub>2</sub>⟩ ≠ 0.
+These results indicate we cannot distinguish states which are not orthonormal to each other using quantum measurements. You can verify that $\langle \psi_1 | \psi_2 \rangle \neq 0$.
 </p>
 
 <button class="collapsible">Exercise 1.10</button>
 <div class="content-box">
-Compute the inner product ⟨ψ₁|ψ₂⟩ for the two states given above.  
+Compute the inner product $\langle \psi_1 | \psi_2 \rangle$ for the two states given above.  
 Explain why a nonzero inner product prevents perfect distinguishability
 using quantum measurements.
 </div>
