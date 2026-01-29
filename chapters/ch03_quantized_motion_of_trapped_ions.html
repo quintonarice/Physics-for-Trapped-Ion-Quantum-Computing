@@ -272,6 +272,7 @@ Noticing that $\hat H | E \rangle = E | E \rangle$ from equation 1.65 we have:
 
 <p>
 So upon acting $\hat H$ upon $\hat a | E \rangle$ the same ket is returned multiplied by the factor $\big (E - \hbar \omega_z)$, which indicates that $\hat a | E \rangle$ is also an eigenstate of $\hat H$ with a lower energy eigenvalue than the original ket $| E \rangle$.
+</p>
   
 <p>
 So we say that $\hat a$ has lowered the energy by $\hbar \omega_z$ and changed the corresponding eigenstate. Note that this new eigenstate is not normalized so we write $\hat a | E \rangle \propto | E - \hbar \omega_z \rangle$.
@@ -291,7 +292,7 @@ In quantum mechanics the total energy cannot of a particle cannot be below the p
 <p>
 \[
 \ \hat a | E_0 \rangle = 0
-\tag{3.17}
+\tag{3.16}
 \]
 </p>
   
@@ -304,20 +305,55 @@ Often known as the <b>ladder termination condition</b>, this can be used to find
 \begin{align}
 \ \hat H |E_0 \rangle & = \hbar \omega_z  \big (\hat a^\dagger \hat a + \frac{1}{2}) | E_0 \rangle \\
 & = \hbar \omega_z \hat a^\dagger \hat a | E_0 \rangle + \frac{1}{2} \hbar \omega_z | E_0 \rangle \\
-& = \frac{1}{2} \hbar \omega_z | E \rangle
+& = \frac{1}{2} \hbar \omega_z | E_0 \rangle
 \end{align}
+\tag{3.17}
+\]
+</p>
+  
+<p>
+Where in the second line we used equation 3.17, $\hat a | E_0 \rangle = 0$, to cancel the first term. This well known result shows that the lowest possible energy is not zero! Rather, $E_0 = \frac{1}{2} \hbar \omega_z$, known as the <b>zero-point energy</b> of the quantum harmonic oscillator.
+</p>
+  
+<p>
+We can repeatedly apply the raising operator by recognizing that $\hat a^\dagger | E \rangle \propto | E + \hbar \omega_z \rangle$. We can call $| E + \hbar \omega_z \rangle = | E_1 \rangle$ so that $\hat a^\dagger \propto | E_1 \rangle$. Therefore:
+</p>
+
+<p>
+\[
+\ \hat H \big (\hat a^\dagger | E_0 \ranlge ) = \big (\hat a^\dagger \hat H + \hbar \omega_z \hat a^\dagger) | E_0 \rangle
 \tag{3.18}
 \]
 </p>
+  
 <p>
-Where in the second line we used equation 3.17 $\hat a | E_0 \rangle = 0$ to cancel the first term. This well known result shows that the lowest possible energy is not zero! Rather, $E_0 = \frac{1}{2} \hbar \omega_z$, known as the <b>zero-point energy</b> of the quantum harmonic oscillator.
-</p>
-<p>
-We can repeatedly apply the raising operator to thi
+Again, we use the fact that $\hat H |E_0\rangle = E_0 |E_0 \rangle$ to write:
 </p>
 
+<p>
+\[
+\begin{align}
+\ \hat H \big (\hat a^\dagger | E_0 \ranlge ) & = \hat a^\dagger E_0 | E_0 \rangle + \hbar \omega_z \hat a^\dagger |E_0\rangle \\
+& = \big (E_0 + \hbar \omega_z) \hat a^\dagger | E_0 \rangle
+\end{align}
+\tag{3.19}
+\]
+</p>  
 
+<p>
+Using the previous result of equation 3.18 we have:
+</p>
 
+<p>
+\[
+\ \hat H \big (\hat a^\dagger | E_0 \ranlge ) = \frac{3}{2} \hbar \omega_z \hat a^\dagger | E_0 \rangle
+\tag{3.20}
+\]
+</p> 
+
+<p>
+This process can be continously applied to produce fractional integers of $\hbar \omega_z$
+</p>
 
   
 </p>
