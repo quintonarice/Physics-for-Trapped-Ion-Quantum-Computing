@@ -206,7 +206,7 @@ Verify explicitly equation 3.10.
 
 
 <p>
-We now demonstrate why the ladder operators are called creation/raising and annihilation/lowering operators by considering the action of the lowering operator on an energy eigenstate $|E\rangle$. The Hamiltonian is linear so we may write:
+We now demonstrate why the ladder operators are called creation/raising and annihilation/lowering operators by considering the action of the lowering operator on an energy eigenstate $|E\rangle$ where we assume $| E \rangle$ is normalized. The Hamiltonian is linear so we may write:
 </p>
 
 <p>
@@ -242,6 +242,10 @@ where we have used $[\hat a, \hat a^\dagger] = 1$ to express $\hat a \hat a^\dag
 \tag{3.13}
 \]
 </p>
+  
+<p>  
+Now plugging $\hat a \hat H$ into the right side of equation 3.11:
+</p>
 
 <p>
 \[
@@ -266,6 +270,41 @@ Noticing that $\hat H | E \rangle = E | E \rangle$ from equation 1.65 we have:
 \]
 </p>
 
+<p>
+So upon acting $\hat H$ upon $\hat a | E \rangle$ the same ket is returned multiplied by the factor $\big (E - \hbar \omega_z)$, which indicates that $\hat a | E \rangle$ is also an eigenstate of $\hat H$ with a lower energy eigenvalue than the original ket $| E \rangle$. A new eignvalue equation may be written as:
+</p>
+
+<p>
+\[
+\ \hat H | E - \hbar \omega_z \rangle = \big (E - \hbar \omega_z) | E - \hbar \omega_z \rangle
+\tag{3.16}
+\]
+</p>
+  
+<p>
+So we that $\hat a$ has lowered the energy by $\hbar \omega_z$ and changed the corresponding eigenstate. Note that this new eigenstate is not normalized so we write $\hat a | E \rangle \propto | E - \hbar \omega_z \rangle.
+</p>
+  
+<button class="collapsible">Exercise 3.2</button>
+<div class="content-box">
+<p>
+Show that the action of $\hat a^\dagger$ on an eigenstate of $\hat H$ produces an eigenvalue raised by $\hbar \omega_z$.
+</p>
+</div>
+
+<p>
+In quantum mechanics the total energy cannot of a particle cannot be below the potential energy minimum which ultimately means that the lowest energy state must not go below $E = 0$. This puts restrictions on the lowering operator as we shall see. We require then that:
+</p>
+
+<p>
+\[
+\ \hat a | E_{0} \rangle = 0
+\tag{3.17}
+\]
+</p>
+<p>
+Often known as the <b>ladder termination condition</b>
+</p>
 
 
 
@@ -274,6 +313,8 @@ Noticing that $\hat H | E \rangle = E | E \rangle$ from equation 1.65 we have:
 
 
 
+  
+</p>
 
 
 
