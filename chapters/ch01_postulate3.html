@@ -400,7 +400,7 @@ From probability theory, the average or expectation value of an outcome, $m$, is
 \langle m \rangle
 & = \sum_m m p(m) \\
 & = \sum_m m \langle \psi | P_m | \psi \rangle \\
-& = \langle | \sum_m m P_m | \psi \rangle \\
+& = \langle \psi | \sum_m m P_m | \psi \rangle \\
 & = \langle \psi | M | \psi \rangle = \langle M \rangle 
 \tag{1.88}
 \end{align}
@@ -408,7 +408,7 @@ From probability theory, the average or expectation value of an outcome, $m$, is
 </p>
   
 <p>
-where $p(m)$ is now given by equation 1.83. The term in the bra-kets is simply equation 1.80 whereby we can now compute the expectation value of an observable using the bra-ket notation.
+where $p(m)$ is now given by equation 1.83. The term in the bra-kets is simply equation 1.80 whereby we can now compute the expectation value of an observable using the bra-ket notation. This is meaningful in quantum mechanics because an observable corresponds to physical quantities that can be measured in the laboratory and so the expectation value gives the average result of many measurements of that quantity.
 </p>
 
 <p>
@@ -441,8 +441,8 @@ Where the commutator [C, D] = CD − DC.
 
 <button class="collapsible">Exercise 1.11</button>
 <div class="content-box">
-For an observable M with eigenvalues m₁ and m₂,  
-compute the expectation value ⟨M⟩ and the standard deviation ΔM  
+For an observable $M$ with eigenvalues $m_1$ and $m_2$,  
+compute the expectation value $\langle M \rangle$ and the standard deviation $ \delta M $  
 for a general qubit state $| \psi \rangle = \alpha | 0 \rangle + \beta | 1 \rangle$.
 </div>
 
@@ -473,11 +473,11 @@ p(m) = \langle \psi | e^{-i\theta} M_m^\dagger M_m e^{i\theta} | \psi \rangle
 
 
 <p>
-Because $e^{−i \theta}e^{i \theta} = 1$. So, from an observational standpoint these two states are identical. These are known as Global Phases and are irrelevant for the observed properties of the physical system.
+Because $e^{−i \theta}e^{i \theta} = 1$. So, from an observational standpoint these two states are identical. These are known as <b>Global Phases</b> and are irrelevant for the observed properties of the physical system.
 </p>
 
 <p>
-Another type of phase is known as Relative Phase and has observable consequences on quantum states. Consider the two orthogonal states which differ by a relative phase:
+Another type of phase is known as <b>Relative Phase</b> and has observable consequences on quantum states. Consider the two orthogonal states which differ by a relative phase:
 </p>
 
 <p>
@@ -557,7 +557,7 @@ M = |\psi_+\rangle\langle \psi_+| - |\psi_-\rangle\langle \psi_-|
 
 
 <p>
-Conventionally, we choose $\lambda = \pm 1$. In the next exercise, verify the Completeness Relation $M$.
+Conventionally, we choose $\lambda = \pm 1$. In the next exercise, verify the Completeness Relation for $M$.
 </p>
 
 <button class="collapsible">Exercise 1.13</button>
@@ -583,16 +583,16 @@ M =
 
 
 <p>
-The result is the Pauli-X observable, so the basis is the Pauli-X basis with M± = |ψ±⟩⟨ψ±|.
+The result is the Pauli-$X$ observable, so the basis is the Pauli-$X$ basis with $ M_{\pm} = | \psi_{\pm} \rangle \langle \psi_{\pm} |$
 </p>
 
 <p>
-In the next exercise, show that in the Pauli-X basis the + and − states are now visually distinguishable using Postulate 3 to compute the probabilities.
+In the next exercise, show that in the Pauli-$X$ basis the $+$ and $−$ states are now visually distinguishable using Postulate 3 to compute the probabilities.
 </p>
 
 <button class="collapsible">Exercise 1.14</button>
 <div class="content-box">
-Using the Pauli-X operator, compute the measurement probabilities
+Using the Pauli-$X$ operator, compute the measurement probabilities
 for the states $|\psi_+\rangle$ and $|\psi_-\rangle$.  
 Show that the outcomes are now perfectly distinguishable.
 </div>
