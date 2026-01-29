@@ -180,11 +180,11 @@ m \omega_z \hat Z - i \hat P_Z
 </p>
 
 <p>
-The ladder operators are dimensionless, linear combinations of position and momentum constructed by P. A. M. Dirac to simplify the Hamilitonian and are commonly known as the <b>creation</b> and <b>annihilation operators</b>. It should be noted and verified by the reader that $[\hat a, \hat a^\dagger] = 1$ which follows from the canonical commutation relation $[\hat Z, \hat P_Z] = i \hbar$.
+The ladder operators are dimensionless, linear combinations of position and momentum constructed by P. A. M. Dirac to simplify the Hamilitonian and are commonly known as the <b>creation</b>, $\hat a^\dagger$, and <b>annihilation operators</b>, $\hat a$. Some texts use the terminology <b>raising</b> and <b>lowering</b> operators as well. It should be noted and verified by the reader that $[\hat a, \hat a^\dagger] = 1$ which follows from the canonical commutation relation $[\hat Z, \hat P_Z] = i \hbar$.
 </p>  
 
 <p>
-The exercise below requires verification of the following:
+The exercise 3.1 below requires verification that the Hamiltonian can be re-written in terms of the ladder operators:
 </p>
   
 <p>
@@ -202,6 +202,39 @@ Perhaps the easiest way is to simply plug in the ladder operators and brute forc
 <div class="content-box">
 Verify explicitly equation 3.10.
 </div>
+
+
+
+<p>
+We now demonstrate why the ladder operators are called creation/raising and annihilation/lowering operators by considering the action of the lowering operator on an energy eigenstate $|E\rangle$. The Hamiltonian is linear so we may write:
+</p>
+
+<p>
+\[
+\ \hat H \big (\hat a | E \rangle) = \big (\hat H \hat a ) | E \rangle
+\tag{3.11}
+\]
+</p>
+
+<p>
+Using the commutation of $\hat H$ and $\hat a$ we have:
+</p>
+
+<p>
+\[
+\begin{align}
+\ [\hat H, \hat a] & = \hbar \omega_z \big (\hat a^\dagger \hat a + \frac{1}{2}) \hat a - \hat a \big (\hat a^\dagger \hat a + \frac{1}{2}) \\
+& = \hbar \omega_z \big (\hat a^\dagger \hat a \hat a - \hat a \hat a^\dagger \hat a) \\
+& = -\hbar \omega_z \hat a
+\end{align}
+\tag{3.12}
+\]
+</p>
+
+<p>
+where we have used the $[\hat a, \hat a^\dagger] = 1$ to express $\hat a \hat a^\dagger = \hat a^\dagger \hat a + 1$
+</p>
+
 
 <p>
 Following the standard approach, we define the <b>number operator</b>:
@@ -241,7 +274,7 @@ This means that $\hat a$ lowers eigenvalues of $\hat N$ while $\hat a^\dagger$ r
 </div>
 
 <p>
-Based on Exercise 3.2, we now have:
+Based on Exercise 3.2, we now have an eigenvalue equation where we have switched to the common notation $\lambda \rightarrow n$:
 </p>
 
 <p>
@@ -298,12 +331,12 @@ We begin by solving the ladder operators in equation 3.9 for the position and mo
 </p>
 
 <p>
-These relations make explicit that position and momentum are built from creation and annihilation operators. We now consider the expectation value of the position of the ion using relations from the Postulate 3 section.
+These relations make explicit that position and momentum are built from creation and annihilation operators. We now consider the expectation value of the position of the ion using equation 1.88 from the Postulate 3 section. The expectation value of the position $Z$ is:
 </p>  
 
 <p>
 \[
-\ \langle M \rangle = \sum_m | \langle m | \psi \rangle |^2
+\ \langle Z \rangle_{n} = \langle n | \hat Z | n \rangle = \sqrt{\frac{\hbar}{2 m \omega_z}} \langle n | \big (\hat a + \hat a^\dagger) | n \rangle 
 \tag{3.17}
 \]
 </p>
