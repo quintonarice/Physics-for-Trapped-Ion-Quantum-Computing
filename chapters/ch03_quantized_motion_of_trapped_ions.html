@@ -271,18 +271,10 @@ Noticing that $\hat H | E \rangle = E | E \rangle$ from equation 1.65 we have:
 </p>
 
 <p>
-So upon acting $\hat H$ upon $\hat a | E \rangle$ the same ket is returned multiplied by the factor $\big (E - \hbar \omega_z)$, which indicates that $\hat a | E \rangle$ is also an eigenstate of $\hat H$ with a lower energy eigenvalue than the original ket $| E \rangle$. A new eignvalue equation may be written as:
-</p>
-
-<p>
-\[
-\ \hat H | E - \hbar \omega_z \rangle = \big (E - \hbar \omega_z) | E - \hbar \omega_z \rangle
-\tag{3.16}
-\]
-</p>
+So upon acting $\hat H$ upon $\hat a | E \rangle$ the same ket is returned multiplied by the factor $\big (E - \hbar \omega_z)$, which indicates that $\hat a | E \rangle$ is also an eigenstate of $\hat H$ with a lower energy eigenvalue than the original ket $| E \rangle$.
   
 <p>
-So we that $\hat a$ has lowered the energy by $\hbar \omega_z$ and changed the corresponding eigenstate. Note that this new eigenstate is not normalized so we write $\hat a | E \rangle \propto | E - \hbar \omega_z \rangle.
+So we say that $\hat a$ has lowered the energy by $\hbar \omega_z$ and changed the corresponding eigenstate. Note that this new eigenstate is not normalized so we write $\hat a | E \rangle \propto | E - \hbar \omega_z \rangle$.
 </p>
   
 <button class="collapsible">Exercise 3.2</button>
@@ -298,17 +290,31 @@ In quantum mechanics the total energy cannot of a particle cannot be below the p
 
 <p>
 \[
-\ \hat a | E_{0} \rangle = 0
+\ \hat a | E_0 \rangle = 0
 \tag{3.17}
 \]
 </p>
+  
 <p>
-Often known as the <b>ladder termination condition</b>
+Often known as the <b>ladder termination condition</b>, this can be used to find the energy of the lowest state. Applying the Hamiltonian:
 </p>
 
-
-
-
+<p>
+\[
+\begin{align}
+\ \hat H |E_0 \rangle & = \hbar \omega_z  \big (\hat a^\dagger \hat a + \frac{1}{2}) | E_0 \rangle \\
+& = \hbar \omega_z \hat a^\dagger \hat a | E_0 \rangle + \frac{1}{2} \hbar \omega_z | E_0 \rangle \\
+& = \frac{1}{2} \hbar \omega_z | E \rangle
+\end{align}
+\tag{3.18}
+\]
+</p>
+<p>
+Where in the second line we used equation 3.17 $\hat a | E_0 \rangle = 0$ to cancel the first term. This well known result shows that the lowest possible energy is not zero! Rather, $E_0 = \frac{1}{2} \hbar \omega_z$, known as the <b>zero-point energy</b> of the quantum harmonic oscillator.
+</p>
+<p>
+We can repeatedly apply the raising operator to thi
+</p>
 
 
 
