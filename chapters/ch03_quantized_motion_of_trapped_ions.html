@@ -429,7 +429,94 @@ Which of course means we can rewrite the Hamiltonian in terms of the number oper
 <p>
 The states $|n\rangle$ represent quantized motional energy levels of the trapped ion and are also known as <b>motional number states</b>. In the next section, we interpret these discrete motional energy excitations as quanta of vibrational motion and introduce the concept of <b>phonons</b>.
 </p>
+<p>
+Before that, we need to take care of our normalization problem from earlier and, in doing so, we find an expression for the operation of the ladder operators on the motion number states $| n\rangle$ in terms of $n$ rather than $E$. We already found out that the raising and lowering operators add or subtract one quantum of energy $\hbar \omega_z$ from the system, however, the new eigenstate is not normalized leading to the proportionality, $\hat a | E \rangle \propto |E - \hbar \omega_z \rangle$, and $\hat a^\dagger \propto |E + \hbar \omega_z \rangle$. These are equivalent to saying:
+</p>
 
+<p>
+\[
+\ \hat a | n \rangle \propto |n - 1 \rangle
+\tag{3.27}
+\]
+</p>
+
+<p>
+\[
+\ \hat a | n \rangle \propto |n + 1 \rangle
+\tag{3.28}
+\]
+</p>
+
+<p>
+Now, we saw from the section on Postulate 3 that we can compute the expectation value of a Hermitian operator, in this case $\hat N$ as such:
+</p>
+
+<p>
+\[
+\ \langle n | \hat N | n \rangle = \langle n |\hat a^\dagger \hat a | n \rangle = \langle n | n | n \rangle = n \langle n | n \rangle = n
+\tag{3.29}
+\]
+</p>
+
+<p>
+where we have used equation 3.25 and the normalization $\langle n | n \rangle = 1$. Also, note that by the spectral theorem, $\lange n | \hat N | n \rangle = \langle n | \hat a \ranlge \langle \hat a | n \rangle = |\hat a | n \rangle|^2$
+</p>
+
+<p>
+Next, just considering the lowering operator, we let $c$ be the proportionality factor between $\hat a | n \rangle$ and the eigenstate $|n - 1 \rangle$:
+</p>
+
+<p>
+\[
+\ \hat a | n \rangle = c | n - 1 \rangle
+\tag{3.30}
+\]
+</p>
+
+<p>
+Therefore we have:
+</p>
+
+<p>
+\[
+\ |\hat a | n \rangle|^2 = | c | n - 1 \rangle |^2 = n 
+\tag{3.31}
+\]
+</p>
+
+<p>
+Meaning:
+</p>
+  
+<p>
+\[
+\ n = |c|^2 
+\tag{3.32}
+\]
+</p>
+
+<p>
+Allowing us to obtain:
+</p>
+
+<p>
+\[
+\ \hat a | n \rangle = \sqrt{n} | n - 1 \rangle
+\tag{3.33}
+\]
+</p>
+
+where we have choosen the proportionality constant to be real and positive since the overall phase does not matter. In the next exercise, show that:
+
+<p>
+\[
+\ \hat a^\dagger | n \rangle = \sqrt{n + 1} | n + 1 \rangle
+\tag{3.34}
+\]
+</p>
+
+
+</p>
 <p>
 <b>Zero-Point Motion and Quantized Motional Excitations</b>
 </p>
