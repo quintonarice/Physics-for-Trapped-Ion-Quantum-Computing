@@ -469,7 +469,7 @@ where we have used equation 3.25 and the normalization $\langle n | n \rangle = 
 \]
 </p>
 <p>
-Therefore,
+
   
 </p>
   
@@ -535,7 +535,7 @@ Show that $\hat a^\dagger | n \rangle = \sqrt{n + 1} | n + 1 \rangle$.
 
 
 <p>
-
+In the next section, we use the relations in equations 3.34 and 3.35 to understand the behavior of the ion in the trap.
 </p>
 
   
@@ -552,7 +552,7 @@ We begin by solving the ladder operators in equation 3.9 for the position and mo
 \ \hat Z = \sqrt{\frac{\hbar}{2 m \omega_z}} \big (\hat a + \hat a^\dagger)\\
   \hat P_Z = i \sqrt{\frac{\hbar m \omega_z}{2}} \big (\hat a^\dagger - \hat a) \\
 \end{align}
-\tag{3.16}
+\tag{3.36}
 \]
 </p>
 
@@ -562,14 +562,82 @@ These relations make explicit that position and momentum are built from creation
 
 <p>
 \[
-\ \langle Z \rangle_{n} = \langle n | \hat Z | n \rangle = \sqrt{\frac{\hbar}{2 m \omega_z}} \langle n | \big (\hat a + \hat a^\dagger) | n \rangle 
-\tag{3.17}
+\begin{align}
+\ \langle Z \rangle_{n} = \langle n | \hat Z | n \rangle \\ 
+& = \sqrt{\frac{\hbar}{2 m \omega_z}} \langle n | \big (\hat a + \hat a^\dagger) | n \rangle \\
+& = \sqrt{\frac{\hbar}{2 m \omega_z}} \big ( \langle n | \hat a |n\rangle + \langle n | \hat a^\dagger | n \rangle) \\
+& = \sqrt{\frac{\hbar}{2 m \omega_z}} \big (\sqrt{n} \langle n | n - 1 \rangle + \sqrt{n+1} \langle n | n + 1 \rangle \\
+\end{align}
+\tag{3.37}
 \]
+</p>
+
+<p>
+Orthonormality gives: $ \langle n | n - 1 \rangle = 0 $ and $ \langle n | n + 1 \rangle = 0 $ so that:
+</p>
+
+<p>
+\[
+\ \langle Z \rangle_{n} = 0
+\tag{3.38}
+\]
+</p>
+
+<p>
+The average position of the ion in the trap is zero. Of course, this does <b>not</b> mean the ion is motionless. We can see this by computing $\langle \hat Z^2 \rangle_n $ but first notice that since $\langle \hat Z \rangle_n = 0$, the variance given by equation 1.89 is now simply, $\big (\delta Z)^2 = \langle \hat Z^2 \rangle_n$. It can be shown that the variance is given by: 
+</p>
+
+<p>
+\[
+\ \langle Z^2 \rangle_n = \frac{\hbar}{2 m \omega_z} \big (2 n + 1 )
+\tag{3.39}
+\]
+</p> 
+
+<button class="collapsible">Exercise 3.4</button>
+<div class="content-box">
+<p>
+Starting with equation 3.16, verify the expression given in equation 3.39. Note that: $ \langle n | \hat a^2 | n \rangle = 0$ and $ \langle n | \big (\hat a^\dagger)^2 | n \rangle = 0$
+</p>
+</div>
+
+
+<p>
+Now, for the ground state $ n = 0 $:
+</p>
+
+<p>
+\[
+\ \langle Z^2 \rangle_0 = \frac{\hbar}{2 m \omega_z}
+\tag{3.40}
+\]
+</p>
+
+<p>
+Which means that even in the ground state the ion is not localized at a single point. In fact, from the variance, the RMS spatial width is given by:
+</p>
+
+<p>
+\[
+\ \delta Z_0 = \sqrt{\frac{\hbar}{2 m \omega_z}}
+\tag{3.41}
+\]
+</p>
+
+<p>
+This is known as <b>zero-point motion</b> and is physically unavoidable. It is not experimental noise or thermal motion; it arises due to the incompatibility of position and momentum from the Heisenberg Uncertainty Principle. In this case, $[\hat Z, \hat P_Z] = i \hbar $
 </p>
 
 
 
 
+
+
+
+
+
+
+  
 </div>
 
 
