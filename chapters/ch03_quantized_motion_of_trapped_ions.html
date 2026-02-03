@@ -563,7 +563,7 @@ These relations make explicit that position and momentum are built from creation
 <p>
 \[
 \begin{align}
-\ \langle Z \rangle_{n} = \langle n | \hat Z | n \rangle \\ 
+\ \langle Z \rangle_{n} & = \langle n | \hat Z | n \rangle \\ 
 & = \sqrt{\frac{\hbar}{2 m \omega_z}} \langle n | \big (\hat a + \hat a^\dagger) | n \rangle \\
 & = \sqrt{\frac{\hbar}{2 m \omega_z}} \big ( \langle n | \hat a |n\rangle + \langle n | \hat a^\dagger | n \rangle) \\
 & = \sqrt{\frac{\hbar}{2 m \omega_z}} \big (\sqrt{n} \langle n | n - 1 \rangle + \sqrt{n+1} \langle n | n + 1 \rangle \\
@@ -584,7 +584,7 @@ Orthonormality gives: $ \langle n | n - 1 \rangle = 0 $ and $ \langle n | n + 1 
 </p>
 
 <p>
-The average position of the ion in the trap is zero. Of course, this does <b>not</b> mean the ion is motionless. We can see this by computing $\langle \hat Z^2 \rangle_n $ but first notice that since $\langle \hat Z \rangle_n = 0$, the variance given by equation 1.89 is now simply, $\big (\delta Z)^2 = \langle \hat Z^2 \rangle_n$. It can be shown that the variance is given by: 
+The average position of the ion in the trap is zero. Of course, this does <b>not</b> mean the ion is motionless. We can see this by computing $\langle Z^2 \rangle_n $ but first notice that since $\langle Z \rangle_n = 0$, the variance given by equation 1.89 is now simply, $\big (\Delta Z)^2 = \langle Z^2 \rangle_n$. It can be shown that the variance is given by: 
 </p>
 
 <p>
@@ -619,13 +619,13 @@ Which means that even in the ground state the ion is not localized at a single p
 
 <p>
 \[
-\ \delta Z_0 = \sqrt{\frac{\hbar}{2 m \omega_z}}
+\ \Delta Z_0 = \sqrt{\frac{\hbar}{2 m \omega_z}}
 \tag{3.41}
 \]
 </p>
 
 <p>
-This is known as <b>zero-point motion</b> and is physically unavoidable. It is not experimental noise or thermal motion; it arises due to the incompatibility of position and momentum from the Heisenberg Uncertainty Principle. In this case, $[\hat Z, \hat P_Z] = i \hbar $
+This is known as <b>zero-point motion</b> and is physically unavoidable. It is not experimental noise or thermal motion; it arises due to the incompatibility of position and momentum from the Heisenberg Uncertainty Principle. In this case, $[\hat Z, \hat P_Z] = i \hbar $. So, even in its motional ground state, a trapped ion fluctuates in position. These fluctuations play a central role in how laser fields couple internal electronic states to quantized motion, motivating the interpretation of motional excitations as phonons.
 </p>
 
 
