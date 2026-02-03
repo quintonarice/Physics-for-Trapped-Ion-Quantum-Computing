@@ -67,7 +67,7 @@ Consider the general form of the propagating electric field of a laser:
 </p>  
 
 <p>
-where $\mathbf{k}$ is the wave vector$, $\mathbf{r}$ is the position vector, $\omega$ is the laser frequency, and $\phi_0$ is the phase. We start by considering axial coupling only which means that $\mathbf{k} \cdot \mathbf{r} = kz$. And since we know that in quantum mechanics the position is an operator, $z \Rightarrow \hat Z$, then:
+where $\mathbf{k}$ is the wave vector, $\mathbf{r}$ is the position vector, $\omega$ is the laser frequency, and $\phi_0$ is the phase. We start by considering axial coupling only which means that $\mathbf{k} \cdot \mathbf{r} = kz$. And since we know that in quantum mechanics the position is an operator, $z \rightarrow \hat Z$, then:
 </p>
 
 <p>
@@ -127,16 +127,30 @@ We now define the <b>Lamb-Dicke parameter</b> as:
 
 <p>
 \[
-\ \eta_z = k_z \sqrt{\frac{\hbar}{2 m \omega_z}}
-\tag{4.6}
+\ \eta_z \equiv k_z \sqrt{\frac{\hbar}{2 m \omega_z}}
+\tag{4.7}
 \]
 </p> 
 
+In what's known as the <b>Lamb-Dicke regime</b> the ion's spatial extent is much smaller than the laser wavelength $\lambda$ and since $k_z \sim \frac{1}{\lambda}$, it follows that in the Lamb-Dicke regime:
 
+<p>
+\[
+\ \eta_z \ll 1
+\tag{4.8}
+\]
+</p> 
 
+<p>
+Under this approximation, we may expand the exponential term of the interaction Hamiltonian as:
+</p>
 
-
-
+<p>
+\[
+\ e^{i \eta_z (\hat a + \hat a^\dagger) \approx 1 + i \eta_z (\hat a + \hat a^\dagger) + \mathscr O (\eta_z^2)
+\tag{4.9}
+\]
+</p> 
 
 
   
