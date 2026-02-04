@@ -61,24 +61,24 @@ Consider the general form of the propagating electric field of a laser:
 
 <p>
 \[
-\ \mathbf{E} (\mathbf{r},t) \propto e^{i(\mathbf{k} \cdot \mathbf{r} - \omega t + \phi_0)}
+\ \mathbf{E} (\mathbf{r},t) \propto \cos (\mathbf{k} \cdot \mathbf{r} - \omega t)
 \tag{4.1}
 \]
 </p>  
 
 <p>
-where $\mathbf{k}$ is the wave vector, $\mathbf{r}$ is the position vector, $\omega$ is the laser frequency, and $\phi_0$ is the phase. We start by considering axial coupling only which means that $\mathbf{k} \cdot \mathbf{r} = kz$. And since we know that in quantum mechanics the position is an operator, $z \rightarrow \hat Z$, then:
+where $\mathbf{k}$ is the wave vector, $\mathbf{r}$ is the position vector, and $\omega$ is the laser frequency. We start by considering axial coupling only which means that $\mathbf{k} \cdot \mathbf{r} = kz$. And since we know that in quantum mechanics the position is an operator, $z \rightarrow \hat Z$, then:
 </p>
 
 <p>
 \[
-\ \mathbf{E} (\hat Z,t) \propto e^{i(k_z \hat Z - \omega t)}
+\ \mathbf{E} (\hat Z,t) \propto \cos (k_z \hat Z - \omega t)
 \tag{4.2}
 \]
 </p>  
 
 <p>
-where we have dropped the phase $\phi_0$. Now, for a charge distribution in an external electric field, the interaction energy is given from classical electromagnetism:
+Now, for a charge distribution in an external electric field, the interaction energy is given from classical electromagnetism:
 </p>
 
 <p>
@@ -89,23 +89,23 @@ where we have dropped the phase $\phi_0$. Now, for a charge distribution in an e
 </p> 
 
 <p>
-where $\mathbf{p}$ is the electric dipole moment. Since the electron cloud surrounding the atom moves in response to the external electric field we express the dipole moment as $\mathbf{p} = -e \mathbf{r}_e$ where $e$ is the charge and $\mathbf{r}_e$ is the electrons position relative to the nucleus. In quantum mechanics, the dipole moment becomes an operator acting on the internal electronic states, while the electric field must be evaluated at the ion’s position operator. The resulting interaction Hamiltonian therefore couples the ion’s internal states to its quantized motion:
+where $\mathbf{p}$ is the electric dipole moment. Since the electron cloud surrounding the atom moves in response to the external electric field we express the dipole moment as $\mathbf{p} = -e \mathbf{r}_e$ where $e$ is the charge and $\mathbf{r}_e$ is the electrons position relative to the nucleus. In quantum mechanics, the dipole moment becomes an operator acting on the internal electronic states, while the electric field must be evaluated at the ion’s position operator. The resulting time-dependent interaction Hamiltonian therefore couples the ion’s internal states to its quantized motional states.
 </p>
 
 <p>
 \[
-\ \hat H_{int} = - \mathbf{\hat p} \cdot \mathbf{E}_0 e^{i(k_z \hat Z - \omega t)}
+\ \hat H_{int} (t) = - \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(k_z \hat Z - \omega t)
 \tag{4.4}
 \]
 </p> 
 
 <p>
-known as the interaction Hamiltonian where $\mathbf{E}_0$ is the electric field amplitude. Now recall the expression for the position operator $\hat Z$ from the last section.
+where $\mathbf{E}_0$ is the electric field amplitude. Now recall the expression for the position operator $\hat Z$ from the last section.
 </p>
 
 <p>
 \[
-\ \hat Z = \sqrt{\frac{\hbar}{2 m \omega_z}} \big (\hat a + \hat a^\dagger)
+\ \hat Z = \sqrt{\frac{\hbar}{2 m \omega_z}} \big (\hat a + \hat a^\dagger) \big
 \tag{4.5}
 \]
 </p> 
@@ -116,7 +116,7 @@ So that:
 
 <p>
 \[
-\ \hat H_{int} = - \mathbf{\hat p} \cdot \mathbf{E}_0 e^{i \big (k_z \sqrt{\frac{\hbar}{2 m \omega_z}} \big (\hat a + \hat a^\dagger) - \omega t)}
+\ \hat H_{int} (t) = - \mathbf{\hat p} \cdot \mathbf{E}_0 \cos \big (k_z \sqrt{\frac{\hbar}{2 m \omega_z}} \big (\hat a + \hat a^\dagger)\big - \omega t)\big
 \tag{4.6}
 \]
 </p> 
@@ -142,21 +142,23 @@ In what's known as the <b>Lamb-Dicke regime</b> the ion's spatial extent is much
 </p> 
 
 <p>
-Under this approximation, we may expand the exponential term of the interaction Hamiltonian as:
+Under this approximation, we may expand the cosine term of the interaction Hamiltonian as:
 </p>
 
 <p>
 \[
-\ e^{i \eta_z (\hat a + \hat a^\dagger)} \approx 1 + i \eta_z (\hat a + \hat a^\dagger) + \mathcal O (\eta_z^2)
+\ \cos \big( \eta_z (\hat a + \hat a^\dagger))\big \approx \cos(\omega t) - \eta_z (\hat a + \hat a^\dagger) \sin(\omega t) + \mathcal O (\eta_z^2)
 \tag{4.9}
 \]
 </p> 
 
 <p>
-where $\mathcal O(\eta_z^2)$ represents higher order terms in the expansion. The zeroth-order term, $1$, corresponds to laser-driven internal transitions that do not affect the ion’s motional state. Note that motion is invisible to the laser, the ion behaves point-like, and the motional quantum number $n$ does not change. This is known as the <b>carrier transition</b>. The first-order term, $i \eta_z (\hat a + \hat a^\dagger)$ accounts for the finite spatial extent of the ion’s motion and allows the laser to exchange energy with the motional degree of freedom. We already know that $\hat a^\dagger$ adds one phonon and $\hat a$ removes one phonon. This terms also informs us that the internal and motional energies are coupled. Additionally, the creation and annihilation of phonons correspond to what are known as <b>blue</b> and <b>red sidebands</b>, respectively. We will explore these in detail next. Lastly, the higher-order terms, $\mathcal O (\eta_z^2)$ correspond to multi-phonon processes and are suppressed by higher powers of $\eta_z$ in the Lamb–Dicke regime.
+where $\mathcal O(\eta_z^2)$ represents higher order terms in the expansion. The zeroth-order term, $\cos(\omega t)$, corresponds to laser-driven internal transitions that do not affect the ion’s motional state. Note that motion is invisible to the laser, the ion behaves point-like, and the motional quantum number $n$ does not change. This is known as the <b>carrier transition</b>. The first-order term, $ \eta_z (\hat a + \hat a^\dagger) \sin(\omega t)$ accounts for the finite spatial extent of the ion’s motion and allows the laser to exchange energy with the motional degree of freedom. We already know that $\hat a^\dagger$ adds one phonon and $\hat a$ removes one phonon. This terms also informs us that the internal and motional energies are coupled. Additionally, the creation and annihilation of phonons correspond to what are known as <b>blue</b> and <b>red sidebands</b>, respectively. We will explore these in detail next. Lastly, the higher-order terms, $\mathcal O (\eta_z^2)$ correspond to multi-phonon processes and are suppressed by higher powers of $\eta_z$ in the Lamb–Dicke regime.
 </p>
 
-
+<p>
+To understand sidebands, we first split our Hamiltonian into a time-independent and time-dependent parts.
+</p>
 
 
   
