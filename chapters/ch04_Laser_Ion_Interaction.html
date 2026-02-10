@@ -496,7 +496,7 @@ The total wavefunction is then:
 <p>
 \[
 \begin{align}
-\ \psi(t)\rangle = e^{-i \alpha t} |\psi(0)\rangle
+\ |\psi(t)\rangle = e^{-i \alpha t} |\psi(0)\rangle
 & -\frac{i}{\hbar} \Big[ - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t'} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t'} -1}{\alpha - \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
 & + \frac{\eta_z \sqrt{n}}{2} \Big[\frac{e^{-i(\alpha - \omega)t'} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t'} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
 & + \frac{\eta_z \sqrt{n+1}}{2i} \Big[\frac{e^{-i(\alpha - \omega)t'} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t'} +1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
@@ -505,11 +505,62 @@ The total wavefunction is then:
 \]
 </p>
 
+<p>
+We are now ready to understand each of these terms through <b>projection</b>. In other words, if the we start off in the state $|\psi(0)\rangle = |g,n\rangle$, then what is the amplitude for the system to be found in the state $|e,b\rangle$ at time $t$? We will explore other possibilities of course but let's see what happens in this case. To project, we take the inner product:
+</p>
 
+<p>
+\[
+\ c_{e,n}(t) \equiv \langle e,n | \psi(t)\rangle
+\tag{4.36}
+\]
+</p>  
 
-  
+<p>
+For the first term, we see that we will have:
+</p>
 
+<p>
+\[
+\ c_{e,n}(t) \propto \langle e,n | g,n\rangle
+\tag{4.37}
+\]
+</p>  
 
+<p>
+More explicitly, we have:
+</p>  
+
+<p>
+\[
+\begin{align}
+\ \langle e,n | \psi(t)\rangle & = \Big( \langle e| \otimes \langle n |\Big)\Big(|g\rangle \otimes |n\rangle\Big) \\
+& = \langle e|g \rangle \langle n|n \rangle = 0 \\
+\end{align}
+\tag{4.38}
+\]
+</p>
+
+<p>
+The free evolution cannot produce population in $|e,n\rangle$ due to the orthogonality of $|e\rangle$ and $|g\rangle$. Of course! Without interaction the system cannot change it's electronic state. If you proceed in a similar fashion you find that only the term 2nd term, involving $|g,n\rangle$ survives! So that:
+</p>
+
+<p>
+\[
+\begin{align}
+\ \langle e,n | \mathbf{\hat p} \cdot \mathbf{E_0} |g,n\rangle \\
+& = \Big( \langle e| \otimes \langle n |\Big) \mathbf{\hat p} \cdot \mathbf{E_0} \Big(|g\rangle \otimes |n\rangle\Big) \\
+& = \Big( \langle e| \otimes \langle n |\Big) \Big(\mathbf{\hat p} \cdot \mathbf{E_0} |g\rangle \Big)|n\rangle \\
+& = \langle e| \mathbf{\hat p} \cdot \mathbf{E_0}|g\rangle \lange n|n \rangle \\
+& = \langle e| \mathbf{\hat p} \cdot \mathbf{E_0}|g\rangle
+\end{align}
+\tag{4.39}
+\]
+</p>
+
+<p>
+Noting that the electric dipole operator only applies to the internal electronic states. It is recommended to show that the 3rd and 4th terms are zero due to the orthogonality of $|n\rangle$ with $|n-1\rangle$ and $|n+1\rangle$, respectively.
+</p>
 
 
   
