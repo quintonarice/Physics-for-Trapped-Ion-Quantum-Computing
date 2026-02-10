@@ -391,18 +391,26 @@ So the integral becomes:
 
 <p>
 \[
-\ = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \big]
+\begin{align}
+\ = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \\
+& + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \\
+& + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \big]\\
+\end{align}
 \tag{4.28}
 \]
 </p>
 
 <p>
-The next step is to let $\hat a$ and $\hat a^\dagger$ operate on $gn\rangle$. The ladder operators only affect the motional states $|n\rangle$, follwowing equation 3.34 and 3.35. After some rearranging, we end up with:
+The next step is to let $\hat a$ and $\hat a^\dagger$ operate on $|g, n\rangle$. The ladder operators only affect the motional states $|n\rangle$, follwowing equation 3.34 and 3.35. After some rearranging, we end up with:
 </p>
 
 <p>
 \[
-\ = -\frac{i}{\hbar} \big[ - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \cos(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' + \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z sqrt(n)   |g, n-1\rangle dt' + \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \sqrt(n+1)   |g, n+1\rangle dt' \big]
+\begin{align}
+\ = -\frac{i}{\hbar} \big[ - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \cos(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' \\
+& + \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \sqrt{n} |g, n-1\rangle dt' \\ 
+& + \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \sqrt{n+1}   |g, n+1\rangle dt' \big] \\
+\end{align}
 \tag{4.29}
 \]
 </p>
