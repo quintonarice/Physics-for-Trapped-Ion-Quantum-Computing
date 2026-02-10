@@ -184,7 +184,10 @@ By plugging this into equation 4.10:
 
 <p>
 \[
-\ i \hbar | \psi(t) \rangle = (\hat H_0 + \hat H_{int} (t)) |psi(t)\rangle = \hat H_0 |psi(t)\rangle + \hat H_{int}(t) |psi(t)\rangle
+\begin{align}
+\ i \hbar \frac{d}{dt}| \psi(t) \rangle & = (\hat H_0 + \hat H_{int} (t)) |\psi(t)\rangle \\
+& = \hat H_0 |\psi(t)\rangle + \hat H_{int}(t) |\psi(t)\rangle \\
+\end{align}
 \tag{4.12}
 \]
 </p>
@@ -195,7 +198,7 @@ Integrating both sides from $0$ to $t$ gives:
 
 <p>
 \[
-\ |\psi(t)\rangle - |psi(t)\rangle = -\frac{i}{\hbar} \int_0^t \hat H_0 |psi(t')\rangle dt' - \frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt'
+\ |\psi(t)\rangle - |\psi(0)\rangle = -\frac{i}{\hbar} \int_0^t \hat H_0 |\psi(t')\rangle dt' - \frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt'
 \tag{4.13}
 \]
 </p>
@@ -215,16 +218,18 @@ Focusing on just the first integral, equations 1.60 and 1.62 allows us to write 
 
 <p>
 \[
-\ -\frac{i}{\hbar} \int_0^t \hat H_0 |psi(t')\rangle dt' = -\frac{i}{\hbar} \int_0^t \hat H_0 e^{-i \hat H_0 t'/ \hbar} |\psi(0)\rangle dt'
+\ -\frac{i}{\hbar} \int_0^t \hat H_0 |\psi(t')\rangle dt' = -\frac{i}{\hbar} \int_0^t \hat H_0 e^{-i \hat H_0 t'/ \hbar} |\psi(0)\rangle dt'
 \tag{4.15}
 \]
 </p>
 
-<p>From the Schrodinger equation, $hat H_0 e^{-i \hat H_0 t'/ \hbar} = i \hbar \frac{d}{dt'} |psi(t')\rangle$</p>, so:
+<p>
+From the Schrodinger equation, $\hat H_0 e^{-i \hat H_0 t'/ \hbar} = i \hbar \frac{d}{dt'} |\psi(t')\rangle$, so:
+</p>
 
 <p>
 \[
-\ -\frac{i}{\hbar} \int_0^t \hat H_0 |psi(t')\rangle dt' = -\frac{i}{\hbar} \int_0^t i \hbar \frac{d}{dt'} |psi(t')\rangle |\psi(0)\rangle dt'
+\ -\frac{i}{\hbar} \int_0^t \hat H_0 |\psi(t')\rangle dt' = -\frac{i}{\hbar} \int_0^t i \hbar \frac{d}{dt'} |\psi(t')\rangle |\psi(0)\rangle dt'
 \tag{4.16}
 \]
 </p>
@@ -239,5 +244,44 @@ Which upon integrating gives:
 \tag{4.17}
 \]
 </p>
-  
 
+<p>
+So, from equation 4.13, we have:
+</p>
+
+<p>
+\[
+\ |\psi(t)\rangle - |\psi(0)\rangle = e^{-i \hat H_0 t/\hbar} |\psi(0)\rangle - |\psi(0)\rangle - \frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt'
+\tag{4.18}
+\]
+</p>
+
+<p>
+Leading to:
+</p>
+
+<p>
+\[
+\ |\psi(t)\rangle = e^{-i \hat H_0 t/\hbar} |\psi(0)\rangle - \frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt'
+\tag{4.18}
+\]
+</p>
+
+<p>
+Now we can tackle the second integral which is much more formidable.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
