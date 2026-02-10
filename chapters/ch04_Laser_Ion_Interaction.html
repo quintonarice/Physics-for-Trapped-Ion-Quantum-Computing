@@ -401,17 +401,61 @@ So the integral becomes:
 </p>
 
 <p>
-The next step is to let $\hat a$ and $\hat a^\dagger$ operate on $|g, n\rangle$. The ladder operators only affect the motional states $|n\rangle$, follwowing equation 3.34 and 3.35. After some rearranging, we end up with:
+The next step is to let $\hat a$ and $\hat a^\dagger$ operate on $|g, n\rangle$. The ladder operators only affect the motional states $|n\rangle$, follwowing equations 3.34 and 3.35. After some rearranging, we end up with:
 </p>
 
 <p>
 \[
 \begin{align}
-\ = -\frac{i}{\hbar} \big[ - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \cos(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' \\
-& + \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \sqrt{n} |g, n-1\rangle dt' \\ 
-& + \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \sqrt{n+1}   |g, n+1\rangle dt' \big] \\
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \big[ & - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \cos(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' \\
+& + \eta_z \sqrt{n} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle dt' \\ 
+& + \eta_z \sqrt{n+1} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle dt' \big] \\
 \end{align}
 \tag{4.29}
+\]
+</p>
+
+<p>
+If we now rewrite $sin(\omega t')$ and $cos(\omega t')$ in exponential form, that is:
+</p>
+
+<p>
+\[
+\begin{align}
+\ sin(\omega t') = \frac{1}{2i} \big(e^{-i \omega t'} - e^{-i \omega t'} \big) \\
+\cos(\omega t') = \frac{1}{2} \big(e^{-i \omega t'} + e^{-i \omega t'} \big) \\
+\end{align}
+\tag{4.30}
+\]
+</p>
+
+<p>
+By subsituting these forms into equation 4.29 we have:
+</p>
+
+<p>
+\[
+\begin{align}
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \big[ & - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2} \big(e^{-i \omega t'} + e^{-i \omega t'} \big) \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' \\
+& + \eta_z \sqrt{n} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2i} \big(e^{-i \omega t'} - e^{-i \omega t'} \big) \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle dt' \\ 
+& + \eta_z \sqrt{n+1} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2i} \big(e^{-i \omega t'} - e^{-i \omega t'} \big) \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle dt' \big] \\
+\end{align}
+\tag{4.31}
+\]
+</p>
+
+<p>
+Combining the exponential terms gives:
+</p>
+
+<p>
+\[
+\begin{align}
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \frac{1}{2} [\int_0^t e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) - \omega)t'} + e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) + \omega)t'}] dt' \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
+& + \frac{\eta_z \sqrt{n}}{2i} \int_0^t [e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) - \omega)t'} - e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) + \omega)t'}] dt' \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
+& + \frac{\eta_z \sqrt{n+1}}{2i} \int_0^t [e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) - \omega)t'} - e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) + \omega)t'}] dt'\mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
+\end{align}
+\tag{4.32}
 \]
 </p>
 
@@ -426,6 +470,8 @@ The next step is to let $\hat a$ and $\hat a^\dagger$ operate on $|g, n\rangle$.
 
 
 
+
+  
 
 
   
