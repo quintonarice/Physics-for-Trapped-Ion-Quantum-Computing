@@ -157,7 +157,7 @@ where $\mathcal O(\eta_z^2)$ represents higher order terms in the expansion. The
 </p>
 
 <p>
-In this next section, we will go into a detailed derviation of the carrier transition and the red/blue sideband transitions to fully understand their origin (which technically is just the interaction Hamiltonian). It is highly encouraged to the read to slow down and perform all necessary steps to reach the final result. We begin by considering the Schrodinger Equation of Postulate 2:
+In this next section, we will go into a detailed derviation of the carrier transition and the red/blue sideband transitions to fully understand their origin (which technically is just the interaction Hamiltonian). It is highly encouraged to the reader to slow down and perform all necessary steps to reach the final result. We begin by considering the Schrodinger Equation of Postulate 2:
 </p>
 
 <p>
@@ -297,7 +297,7 @@ We now have 3 separate integrals to evaluate:
 </p>
 
 <p>
-Whew! Now since $|\psi(t') = e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle$
+Now since $|\psi(t') = e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle$, the integral is written:
 </p>
 
 <p>
@@ -392,7 +392,7 @@ So the integral becomes:
 <p>
 \[
 \begin{align}
-\ = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \\
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt'& = -\frac{i}{\hbar} \big[ & - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \\
 & + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \\
 & + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \big]\\
 \end{align}
