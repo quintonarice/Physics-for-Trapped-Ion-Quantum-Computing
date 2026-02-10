@@ -291,7 +291,7 @@ We now have 3 separate integrals to evaluate:
 
 <p>
 \[
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')|\psi(t')\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')|\psi(t')\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') |\psi(t')\rangle dt' \big]
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')|\psi(t')\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')|\psi(t')\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') |\psi(t')\rangle dt' \Big]
 \tag{4.20}
 \]
 </p>
@@ -302,7 +302,7 @@ Now since $|\psi(t') = e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle$, the integral is
 
 <p>
 \[
-\ = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' \big]
+\ = -\frac{i}{\hbar} \Big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' \Big]
 \tag{4.21}
 \]
 </p>
@@ -313,7 +313,7 @@ We now take the intial state $|\psi(0)\rangle$ to be composite of electronic gro
 
 <p>
 \[
-\ = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' \big]
+\ = -\frac{i}{\hbar} \Big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' \Big]
 \tag{4.22}
 \]
 </p> 
@@ -365,7 +365,7 @@ Now using series expansion of the exponential, $e^{-i \hat H_0 t / \hbar}$, we c
 
 <p>
 \[
-\ e^{-i \hat H_0 t / \hbar} = \sum_{k=0}^\infty \frac{1}{k!} \big(-\frac{it}{\hbar} \hat H_0 \big)^k
+\ e^{-i \hat H_0 t / \hbar} = \sum_{k=0}^\infty \frac{1}{k!} \Big(-\frac{it}{\hbar} \hat H_0 \Big)^k
 \tag{4.26}
 \]
 </p>
@@ -377,8 +377,8 @@ So we may write:
 <p>
 \[
 \begin{align}
-\ e^{-i \hat H_0 t / \hbar} |g, n\rangle & = \sum_{k=0}^\infty \frac{1}{k!} \big(-\frac{it}{\hbar} \hat H_0 \big)^k |g, n\rangle \\
-& = \sum_{k=0}^\infty \frac{1}{k!} \big(-\frac{it}{\hbar} (E_g + \hbar \omega_z (n + \frac{1}{2})) \big)^k |g, n\rangle \\
+\ e^{-i \hat H_0 t / \hbar} |g, n\rangle & = \sum_{k=0}^\infty \frac{1}{k!} \Big(-\frac{it}{\hbar} \hat H_0 \Big)^k |g, n\rangle \\
+& = \sum_{k=0}^\infty \frac{1}{k!} \Big(-\frac{it}{\hbar} (E_g + \hbar \omega_z (n + \frac{1}{2})) \Big)^k |g, n\rangle \\
 & = e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t/\hbar} |g, n\rangle \\
 \end{align}
 \tag{4.27}
@@ -392,9 +392,9 @@ So the integral becomes:
 <p>
 \[
 \begin{align}
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt'= -\frac{i}{\hbar} \big[ & - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \\
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt'= -\frac{i}{\hbar} \Big[ & - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \\
 & + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \\
-& + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \big]\\
+& + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \Big]\\
 \end{align}
 \tag{4.28}
 \]
@@ -407,38 +407,38 @@ The next step is to let $\hat a$ and $\hat a^\dagger$ operate on $|g, n\rangle$.
 <p>
 \[
 \begin{align}
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \big[ & - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \cos(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' \\
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \cos(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' \\
 & + \eta_z \sqrt{n} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle dt' \\ 
-& + \eta_z \sqrt{n+1} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle dt' \big] \\
+& + \eta_z \sqrt{n+1} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle dt' \Big] \\
 \end{align}
 \tag{4.29}
 \]
 </p>
 
 <p>
-If we now rewrite $sin(\omega t')$ and $cos(\omega t')$ in exponential form, that is:
+If we now rewrite $\sin(\omega t')$ and $\cos(\omega t')$ in exponential form, that is:
 </p>
 
 <p>
 \[
 \begin{align}
-\ sin(\omega t') = \frac{1}{2i} \big(e^{-i \omega t'} - e^{-i \omega t'} \big) \\
-\cos(\omega t') = \frac{1}{2} \big(e^{-i \omega t'} + e^{-i \omega t'} \big) \\
+\ \sin(\omega t') = \frac{1}{2i} \Big(e^{-i \omega t'} - e^{-i \omega t'} \Big) \\
+\cos(\omega t') = \frac{1}{2} \Big(e^{-i \omega t'} + e^{-i \omega t'} \Big) \\
 \end{align}
 \tag{4.30}
 \]
 </p>
 
 <p>
-By subsituting these forms into equation 4.29 we have:
+We can then subsituting these forms into equation 4.29 to get:
 </p>
 
 <p>
 \[
 \begin{align}
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \big[ & - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2} \big(e^{-i \omega t'} + e^{-i \omega t'} \big) \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' \\
-& + \eta_z \sqrt{n} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2i} \big(e^{-i \omega t'} - e^{-i \omega t'} \big) \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle dt' \\ 
-& + \eta_z \sqrt{n+1} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2i} \big(e^{-i \omega t'} - e^{-i \omega t'} \big) \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle dt' \big] \\
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2} \Big(e^{-i \omega t'} + e^{-i \omega t'} \Big) \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' \\
+& + \eta_z \sqrt{n} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2i} \Big(e^{-i \omega t'} - e^{-i \omega t'} \Big) \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle dt' \\ 
+& + \eta_z \sqrt{n+1} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2i} \Big(e^{-i \omega t'} - e^{-i \omega t'} \Big) \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle dt' \Big] \\
 \end{align}
 \tag{4.31}
 \]
@@ -451,7 +451,7 @@ Combining the exponential terms gives:
 <p>
 \[
 \begin{align}
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \frac{1}{2} [\int_0^t e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) - \omega)t'} + e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) + \omega)t'}] dt' \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \frac{1}{2} \int_0^t [e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) - \omega)t'} + e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) + \omega)t'}] dt' \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
 & + \frac{\eta_z \sqrt{n}}{2i} \int_0^t [e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) - \omega)t'} - e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) + \omega)t'}] dt' \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
 & + \frac{\eta_z \sqrt{n+1}}{2i} \int_0^t [e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) - \omega)t'} - e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) + \omega)t'}] dt'\mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
 \end{align}
@@ -459,17 +459,51 @@ Combining the exponential terms gives:
 \]
 </p>
 
+<p>
+We now define, $alpha \equiv \frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}). This gives a somewhat, but not by much, cleaner expression:
+</p>
 
+<p>
+\[
+\begin{align}
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \frac{1}{2} \int_0^t [e^{-i(\alpha - \omega)t'} + e^{-i(\alpha + \omega)t'}] dt' \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
+& + \frac{\eta_z \sqrt{n}}{2i} \int_0^t [e^{-i(\alpha - \omega)t'} - e^{-i(\alpha + \omega)t'}] dt' \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
+& + \frac{\eta_z \sqrt{n+1}}{2i} \int_0^t [e^{-i(\alpha - \omega)t'} - e^{-i(\alpha + \omega)t'}] dt'\mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
+\end{align}
+\tag{4.33}
+\]
+</p>
 
+<p>
+Finally, we are ready to integrate these expressions. Upon evaluating each integral from $0$ to $t$ and doing a bit of algebra, the result is:
+</p>
 
+<p>
+\[
+\begin{align}
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \frac{i}{2} [\frac{e^{-i(\alpha - \omega)t'} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t'} -1}{\alpha - \omega}] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
+& + \frac{\eta_z \sqrt{n}}{2} [\frac{e^{-i(\alpha - \omega)t'} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t'} + 1}{\alpha + \omega}] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
+& + \frac{\eta_z \sqrt{n+1}}{2i} [\frac{e^{-i(\alpha - \omega)t'} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t'} +1}{\alpha + \omega}] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
+\end{align}
+\tag{4.34}
+\]
+</p>
 
+<p>
+The total wavefunction is then:
+</p>
 
-
-
-
-
-
-
+<p>
+\[
+\begin{align}
+\ \psi(t)\rangle = e^{-i \alpha t} |psi(0)\rangle \\
+& = -\frac{i}{\hbar} \Big[ & - \frac{i}{2} [\frac{e^{-i(\alpha - \omega)t'} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t'} -1}{\alpha - \omega}] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
+& + \frac{\eta_z \sqrt{n}}{2} [\frac{e^{-i(\alpha - \omega)t'} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t'} + 1}{\alpha + \omega}] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
+& + \frac{\eta_z \sqrt{n+1}}{2i} [\frac{e^{-i(\alpha - \omega)t'} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t'} +1}{\alpha + \omega}] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
+\end{align}
+\tag{4.3}
+\]
+</p>
 
   
 
