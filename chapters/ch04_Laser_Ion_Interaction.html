@@ -291,7 +291,7 @@ We now have 3 separate integrals to evaluate:
 
 <p>
 \[
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t)|\psi(t')\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t)|\psi(t')\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t) |\psi(t')\rangle dt' \big]
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')|\psi(t')\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')|\psi(t')\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') |\psi(t')\rangle dt' \big]
 \tag{4.20}
 \]
 </p>
@@ -302,29 +302,29 @@ Whew! Now since $|\psi(t') = e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle$
 
 <p>
 \[
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t)e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t)e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t) e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' \big]
+\ = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' \big]
 \tag{4.21}
 \]
 </p>
 
 <p>
-We now take the intial state $|\psi(0)\rangle$ to be composite of electronic ground and motional states, $|g\rangle$ and $|n\rangle$ so that $|\psi(0)\rangle = |gn\rangle$ where $|g n \rangle$ is the tensor product from Posutlate 4: $|g\rangle \otimes |n\rangle$. Therefore,
+We now take the intial state $|\psi(0)\rangle$ to be composite of electronic ground and motional states, $|g\rangle$ and $|n\rangle$, so that $|\psi(0)\rangle = |g,n\rangle$ where $|g,n \rangle$ is the tensor product from Posutlate 4: $|g,n\ranlge = |g\rangle \otimes |n\rangle$. Therefore,
 </p>
 
 <p>
 \[
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t)e^{-i \hat H_0 t'/\hbar}|gn\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t)e^{-i \hat H_0 t'/\hbar}|gn\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t) e^{-i \hat H_0 t'/\hbar}|gn\rangle dt' \big]
+\ = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' \big]
 \tag{4.22}
 \]
 </p> 
 
 <p>
-It is now important to recognize the action of $e^{-i \hat H_0 t'/\hbar}|gn\rangle$ because it appears in each term. We first write the unperturbed Hamiltoniana, $\hat H_0$ as the sum of an electronic Hamiltonian, $\hat H_el$, and a motional Hamiltonian, $\hat H_mot$, so that:
+It is now important to recognize the action of $e^{-i \hat H_0 t'/\hbar}|g,n\rangle$ because it appears in each term. We first write the unperturbed Hamiltonian, $\hat H_0$ as the sum of an electronic Hamiltonian, $\hat H_{el}$, and a motional Hamiltonian, $\hat H_{mot}$, so that:
 </p>
 
 <p>
 \[
-\ \hat H_0 = \hat H_el + \hat H_mot
+\ \hat H_0 = \hat H_{el} + \hat H_{mot}
 \tag{4.23}
 \]
 </p>
@@ -335,8 +335,10 @@ We already know that:
 
 <p>
 \[
-\ \hat H_el |g\rangle = E_g |g\rangle
-\ \hat H_mot |n\rangle = \hbar \omega_z (n + \frac{1}{2})|n\rangle
+\begin{align}
+\ \hat H_el |g\rangle & = E_g |g\rangle \\
+\hat H_mot |n\rangle & = \hbar \omega_z (n + \frac{1}{2})|n\rangle \\
+\end{align}
 \tag{4.24}
 \]
 </p>
@@ -348,10 +350,10 @@ So, explicitly,
 <p>
 \[
 \begin{align}
-\ \hat H_0 |gn\rangle & = (\hat H_el + \hat H_mot)(|g\rangle \otimes |n\rangle)\\
-& = (\hat H_el |g\rangle) \otimes |n\rangle + |g\rangle \otimes (\hat H_mot |n\rangle)\\
-& = (E_g |g\rangle) \otimes |n\rangle + |g\rangle \otimes (\hbar \omega_z (n + \frac{1}{2}) |n\rangle\\
-& = (E_g + \hbar \omega_z (n + \frac{1}{2}) |gn\rangle
+\ \hat H_0 |g,n\rangle & = (\hat H_{el} + \hat H_{mot})(|g\rangle \otimes |n\rangle)\\
+& = (\hat H_{el} |g\rangle) \otimes |n\rangle + |g\rangle \otimes (\hat H_{mot} |n\rangle)\\
+& = (E_g |g\rangle) \otimes |n\rangle + |g\rangle \otimes (\hbar \omega_z (n + \frac{1}{2})) |n\rangle\\
+& = (E_g + \hbar \omega_z (n + \frac{1}{2})) |g,n\rangle
 \end{align}
 \tag{4.25}
 \]
@@ -363,7 +365,7 @@ Now using series expansion of the exponential, $e^{-i \hat H_0 t / \hbar}$, we c
 
 <p>
 \[
-\ e^{-i \hat H_0 t / \hbar} = \sum_{k=0}^infty \frac{1}{k!} \big(-\frac{it}{\hbar} \hat H_0 \big)^k
+\ e^{-i \hat H_0 t / \hbar} = \sum_{k=0}^\infty \frac{1}{k!} \big(-\frac{it}{\hbar} \hat H_0 \big)^k
 \tag{4.26}
 \]
 </p>
@@ -375,28 +377,35 @@ So we may write:
 <p>
 \[
 \begin{align}
-\ e^{-i \hat H_0 t / \hbar} |gn\rangle & = \sum_{k=0}^infty \frac{1}{k!} \big(-\frac{it}{\hbar} \hat H_0 \big)^k |gn\rangle \\
-& = \sum_{k=0}^infty \frac{1}{k!} \big(-\frac{it}{\hbar} (E_g + \hbar \omega_z (n + \frac{1}{2})) \big)^k |gn\rangle \\
-& = e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))} |gn\rangle \\
+\ e^{-i \hat H_0 t / \hbar} |gn\rangle & = \sum_{k=0}^\infty \frac{1}{k!} \big(-\frac{it}{\hbar} \hat H_0 \big)^k |gn\rangle \\
+& = \sum_{k=0}^\infty \frac{1}{k!} \big(-\frac{it}{\hbar} (E_g + \hbar \omega_z (n + \frac{1}{2})) \big)^k |gn\rangle \\
+& = e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t/\hbar} |gn\rangle \\
 \end{align}
-\tag{4.26}
+\tag{4.27}
 \]
 </p>
 
 <p>
-So the integral become:
+So the integral becomes:
 </p>
 
 <p>
 \[
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t)e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))} |gn\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t)e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))} |gn\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t) e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))} |gn\rangle dt' \big]
-\tag{4.22}
+\ = -\frac{i}{\hbar} \big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |gn\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |gn\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |gn\rangle dt' \big]
+\tag{4.28}
 \]
 </p>
 
+<p>
+The next step is to let $\hat a$ and $\hat a^\dagger$ operate on $gn\rangle$. The ladder operators only affect the motional states $|n\rangle$, follwowing equation 3.34 and 3.35. After some rearranging, we end up with:
+</p>
 
-
-
+<p>
+\[
+\ = -\frac{i}{\hbar} \big[ - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \cos(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0  |gn\rangle dt' + \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z sqrt(n)   |g,n-1\rangle dt' + \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \sqrt(n+1)   |g,n+1\rangle dt' \big]
+\tag{4.29}
+\]
+</p>
 
 
 
