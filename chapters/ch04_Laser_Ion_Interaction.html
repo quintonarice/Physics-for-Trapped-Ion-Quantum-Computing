@@ -173,29 +173,71 @@ We now split the Hamiltonian into a time-independent part, $\hat H_0$, and a tim
 
 <p>
 \[
-\ \hat H(t) = \hat H_0 + \hat H_{int}
+\ \hat H(t) = \hat H_0 + \hat H_{int} (t)
 \tag{4.11}
 \]
 </p>
+  
+<p>
+By plugging this into equation 4.10:
+</p>
 
+<p>
+\[
+\ i \hbar | \psi(t) \rangle = (\hat H_0 + \hat H_{int} (t)) |psi(t)\rangle = \hat H_0 |psi(t)\rangle + \hat H_{int}(t) |psi(t)\rangle
+\tag{4.12}
+\]
+</p>
 
+<p>
+Integrating both sides from $0$ to $t$ gives:
+</p>
 
+<p>
+\[
+\ |\psi(t)\rangle - |psi(t)\rangle = -\frac{i}{\hbar} \int_0^t \hat H_0 |psi(t')\rangle dt' - \frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt'
+\tag{4.13}
+\]
+</p>
 
+<p>
+Focusing on just the first integral, equations 1.60 and 1.62 allows us to write the solution as:
+</p>
 
+<p>
+\[
+\ |\psi(t')\rangle = e^{-i \hat H_0 t'/ \hbar} |\psi(0)\rangle + \mathcal O (\hat H_{int})
+\tag{4.14}
+\]
+</p>
 
+<p>Therefore,</p>
 
+<p>
+\[
+\ -\frac{i}{\hbar} \int_0^t \hat H_0 |psi(t')\rangle dt' = -\frac{i}{\hbar} \int_0^t \hat H_0 e^{-i \hat H_0 t'/ \hbar} |\psi(0)\rangle dt'
+\tag{4.15}
+\]
+</p>
 
+<p>From the Schrodinger equation, $hat H_0 e^{-i \hat H_0 t'/ \hbar} = i \hbar \frac{d}{dt'} |psi(t')\rangle$</p>, so:
 
+<p>
+\[
+\ -\frac{i}{\hbar} \int_0^t \hat H_0 |psi(t')\rangle dt' = -\frac{i}{\hbar} \int_0^t i \hbar \frac{d}{dt'} |psi(t')\rangle |\psi(0)\rangle dt'
+\tag{4.16}
+\]
+</p>
 
+<p>
+Which upon integrating gives:
+</p>
 
-
-
-
-
-
-
-
-
-
+<p>
+\[
+\ -\frac{i}{\hbar} \int_0^t \hat H_0 |psi(t')\rangle dt' = e^{-i \hat H_0 t/\hbar} |\psi(0)\rangle - |\psi(0)\rangle
+\tag{4.17}
+\]
+</p>
   
 
