@@ -89,7 +89,7 @@ Now, for a charge distribution in an external electric field, the interaction en
 </p> 
 
 <p>
-where $\mathbf{p}$ is the electric dipole moment. Since the electron cloud surrounding the atom moves in response to the external electric field we express the dipole moment as $\mathbf{p} = -e \mathbf{r}_e$ where $e$ is the charge and $\mathbf{r}_e$ is the electrons position relative to the nucleus. In quantum mechanics, the dipole moment becomes an operator acting on the internal electronic states, while the electric field must be evaluated at the ion’s position operator. The resulting time-dependent interaction Hamiltonian therefore couples the ion’s internal states to its quantized motional states.
+where $\mathbf{p}$ is the electric dipole moment. Since the electron cloud surrounding the atom moves in response to the external electric field we express the dipole moment as $\mathbf{p} = -e \mathbf{r}_e$ where $e$ is the charge and $\mathbf{r}_e$ is the electrons position relative to the nucleus. In quantum mechanics, the dipole moment becomes an operator acting on only the internal electronic states (for formal proof see Appendix), while the electric field must be evaluated at the ion’s position operator. The resulting time-dependent interaction Hamiltonian therefore couples the ion’s internal states to its quantized motional states.
 </p>
 
 <p>
@@ -168,7 +168,7 @@ In this next section, we will go into a detailed derviation of the carrier trans
 </p>
 
 <p>  
-We know invoke <b>Time-dependent Perturbation Theory</b> where we split the Hamiltonian into a time-independent part, $\hat H_0$, and a time-dependent part, $\hat H_{int}$, so that:
+We know invoke <b>Time-dependent Perturbation Theory</b> where we split the Hamiltonian into a time-independent part, $\hat H_0$, and a time-dependent part, $\hat H_{int}(t)$, so that:
 </p>
 
 <p>
@@ -536,16 +536,27 @@ For the first term, we see that we will have:
 </p>  
 
 <p>
-More explicitly, we have:
-</p>  
+To compute this we use the fact that the inner product on a tensor product space is defined so that: 
+</p>
 
 <p>
 \[
+\ \Big( \langle a| \otimes \langle b |\Big)\Big(|c\rangle \otimes |d\rangle\Big) = \langle a|b \rangle \langle c|d \rangle
+\tag{4.39}
+\]
+</p>
+
+<p>
+In our case, we have:
+</p>
+  
+<p>
+\[
 \begin{align}
-\ \langle e,n | \psi(t)\rangle & = \Big( \langle e| \otimes \langle n |\Big)\Big(|g\rangle \otimes |n\rangle\Big) \\
+\ \langle e,n | g,n \rangle & = \Big( \langle e| \otimes \langle n |\Big)\Big(|g\rangle \otimes |n\rangle\Big) \\
 & = \langle e|g \rangle \langle n|n \rangle = 0 \\
 \end{align}
-\tag{4.39}
+\tag{4.40}
 \]
 </p>
 
@@ -562,15 +573,36 @@ The free evolution cannot produce population in $|e,n\rangle$ due to the orthogo
 & = \langle e| \mathbf{\hat p} \cdot \mathbf{E_0}|g\rangle \langle n|n \rangle \\
 & = \langle e| \mathbf{\hat p} \cdot \mathbf{E_0}|g\rangle
 \end{align}
-\tag{4.40}
+\tag{4.41}
 \]
 </p>
 
 
 <p>
-Noting that the electric dipole operator only applies to the internal electronic states. It is recommended to show that the 3rd and 4th terms are zero due to the orthogonality of $|n\rangle$ with $|n-1\rangle$ and $|n+1\rangle$, respectively.
+It is recommended to show that the 3rd and 4th terms are zero due to the orthogonality of $|n\rangle$ with $|n-1\rangle$ and $|n+1\rangle$, respectively, noting that the electric dipole operator only applies to the internal electronic states.
 </p>
+  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   
 </div>
