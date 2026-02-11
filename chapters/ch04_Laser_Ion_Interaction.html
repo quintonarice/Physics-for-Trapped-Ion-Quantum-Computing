@@ -168,7 +168,7 @@ In this next section, we will go into a detailed derviation of the carrier trans
 </p>
 
 <p>  
-We now split the Hamiltonian into a time-independent part, $\hat H_0$, and a time-dependent part, $\hat H_{int}$, so that:
+We know invoke <b>Time-dependent Perturbation Theory</b> where we split the Hamiltonian into a time-independent part, $\hat H_0$, and a time-dependent part, $\hat H_{int}$, so that:
 </p>
 
 <p>
@@ -179,7 +179,7 @@ We now split the Hamiltonian into a time-independent part, $\hat H_0$, and a tim
 </p>
   
 <p>
-By plugging this into equation 4.10:
+We see that only the interaction term can change both internal or motional quantum states. Now, by plugging equation 4.11 into equation 4.10:
 </p>
 
 <p>
@@ -240,7 +240,7 @@ Which upon integrating gives:
 
 <p>
 \[
-\ -\frac{i}{\hbar} \int_0^t \hat H_0 |psi(t')\rangle dt' = e^{-i \hat H_0 t/\hbar} |\psi(0)\rangle - |\psi(0)\rangle
+\ -\frac{i}{\hbar} \int_0^t \hat H_0 |\psi(t')\rangle dt' = e^{-i \hat H_0 t/\hbar} |\psi(0)\rangle - |\psi(0)\rangle
 \tag{4.17}
 \]
 </p>
@@ -263,7 +263,7 @@ Leading to:
 <p>
 \[
 \ |\psi(t)\rangle = e^{-i \hat H_0 t/\hbar} |\psi(0)\rangle - \frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt'
-\tag{4.18}
+\tag{4.19}
 \]
 </p>
 
@@ -281,7 +281,7 @@ The interaction Hamiltonian under our approximation in equation 4.9 to first ord
 \ \hat H_{int} (t) & = - \mathbf{\hat p} \cdot \mathbf{E}_0 [\cos(\omega t) - \eta_z (\hat a + \hat a^\dagger) \sin(\omega t)] \\
 & = - \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t) + \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t) + \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t) \\
 \end{align}
-\tag{4.19}
+\tag{4.20}
 \]
 </p>
 
@@ -292,7 +292,7 @@ We now have 3 separate integrals to evaluate:
 <p>
 \[
 \ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')|\psi(t')\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')|\psi(t')\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') |\psi(t')\rangle dt' \Big]
-\tag{4.20}
+\tag{4.21}
 \]
 </p>
 
@@ -303,7 +303,7 @@ Now since $|\psi(t') = e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle$, the integral is
 <p>
 \[
 \ = -\frac{i}{\hbar} \Big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i \hat H_0 t'/\hbar}|\psi(0)\rangle dt' \Big]
-\tag{4.21}
+\tag{4.22}
 \]
 </p>
 
@@ -314,7 +314,7 @@ We now take the intial state $|\psi(0)\rangle$ to be composite of electronic gro
 <p>
 \[
 \ = -\frac{i}{\hbar} \Big[ - \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(\omega t')e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i \hat H_0 t'/\hbar}|g,n\rangle dt' \Big]
-\tag{4.22}
+\tag{4.23}
 \]
 </p> 
 
@@ -325,7 +325,7 @@ It is now important to recognize the action of $e^{-i \hat H_0 t'/\hbar}|g,n\ran
 <p>
 \[
 \ \hat H_0 = \hat H_{el} + \hat H_{mot}
-\tag{4.23}
+\tag{4.24}
 \]
 </p>
 
@@ -339,7 +339,7 @@ We already know that:
 \ \hat H_{el} |g\rangle & = E_g |g\rangle \\
 \hat H_{mot} |n\rangle & = \hbar \omega_z (n + \frac{1}{2})|n\rangle \\
 \end{align}
-\tag{4.24}
+\tag{4.25}
 \]
 </p>
 
@@ -355,7 +355,7 @@ So, explicitly,
 & = (E_g |g\rangle) \otimes |n\rangle + |g\rangle \otimes (\hbar \omega_z (n + \frac{1}{2})) |n\rangle\\
 & = (E_g + \hbar \omega_z (n + \frac{1}{2})) |g,n\rangle
 \end{align}
-\tag{4.25}
+\tag{4.26}
 \]
 </p>
 
@@ -366,7 +366,7 @@ Now using series expansion of the exponential, $e^{-i \hat H_0 t / \hbar}$, we c
 <p>
 \[
 \ e^{-i \hat H_0 t / \hbar} = \sum_{k=0}^\infty \frac{1}{k!} \Big(-\frac{it}{\hbar} \hat H_0 \Big)^k
-\tag{4.26}
+\tag{4.27}
 \]
 </p>
 
@@ -381,7 +381,7 @@ So we may write:
 & = \sum_{k=0}^\infty \frac{1}{k!} \Big(-\frac{it}{\hbar} (E_g + \hbar \omega_z (n + \frac{1}{2})) \Big)^k |g, n\rangle \\
 & = e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t/\hbar} |g, n\rangle \\
 \end{align}
-\tag{4.27}
+\tag{4.28}
 \]
 </p>
 
@@ -396,7 +396,7 @@ So the integral becomes:
 & + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z \hat a  \sin(\omega t')e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \\
 & + \int_0^t \mathbf{\hat p} \cdot \mathbf{E}_0 \eta_z\hat a^\dagger \sin(\omega t') e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} |g, n\rangle dt' \Big]\\
 \end{align}
-\tag{4.28}
+\tag{4.29}
 \]
 </p>
 
@@ -411,7 +411,7 @@ The next step is to let $\hat a$ and $\hat a^\dagger$ operate on $|g, n\rangle$.
 & + \eta_z \sqrt{n} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle dt' \\ 
 & + \eta_z \sqrt{n+1} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \sin(\omega t') \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle dt' \Big] \\
 \end{align}
-\tag{4.29}
+\tag{4.30}
 \]
 </p>
 
@@ -422,10 +422,10 @@ If we now rewrite $\sin(\omega t')$ and $\cos(\omega t')$ in exponential form, t
 <p>
 \[
 \begin{align}
-\ \sin(\omega t') = \frac{1}{2i} \Big(e^{-i \omega t'} - e^{-i \omega t'} \Big) \\
-\cos(\omega t') = \frac{1}{2} \Big(e^{-i \omega t'} + e^{-i \omega t'} \Big) \\
+\ \sin(\omega t') = \frac{1}{2i} \Big(e^{i \omega t'} - e^{-i \omega t'} \Big) \\
+\cos(\omega t') = \frac{1}{2} \Big(e^{i \omega t'} + e^{-i \omega t'} \Big) \\
 \end{align}
-\tag{4.30}
+\tag{4.31}
 \]
 </p>
 
@@ -436,11 +436,11 @@ We can then subsituting these forms into equation 4.29 to get:
 <p>
 \[
 \begin{align}
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2} \Big(e^{-i \omega t'} + e^{-i \omega t'} \Big) \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' \\
-& + \eta_z \sqrt{n} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2i} \Big(e^{-i \omega t'} - e^{-i \omega t'} \Big) \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle dt' \\ 
-& + \eta_z \sqrt{n+1} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2i} \Big(e^{-i \omega t'} - e^{-i \omega t'} \Big) \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle dt' \Big] \\
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2} \Big(e^{i \omega t'} + e^{-i \omega t'} \Big) \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle dt' \\
+& + \eta_z \sqrt{n} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2i} \Big(e^{i \omega t'} - e^{-i \omega t'} \Big) \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle dt' \\ 
+& + \eta_z \sqrt{n+1} \int_0^t e^{-i(E_g + \hbar \omega_z (n + \frac{1}{2}))t'/\hbar} \frac{1}{2i} \Big(e^{i \omega t'} - e^{-i \omega t'} \Big) \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle dt' \Big] \\
 \end{align}
-\tag{4.31}
+\tag{4.32}
 \]
 </p>
 
@@ -455,7 +455,7 @@ Combining the exponential terms gives:
 & + \frac{\eta_z \sqrt{n}}{2i} \int_0^t [e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) - \omega)t'} - e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) + \omega)t'}] dt' \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
 & + \frac{\eta_z \sqrt{n+1}}{2i} \int_0^t [e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) - \omega)t'} - e^{-i(\frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2}) + \omega)t'}] dt'\mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
 \end{align}
-\tag{4.32}
+\tag{4.33}
 \]
 </p>
 
@@ -470,7 +470,7 @@ We now define, $\alpha \equiv \frac{E_g}{\hbar} + \omega_z (n + \frac{1}{2})$. T
 & + \frac{\eta_z \sqrt{n}}{2i} \int_0^t [e^{-i(\alpha - \omega)t'} - e^{-i(\alpha + \omega)t'}] dt' \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
 & + \frac{\eta_z \sqrt{n+1}}{2i} \int_0^t [e^{-i(\alpha - \omega)t'} - e^{-i(\alpha + \omega)t'}] dt'\mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
 \end{align}
-\tag{4.33}
+\tag{4.34}
 \]
 </p>
 
@@ -481,11 +481,11 @@ Finally, we are ready to integrate these expressions. Upon evaluating each integ
 <p>
 \[
 \begin{align}
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t'} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t'} -1}{\alpha - \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
-& + \frac{\eta_z \sqrt{n}}{2} \Big[\frac{e^{-i(\alpha - \omega)t'} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t'} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
-& + \frac{\eta_z \sqrt{n+1}}{2i} \Big[\frac{e^{-i(\alpha - \omega)t'} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t'} +1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t} -1}{\alpha - \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
+& + \frac{\eta_z \sqrt{n}}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
+& + \frac{\eta_z \sqrt{n+1}}{2i} \Big[\frac{e^{-i(\alpha - \omega)t} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} +1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
 \end{align}
-\tag{4.34}
+\tag{4.35}
 \]
 </p>
 
@@ -496,23 +496,31 @@ The total wavefunction is then:
 <p>
 \[
 \begin{align}
-\ |\psi(t)\rangle = e^{-i \alpha t} |\psi(0)\rangle
-& -\frac{i}{\hbar} \Big[ - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t'} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t'} -1}{\alpha - \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
-& + \frac{\eta_z \sqrt{n}}{2} \Big[\frac{e^{-i(\alpha - \omega)t'} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t'} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
-& + \frac{\eta_z \sqrt{n+1}}{2i} \Big[\frac{e^{-i(\alpha - \omega)t'} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t'} +1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
+\ |\psi(t)\rangle = e^{-i \alpha t} |g,n\rangle
+& -\frac{i}{\hbar} \Big[ - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t} -1}{\alpha - \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
+& + \frac{\eta_z \sqrt{n}}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
+& + \frac{\eta_z \sqrt{n+1}}{2i} \Big[\frac{e^{-i(\alpha - \omega)t} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} +1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
 \end{align}
-\tag{4.35}
+\tag{4.36}
 \]
 </p>
 
 <p>
-We are now ready to understand each of these terms through <b>projection</b>. In other words, if the we start off in the state $|\psi(0)\rangle = |g,n\rangle$, then what is the amplitude for the system to be found in the state $|e,b\rangle$ at time $t$? We will explore other possibilities of course but let's see what happens in this case. To project, we take the inner product:
+Let's pause and assess the result. The first term of the wavefunction represents the free evolution under the time-independent Hamiltonian which indicates phase rotations of the state. The second term corresponds to transitions in which the phonon number, $n$, is unchanged known as the carrier transition. The third and fourth terms correspond to transitions in which the phonon number is decreased or increased by one, respectively. As stated above, these are known as the red and blue sideband transitions. Shortly, we will understand why we call them transitions in the first place but the labels "red" and "blue" make sense because in terms of wavelength/frequency, red is lower energy, one less phonon, while blue is higher energy, one additional phonon.
+</p>
+  
+<p>
+Additionally, the messy exponentials in brackets will determine which processes become resonant based on the values of $(\alpha \pm \omega)$. We will see that when the laser frequency matches one of these energy differences, the corresponding amplitude dominates. For now, we ignore these terms just to get a since of the state dynamics. 
+</p>
+
+<p>
+We are now ready to understand each of these terms through <b>projection</b>. In other words, if the we start off in the state $|\psi(0)\rangle = |g,n\rangle$, then what is the amplitude for the system to be found in the state $|e,n\rangle$ at time $t$? Here, $|e\rangle$ represents the electronic excited state. We will explore other possibilities of course but let's see what happens in this case. To project, we take the inner product:
 </p>
 
 <p>
 \[
 \ c_{e,n}(t) \equiv \langle e,n | \psi(t)\rangle
-\tag{4.36}
+\tag{4.37}
 \]
 </p>  
 
@@ -523,7 +531,7 @@ For the first term, we see that we will have:
 <p>
 \[
 \ c_{e,n}(t) \propto \langle e,n | g,n\rangle
-\tag{4.37}
+\tag{4.38}
 \]
 </p>  
 
@@ -537,7 +545,7 @@ More explicitly, we have:
 \ \langle e,n | \psi(t)\rangle & = \Big( \langle e| \otimes \langle n |\Big)\Big(|g\rangle \otimes |n\rangle\Big) \\
 & = \langle e|g \rangle \langle n|n \rangle = 0 \\
 \end{align}
-\tag{4.38}
+\tag{4.39}
 \]
 </p>
 
@@ -554,9 +562,10 @@ The free evolution cannot produce population in $|e,n\rangle$ due to the orthogo
 & = \langle e| \mathbf{\hat p} \cdot \mathbf{E_0}|g\rangle \langle n|n \rangle \\
 & = \langle e| \mathbf{\hat p} \cdot \mathbf{E_0}|g\rangle
 \end{align}
-\tag{4.39}
+\tag{4.40}
 \]
 </p>
+
 
 <p>
 Noting that the electric dipole operator only applies to the internal electronic states. It is recommended to show that the 3rd and 4th terms are zero due to the orthogonality of $|n\rangle$ with $|n-1\rangle$ and $|n+1\rangle$, respectively.
@@ -564,3 +573,4 @@ Noting that the electric dipole operator only applies to the internal electronic
 
 
   
+</div>
