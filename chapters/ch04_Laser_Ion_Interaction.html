@@ -600,7 +600,7 @@ Or exlicitly:
 
 <p>
 \[
-\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} + \frac{e^{-i(\alpha + \omega)t} - 1}{\alpha - \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
+\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} + \frac{e^{-i(\alpha + \omega)t} - 1}{\alpha + \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
 \tag{4.43}
 \]
 </p>
@@ -628,63 +628,22 @@ As previously shown, this leads to:
 </p>
 
 <p>
-Which is the free evolution of the excited state. This phase must match the total phase of the transition we are interested in to produce amplification as we will explain momentarily. That means the phases:
+Which is the free evolution of the excited state. For convenience, we let $\beta = \frac{E_e}{\hbar} + \omega_z(n + \frac{1}{2})$, which represents the energy of the excited state. Recall that $\alpha = \frac{E_g}{\hbar} + \omega_z(n + \frac{1}{2})$ represents the energy of the ground state. From these relations we may write the energy difference between the ground and excited state as:
 </p>
 
 <p>
 \[
-\ \alpha \pm \omega = E_e + \hbar \omega_z(n + \frac{1}{2})
+\begin{align}
+\ \beta - \alpha = \frac{E_e}{\hbar} + \omega_z(n + \frac{1}{2}) - \frac{E_g}{\hbar} + \omega_z(n + \frac{1}{2}) \\
+& = \frac{E_e - E_g}{\hbar} \equiv \omega_0
+\end{align}
 \tag{4.46}
 \]
 </p>
 
 <p>
-where $\alpha = E_g + \hbar \omega_z(n + \frac{1}{2})$. After rearranging, we get:
-</p> 
-
-<p>
-\[
-\ \omega = \frac{E_e - E_g}{\hbar} \equiv \omega_0
-\tag{4.47}
-\]
+where $\omega_0$ is the natural frequency of the transition from ground to excited state. 
 </p>
-
-<p>
-where we define the $\omega_0$ as the frequency corresponding to the energy gap between the ground and excited states. Note: we take the laser frequency to positive.
-</p>
-
-<p>
-So, when $\omega = \omega_0$,
-</p>
-
-<p>
-\[
-\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega_0)t} - 1}{\alpha - \omega_0} + \frac{e^{-i(\alpha + \omega_0)t} - 1}{\alpha + \omega_0}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
-\tag{4.48}
-\]
-</p>
-
-<p>
-We will now show that the term involving $\frac{1}{\alpha + \omega_0}$ cannot phase match and remains bounded while the term involving $\frac{1}{\alpha - \omega_0}$ can accumulate and grow linearly to first order. To see this we first take the magnitude and apply the <b>trianlge inequality</b>:
-</p>
-
-<p>
-\[
-\ \Big|\frac{e^{-i(\alpha + \omega_0)t} - 1}{\alpha + \omega_0}\Big| \le \frac{|e^{-i(\alpha + \omega_0)t}| + |-1|}{|\alpha + \omega_0|} \le \frac{2}{|\alpha + \omega_0|}
-\tag{4.49}
-\]
-</p>
-
-<p>
-
-</p>
-
-
-
-
-
-
-
 
 
 
