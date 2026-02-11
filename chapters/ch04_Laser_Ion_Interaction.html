@@ -561,7 +561,7 @@ In our case, we have:
 </p>
 
 <p>
-The free evolution cannot produce population in $|e,n\rangle$ due to the orthogonality of $|e\rangle$ and $|g\rangle$. Of course! Without interaction the system cannot change it's electronic state. If you proceed in a similar fashion you find that only the term 2nd term, involving $|g,n\rangle$ survives! So that:
+The free evolution cannot produce population in $|e,n\rangle$ due to the orthogonality of $|e\rangle$ and $|g\rangle$. Of course! Without interaction the system cannot change it's electronic state. If you proceed in a similar fashion you find that only the term second term, involving $|g,n\rangle$ survives! So that:
 </p>
 
 <p>
@@ -579,27 +579,57 @@ The free evolution cannot produce population in $|e,n\rangle$ due to the orthogo
 
 
 <p>
-It is recommended to show that the 3rd and 4th terms are zero due to the orthogonality of $|n\rangle$ with $|n-1\rangle$ and $|n+1\rangle$, respectively, noting that the electric dipole operator only applies to the internal electronic states.
+Noting that the electric dipole operator only applies to the internal electronic states. It is recommended to show that the third and fourth terms are zero due to the orthogonality of $|n\rangle$ with $|n-1\rangle$ and $|n+1\rangle$, respectively.
 </p>
   
 
+<p>
+So, we can write compactly:
+</p>
 
+<p>
+\[
+\ \langle e,n|\psi(t)\rangle \propto \langle e|\mathbf{\hat p} \cdot \mathbf{E_0} | g \rangle
+\tag{4.42}
+\]
+</p>
 
+<p>
+Or exlicitly:
+</p>
 
+<p>
+\[
+\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega)t} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t} -1}{\alpha - \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
+\tag{4.43}
+\]
+</p>
 
+<p>
+Now, the unperturbed Hamiltonian is still given by equation 4.24. Note that $\hat H_{el}|e\rangle = E_e|$ so following the structure of equations 4.26:
+</p>
 
+<p>
+\[
+\ \hat H_0 |e,n\rangle =  \Big(E_e + \hbar \omega_z(n + \frac{1}{2})\Big)|e,n\rangle
+\tag{4.44}
+\]
+</p>
 
+<p>
+As previously shown, this leads to:
+</p>
 
+<p>
+\[
+\ e^{-i \hat H_0 t/\hbar} |e,n\rangle =  e^{-i\Big(E_e + \hbar \omega_z(n + \frac{1}{2})\Big)}|e,n\rangle
+\tag{4.45}
+\]
+</p>
 
+<p>
 
-
-
-
-
-
-
-
-
+</p>
 
 
 
