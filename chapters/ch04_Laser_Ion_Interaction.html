@@ -606,7 +606,7 @@ Or exlicitly:
 </p>
 
 <p>
-Now, the unperturbed Hamiltonian is still given by equation 4.24. Note that $\hat H_{el}|e\rangle = E_e|$ so following the structure of equations 4.26:
+Now, the unperturbed Hamiltonian is still given by equation 4.24. Note that $\hat H_{el}|e\rangle = E_e|e\rangle$ so following the structure of equations 4.26:
 </p>
 
 <p>
@@ -628,12 +628,12 @@ As previously shown, this leads to:
 </p>
 
 <p>
-Which is the free evolution of the excited state. This phase must match the total phase of the transition we are interested in to produce amplification as we will explain momentarily. That means for the $(\alpha - \omega)$ case:
+Which is the free evolution of the excited state. This phase must match the total phase of the transition we are interested in to produce amplification as we will explain momentarily. That means the phases:
 </p>
 
 <p>
 \[
-\ \alpha - \omega = E_e + \hbar \omega_z(n + \frac{1}{2})
+\ \alpha \pm \omega = E_e + \hbar \omega_z(n + \frac{1}{2})
 \tag{4.46}
 \]
 </p>
@@ -654,14 +654,26 @@ where we define the $\omega_0$ as the frequency corresponding to the energy gap 
 </p>
 
 <p>
-For the case, 
+So, when $\omega = \omega_0$,
 </p>
 
+<p>
+\[
+\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega_0)t} +1}{\alpha + \omega_0} + \frac{e^{-i(\alpha + \omega_0)t} -1}{\alpha - \omega_0}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
+\tag{4.48}
+\]
+</p>
 
+<p>
+We will now show that the term involving $\frac{1}{\alpha + \omega_0}$ cannot phase match and remains bounded while the term involving $\frac{1}{\alpha - \omega_0}$ can accumulate and grow linearly to first order. To see this we first take the magnitude and apply the <b>trianlge inequality</b>:
+</p>
 
-
-
-
+<p>
+\[
+\ |\frac{e^{-i(\alpha - \omega_0)t} +1}{\alpha + \omega_0}| \le \frac{|e^{-i(\alpha - \omega_0)t}| + |1|}{|\alpha + \omega_0|} \le \frac{2}{|\alpha + \omega_0|}
+\tag{4.49}
+\]
+</p>
 
 
 
