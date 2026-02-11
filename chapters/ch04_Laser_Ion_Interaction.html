@@ -481,9 +481,9 @@ Finally, we are ready to integrate these expressions. Upon evaluating each integ
 <p>
 \[
 \begin{align}
-\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t} -1}{\alpha - \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
+\ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} + \frac{e^{-i(\alpha + \omega)t} - 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
 & + \frac{\eta_z \sqrt{n}}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
-& + \frac{\eta_z \sqrt{n+1}}{2i} \Big[\frac{e^{-i(\alpha - \omega)t} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} +1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
+& + \frac{\eta_z \sqrt{n+1}}{2i} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
 \end{align}
 \tag{4.35}
 \]
@@ -497,7 +497,7 @@ The total wavefunction is then:
 \[
 \begin{align}
 \ |\psi(t)\rangle = e^{-i \alpha t} |g,n\rangle
-& -\frac{i}{\hbar} \Big[ - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t} -1}{\alpha - \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
+& -\frac{i}{\hbar} \Big[ - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} + \frac{e^{-i(\alpha + \omega)t} - 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
 & + \frac{\eta_z \sqrt{n}}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
 & + \frac{\eta_z \sqrt{n+1}}{2i} \Big[\frac{e^{-i(\alpha - \omega)t} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} +1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
 \end{align}
@@ -600,7 +600,7 @@ Or exlicitly:
 
 <p>
 \[
-\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega)t} +1}{\alpha + \omega} + \frac{e^{-i(\alpha + \omega)t} -1}{\alpha - \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
+\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} + \frac{e^{-i(\alpha + \omega)t} - 1}{\alpha - \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
 \tag{4.43}
 \]
 </p>
@@ -659,7 +659,7 @@ So, when $\omega = \omega_0$,
 
 <p>
 \[
-\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega_0)t} +1}{\alpha + \omega_0} + \frac{e^{-i(\alpha + \omega_0)t} -1}{\alpha - \omega_0}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
+\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega_0)t} - 1}{\alpha - \omega_0} + \frac{e^{-i(\alpha + \omega_0)t} - 1}{\alpha + \omega_0}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
 \tag{4.48}
 \]
 </p>
@@ -670,12 +670,14 @@ We will now show that the term involving $\frac{1}{\alpha + \omega_0}$ cannot ph
 
 <p>
 \[
-\ |\frac{e^{-i(\alpha - \omega_0)t} +1}{\alpha + \omega_0}| \le \frac{|e^{-i(\alpha - \omega_0)t}| + |1|}{|\alpha + \omega_0|} \le \frac{2}{|\alpha + \omega_0|}
+\ \Big|\frac{e^{-i(\alpha + \omega_0)t} - 1}{\alpha + \omega_0}\Big| \le \frac{|e^{-i(\alpha + \omega_0)t}| + |-1|}{|\alpha + \omega_0|} \le \frac{2}{|\alpha + \omega_0|}
 \tag{4.49}
 \]
 </p>
 
+<p>
 
+</p>
 
 
 
