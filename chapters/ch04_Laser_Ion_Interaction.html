@@ -628,13 +628,13 @@ As previously shown, this leads to:
 </p>
 
 <p>
-Which is the free evolution of the excited state. For convenience, we let $\beta = \frac{E_e}{\hbar} + \omega_z(n + \frac{1}{2})$, which represents the energy of the excited state. Recall that $\alpha = \frac{E_g}{\hbar} + \omega_z(n + \frac{1}{2})$ represents the energy of the ground state. From these relations we may write the energy difference between the ground and excited state as:
+Which is the free evolution of the excited state. For convenience, we let $\beta = \frac{E_e}{\hbar} + \omega_z(n + \frac{1}{2})$, which represents the natural frequency of the excited state. Recall that $\alpha = \frac{E_g}{\hbar} + \omega_z(n + \frac{1}{2})$ represents the natural frequency of the ground state. From these relations we may write the frequency difference between the ground and excited state as:
 </p>
 
 <p>
 \[
 \begin{align}
-\ \beta - \alpha = \frac{E_e}{\hbar} + \omega_z(n + \frac{1}{2}) - \frac{E_g}{\hbar} + \omega_z(n + \frac{1}{2}) \\
+\ \beta - \alpha & = \frac{E_e}{\hbar} + \omega_z(n + \frac{1}{2}) - \frac{E_g}{\hbar} + \omega_z(n + \frac{1}{2}) \\
 & = \frac{E_e - E_g}{\hbar} \equiv \omega_0
 \end{align}
 \tag{4.46}
@@ -642,10 +642,30 @@ Which is the free evolution of the excited state. For convenience, we let $\beta
 </p>
 
 <p>
-where $\omega_0$ is the natural frequency of the transition from ground to excited state. 
+where $\omega_0$ is the natural frequency difference of the transition from ground to excited state. We now rewrite $\alpha$ as:
 </p>
 
+<p>
+\[
+\ \alpha = \beta - \omega_0
+\tag{4.47}
+\]
+</p>
 
+<p>
+So, when we insert this back into equation 4.43 we get:
+</p>
+
+<p>
+\[
+\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\beta - omega_0 - \omega)t} - 1}{\beta - \omega_0 - \omega} + \frac{e^{-i(\beta -\omega_0 + \omega)t} - 1}{\beta - \omega_0 + \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
+\tag{4.48}
+\]
+</p>
+
+<p>
+This allows us to write the projection in terms of the frequency difference instead. 
+</p>
 
 
 
