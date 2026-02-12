@@ -483,7 +483,7 @@ Finally, we are ready to integrate these expressions. Upon evaluating each integ
 \begin{align}
 \ -\frac{i}{\hbar} \int_0^t \hat H_{int}(t') |\psi(t')\rangle dt' = -\frac{i}{\hbar} \Big[ & - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} + \frac{e^{-i(\alpha + \omega)t} - 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
 & + \frac{\eta_z \sqrt{n}}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
-& + \frac{\eta_z \sqrt{n+1}}{2i} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
+& + \frac{\eta_z \sqrt{n+1}}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
 \end{align}
 \tag{4.35}
 \]
@@ -499,7 +499,7 @@ The total wavefunction is then:
 \ |\psi(t)\rangle = e^{-i \alpha t} |g,n\rangle
 & -\frac{i}{\hbar} \Big[ - \frac{i}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} + \frac{e^{-i(\alpha + \omega)t} - 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0  |g, n\rangle \\
 & + \frac{\eta_z \sqrt{n}}{2} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n-1\rangle  \\ 
-& + \frac{\eta_z \sqrt{n+1}}{2i} \Big[\frac{e^{-i(\alpha - \omega)t} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} +1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
+& + \frac{\eta_z \sqrt{n+1}}{2} \Big[\frac{e^{-i(\alpha - \omega)t} -1}{\alpha - \omega} - \frac{e^{-i(\alpha + \omega)t} +1}{\alpha + \omega}\Big] \mathbf{\hat p} \cdot \mathbf{E}_0 |g, n+1\rangle  \Big] \\
 \end{align}
 \tag{4.36}
 \]
@@ -684,6 +684,35 @@ Let's focus on the what happens when $\omega = \omega_0$. We can see that:
 \tag{4.50}
 \]
 </p>
+
+<p>
+The first term, $\frac{e^{i 2 \omega_0 t} - e^{i \beta t}}{\beta - 2\omega_0}$, oscillates at optical frequencies, is very large, and remains bounded. The second term, $\frac{1 - e^{i \beta t}}{\beta}$ can be expanded to first order as:
+</p>
+
+<p>
+\[
+\ \frac{1 - e^{i \beta t}}{\beta} \approx \frac{1 - [1 + i \beta t]}{beta} = -it
+\tag{4.51}
+\]
+</p>
+
+<p>
+So, we get a linear build up which accumulates. Finally, for the carrier transition we have:
+</p>
+
+<p>
+\[
+\ \langle e,n|\psi(t)\rangle \approx -\frac{it}{2 \hbar} \langle e|\mathbf{\hat p} \cdot \mathbf{E_0}|g \rangle
+\tag{4.52}
+\]
+</p>
+
+
+
+
+
+
+
 
 
   
