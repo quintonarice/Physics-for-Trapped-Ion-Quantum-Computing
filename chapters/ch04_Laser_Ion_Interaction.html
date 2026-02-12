@@ -658,26 +658,47 @@ So, when we insert this back into equation 4.43 we get:
 
 <p>
 \[
-\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\beta - omega_0 - \omega)t} - 1}{\beta - \omega_0 - \omega} + \frac{e^{-i(\beta -\omega_0 + \omega)t} - 1}{\beta - \omega_0 + \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
+\ \langle e,n|\psi(t)\rangle = \frac{1}{2 \hbar} \Big[\frac{e^{-i(\beta - \omega_0 - \omega)t} - 1}{\beta - \omega_0 - \omega} + \frac{e^{-i(\beta -\omega_0 + \omega)t} - 1}{\beta - \omega_0 + \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
 \tag{4.48}
 \]
 </p>
 
 <p>
-This allows us to write the projection in terms of the frequency difference instead. 
+Now we have the projection in terms of the frequency difference instead. After some factoring, our result becomes:
 </p>
 
+<p>
+\[
+\ \langle e,n|\psi(t)\rangle = \frac{e^{-i \beta t}}{2 \hbar} \Big[\frac{e^{i(\omega_0 + \omega)t} - e^{i \beta t}}{\beta - \omega_0 - \omega} + \frac{e^{i(\omega_0 - \omega)t} - e^{i \beta t}}{\beta - \omega_0 + \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
+\tag{4.49}
+\]
+</p>
 
+<p>
+Let's focus on the what happens when $\omega = omega_0$. The second term containing $e^{i(\omega_0 - \omega)t}$ goes to $1$, so the becomes:
+</p>
 
+<p>
+\[
+\ \frac{1 - e^{i \beta t}}{\beta}
+\tag{4.50}
+\]
+</p>  
 
+<p>
+To first order we may write $e^{i \beta t} \approx 1 + i \beta t$, so that:
+</p>
 
-  
+<p>
+\[
+\ \frac{1 - e^{i \beta t}}{\beta} = \frac{1 -1 - i \beta t}{beta} = -it
+\tag{4.51}
+\]
+</p> 
 
-
-
-
-
-
+<p>
+So we get linear growth in time! Notice that if we consider the other exponential $e^{i(\omega_0 + omega)}$, when $\omega = omega_0$ we simply get $2 \omega_0$ in the exponent which means there is no such linear growth or accumulation but simply bounded oscillation.
+</p>
 
 
   
