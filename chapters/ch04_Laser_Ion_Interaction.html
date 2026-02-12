@@ -686,12 +686,16 @@ Let's focus on the what happens when $\omega = \omega_0$. We can see that:
 </p>
 
 <p>
-The first term, $\frac{e^{i 2 \omega_0 t} - e^{i \beta t}}{\beta - 2\omega_0}$, oscillates at optical frequencies, is very large, and remains bounded. The second term, $\frac{1 - e^{i \beta t}}{\beta}$ can be expanded to first order as:
+The first term, $\frac{e^{i 2 \omega_0 t} - e^{i \beta t}}{\beta - 2\omega_0}$, oscillates rapidly at optical frequencies and remains bounded in magnitude. It does not accumulate coherently. In first-order perturbation theory, such rapidly rotating terms are neglected.
+</p>
+  
+<p>
+To examine the time dependence of the second term, $\frac{1 - e^{i \beta t}}{\beta}$, we expand the exponential to first order in $t$:
 </p>
 
 <p>
 \[
-\ \frac{1 - e^{i \beta t}}{\beta} \approx \frac{1 - [1 + i \beta t]}{beta} = -it
+\ \frac{1 - e^{i \beta t}}{\beta} \approx \frac{1 - [1 + i \beta t]}{\beta} = -it
 \tag{4.51}
 \]
 </p>
@@ -707,7 +711,9 @@ So, we get a linear build up which accumulates. Finally, for the carrier transit
 \]
 </p>
 
-
+<p>
+At resonance, the oscillatory phase associated with the frequency difference vanishes, so this linear growth is not suppressed by destructive interference and can continue to accumulate.
+</p>
 
 
 
