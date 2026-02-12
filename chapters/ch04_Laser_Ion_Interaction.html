@@ -634,7 +634,7 @@ Which is the free evolution of the excited state. For convenience, we let $\beta
 <p>
 \[
 \begin{align}
-\ \beta - \alpha & = \frac{E_e}{\hbar} + \omega_z(n + \frac{1}{2}) - \frac{E_g}{\hbar} + \omega_z(n + \frac{1}{2}) \\
+\ \beta - \alpha & = \frac{E_e}{\hbar} + \omega_z(n + \frac{1}{2}) - \frac{E_g}{\hbar} - \omega_z(n + \frac{1}{2}) \\
 & = \frac{E_e - E_g}{\hbar} \equiv \omega_0
 \end{align}
 \tag{4.46}
@@ -675,29 +675,14 @@ Now we have the projection in terms of the frequency difference instead. After s
 </p>
 
 <p>
-Let's focus on the what happens when $\omega = omega_0$. The second term containing $e^{i(\omega_0 - \omega)t}$ goes to $1$, so the becomes:
+Let's focus on the what happens when $\omega = \omega_0$. We can see that:
 </p>
 
 <p>
 \[
-\ \frac{1 - e^{i \beta t}}{\beta}
+\ \langle e,n|\psi(t)\rangle = \frac{e^{-i \beta t}}{2 \hbar} \Big[\frac{e^{i 2 \omega_0 t} - e^{i \beta t}}{\beta - 2\omega_0} + \frac{1 - e^{i \beta t}}{\beta}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
 \tag{4.50}
 \]
-</p>  
-
-<p>
-To first order we may write $e^{i \beta t} \approx 1 + i \beta t$, so that:
-</p>
-
-<p>
-\[
-\ \frac{1 - e^{i \beta t}}{\beta} = \frac{1 -1 - i \beta t}{beta} = -it
-\tag{4.51}
-\]
-</p> 
-
-<p>
-So we get linear growth in time! Notice that if we consider the other exponential $e^{i(\omega_0 + omega)}$, when $\omega = omega_0$ we simply get $2 \omega_0$ in the exponent which means there is no such linear growth or accumulation but simply bounded oscillation.
 </p>
 
 
