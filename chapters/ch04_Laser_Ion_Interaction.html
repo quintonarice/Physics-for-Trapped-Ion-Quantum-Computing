@@ -779,8 +779,8 @@ Examining the cases where $\omega = \omega_0 - \omega_z$ and $\omega = \omega_0 
 <p>
 \[
 \begin{align}
-\ \langle e,n - 1 | \psi(t)\rangle &\propto \frac{-i t \eta_z \sqrt{n}}{2 \hbar} \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle  \\
-  \langle e, n + 1 |\psi(t)\rangle &\propto \frac{-i t \eta_z \sqrt{n+1}}{2 \hbar} \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle \\
+\ \langle e,n - 1 | \psi(t)\rangle &\approx \frac{-i t \eta_z \sqrt{n}}{2 \hbar} \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle  \\
+  \langle e, n + 1 |\psi(t)\rangle &\approx \frac{-i t \eta_z \sqrt{n+1}}{2 \hbar} \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle \\
 \end{align}
 \tag{4.57}
 \]
@@ -796,7 +796,170 @@ So from the Schrodinger equation and a time-dependent interaction, we have shown
 </p>
 
 <p>
-First-order perturbation theory reveals the resonance conditions and initial linear growth of the transition amplitude. However, to understand coherent population transfer and pulse control, we must now solve the dynamics exactly at resonance.
+First-order perturbation theory reveals the resonance conditions and initial linear growth of the transition amplitude. However, perturbation theory breaks down once the excited-state population becomes appreciable. To understand coherent population transfer and pulse control, we must now solve the dynamics exactly at resonance.
+</p>
+
+<p>
+At resonance and under the rotating wave approximation (RWA), only the resonant terms survive. For the carrier transition, we found that:
+</p>
+
+<p>
+\[
+\ \langle e,n|\psi(t)\rangle \approx -\frac{it}{2 \hbar} \langle e|\mathbf{\hat p} \cdot \mathbf{E_0}|g \rangle
+\tag{4.58}
+\]
+</p>
+
+<p>
+We define:
+</p>
+
+<p>
+\[
+\ \hbar \Omega \eqiv \langle e |\mathbf{\hat p} \cdot \mathbf{E_0} |g \rangle
+\tag{4.59}
+\]
+</p>
+
+<p>
+Where $\Omega = \frac{1}{\hbar} \langle e |\mathbf{\hat p} \cdot \mathbf{E_0} |g \rangle$ is known as the <b>Rabi Frequency</b>
+</p>
+
+<p>
+So that:
+</p>
+
+<p>
+\[
+\ c_{e,n}(t) = -\frac{i \Omega t}{2}
+\tag{4.60}
+\]
+</p>
+
+<p>
+The Schrodinger Equation tells us that:
+</p>
+
+<p>
+\[
+\ |\psi(t)\rangle = |\psi(0)\rangle - \frac{i}{\hbar} \hat H_{eff} t |\psi(0)\rangle + \mathcal O (t^2)
+\tag{4.61}
+\]
+</p>
+
+<p>
+So that when we project onto to $|e,n\rangle$:
+</p>
+
+<p>
+\[
+\ c_{e,n}(t) = \langle e,n|\psi(t)\rangle = -\frac{i}{\hbar} \langle e,n| \hat H_{eff}|g,n\rangle t
+\tag{4.62}
+\]
+</p>
+
+<p>
+Of course, equation 4.60 and 4.62 are equivalent. Then:
+</p>
+
+<p>
+\[
+\ \langle e,n| \hat H_{eff}|g,n\rangle = \frac{\hbar \Omega}{2}
+\tag{4.63}
+\]
+</p>
+
+<p>
+We desire to write the effective Hamiltonian, $\hat H_{eff}$, in the simplest possible form which couples the ground state $|g,n\rangle$ to the excited state $|e,n\rangle$. 
+</p>  
+
+<p>
+Verify that the effective Hamiltonian can be written as:
+</p>
+
+<p>
+\[
+\ \hat H{eff} = \frac{\hbar \Omega}{2} \Big(|e,n\rangle \langle g,n| + |g,n\rangle \langle e,n| \Big)
+\tag{4.64}
+\]
+</p>
+
+  
+<p>
+Since all other states are irrelevant for the carrier transition, the Hilbert space collapses to a two-dimensional subspace. We can express the wavefunction in this two dimensional subspace as a superposition:
+</p>
+
+
+<p>
+\[
+\ \psi(t)\rangle = c_{g,n}(t) |g,n\rangle + c_{e,n}(t)|e,n\rangle
+\tag{4.65}
+\]
+</p>
+
+<p>
+Plugging this into the Schrodinger equation for our effective Hamiltonian we obtain two coupled differential equations:
+</p>
+
+<p>
+\[
+\begin{align}
+\ i \dot c_{g,n}(t) & = \frac{\Omega}{2} c_{e.n}(t) \\
+  i \dot c_{e,n}(t) & = \frac{\Omega}{2} c_{g,n}(t) \\
+\end{align}
+\tag{4.66}
+\]
+</p>
+
+<p>
+If we now differentiate again and plug in $\dot c_{g,n}(t)$, say the second expression, we get:
+</p>
+
+<p>
+\[
+\ \ddot c_{e,n}(t) = \-frac{\Omega^2}{4} c_{g,n}(t)
+\tag{4.67}
+\]
+</p>
+
+<p>
+Which is simple harmonic oscillation with solutions of the form:
+</p>
+
+<p>
+\[
+\ c_{e,n}(t) = A \sin (\frac{\Omega t}{2}) + B \cos (\frac{\Omega t}{2})
+\tag{4.68}
+\]
+</p>
+  
+<p>
+Using the intial conditions, starting in the ground state $c_{g,n}(0) = 1$ and $c_{e,n}(0) = 0$ we arrive at:
+</p>
+
+<p>
+\[
+\begin{align}
+\ c_{e,n}(t) = -i \sin(\frac{\Omega t}{2}) \\
+  c_{g,n}(t) = \cos(\frac{\Omega t}{2}) \\
+\end{align}
+\tag{4.69}
+\]
+</p>
+
+<p>
+The excited state population probability is then the square modulus of the amplitude:
+</p>
+
+<p>
+\[
+\ P_{e,n}(t) = |c_{e,n}(t)|^2 = \sin^2 (\frac{\Omega t}{2})
+\tag{4.70}
+\]
+</p>
+
+<p>
+Therefore, the system oscillates coherently from the ground state to the excited state. Energy is continuously exchanged between the excited state and the field. In the next example you will show how the laser pulse duration controls the population of the electronic states. Essentially, this is how qubit rotations are implemented in trapped-ion systems.
 </p>
 
 
@@ -804,15 +967,5 @@ First-order perturbation theory reveals the resonance conditions and initial lin
 
 
 
-
-
-
-
-
-
-
-
-
-  
   
 </div>
