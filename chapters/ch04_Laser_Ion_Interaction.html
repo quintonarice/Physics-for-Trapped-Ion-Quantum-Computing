@@ -510,7 +510,7 @@ Let's pause and assess the result. The first term of the wavefunction represents
 </p>
   
 <p>
-Additionally, the messy exponentials in brackets will determine which processes become resonant based on the values of $(\alpha \pm \omega)$. We will see that when the laser frequency matches one of these energy differences, the corresponding amplitude dominates. For now, we ignore these terms just to get a since of the state dynamics. 
+Additionally, the messy exponentials in brackets will determine which processes become resonant based on the values of $(\alpha \pm \omega)$. We will see that when the laser frequency matches one of these energy differences, the corresponding amplitude dominates. For now, we ignore these terms just to get a sence of the state dynamics. 
 </p>
 
 <p>
@@ -712,11 +712,100 @@ So, we get a linear build up which accumulates. Finally, for the carrier transit
 </p>
 
 <p>
-At resonance, the oscillatory phase associated with the frequency difference vanishes, so this linear growth is not suppressed by destructive interference and can continue to accumulate. Neglecting the rapidly oscillating term near resonance is known as the <b>rotating wave approximation</b> (RWA. The rapidly oscillating term remains bounded and does not accumulate coherently. Neglecting such counter-rotating terms near resonance is known as the rotating wave approximation. This approximation is valid when the optical frequency is much larger than the coupling strength, which is the case for typical trapped-ion systems.
+At resonance, the oscillatory phase associated with the frequency difference vanishes, so this linear growth is not suppressed by destructive interference and can continue to accumulate. Neglecting the rapidly oscillating term near resonance is known as the <b>rotating wave approximation</b> (RWA). The rapidly oscillating term remains bounded and does not accumulate coherently. Neglecting such counter-rotating terms near resonance is known as the rotating wave approximation. This approximation is valid when the optical frequency is much larger than the coupling strength, which is the case for typical trapped-ion systems.
+</p>
+
+<p>
+Now, we can determine the amplitudes for the red and blue sideband transitions. Again, assuming we start off in the ground state, $|\psi(0)\rangle = |g,n\rangle$, we'd like to see what is the amplitude for the system to be in the $|e, n-1\rangle$ state or the $|e, n + 1\rangle$ state at some time $t$. That is:
+</p>
+
+<p>
+\[
+\begin{align}
+\ c_{e,n-1}(t) & = \langle e,n - 1 | \psi(t)\rangle \\
+  c_{e, n+1}(t) & = \langle e, n + 1 |\psi(t)\rangle \\
+\end{align}
+\tag{4.53}
+\]
+</p> 
+
+<p>
+Using the same orthogonality argument from earlier, the only terms which survive the respective projections are:
+</p>
+
+<p>
+\[
+\begin{align}
+\ c_{e,n-1}(t) & = -i \frac{\eta_z \sqrt{n}}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} + \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle
+  c_{e, n+1}(t) & = -i \frac{\eta_z \sqrt{n+1}}{2 \hbar} \Big[\frac{e^{-i(\alpha - \omega)t} - 1}{\alpha - \omega} + \frac{e^{-i(\alpha + \omega)t} + 1}{\alpha + \omega}\Big] \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle \\
+\end{align}
+\tag{4.54}
+\]
+</p> 
+
+<p>
+Following the same logic as above we can show that the free evolution phases of the excited states corresponding to each sideband are:
+</p>
+
+<p>
+\[
+\begin{align}
+\ \beta_{n-1} = \frac{E_e}{\hbar} + \omega_z(n - \frac{1}{2}) \\
+  \beta_{n+1} = \frac{E_e}{\hbar} + \omega_z(n + \frac{3}{2} \\
+\end{align}
+\tag{4.55}
+\]
+</p> 
+
+<p>
+Just as before, we are interested in the frequency difference. Rewriting $\alpha$ now has additional term in each sideband phase:
+</p>
+
+<p>
+\[
+\begin{align}
+\ \alpha = \beta_{n-1} -\omega_0 + \omega_z \\
+  \alpha = \beta_{n+1} -\omega_0 -\omega_z \\
+\end{align}
+\tag{4.56}
+\]
 </p>
 
 
+<p>
+Examining the cases where $\omega = \omega_0 - \omegaZ$ and $\omega = \omega_0 + \omega_z$ follows the same analysis as shown above for the carrier transition. Therefore, it follows that the resulting amplitudes for the red and blue sideband are: 
+</p>
 
+<p>
+\[
+\begin{align}
+\ c_{e,n-1}(t) & = \langle e,n - 1 | \psi(t)\rangle \propto \frac{-i t \eta_z \sqrt{n}}{2 \hbar} \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle  \\
+  c_{e,n+1}(t) & = \langle e, n + 1 |\psi(t)\rangle \propto \frac{-i t \eta_z \sqrt{n+1}}{2 \hbar} \langle e |\mathbf{\hat p} \cdot \mathbf{E}_0  |g\rangle \\
+\end{align}
+\tag{4.57}
+\]
+</p> 
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</p>  
+<p>
+<b>Two-Level Systems</b>
+</p>
+  
+<p>
+First-order perturbation theory reveals the resonance conditions and initial linear growth of the transition amplitude. However, to understand coherent population transfer and pulse control, we must now solve the dynamics exactly at resonance.
+</p>
 
 
 
