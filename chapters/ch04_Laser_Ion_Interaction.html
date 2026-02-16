@@ -1033,12 +1033,16 @@ We now assign the states: $|g,n\rangle \equiv |0\rangle$ and $|e,n\rangle \equiv
 </p>
 
 <p>
-Using the standard basis, we can write our effective Hamiltonian in terms of the Pauli-$X$ matrix, $\sigma_x = \begin{bmatrix}
+Using the standard basis, we can express $|1\rangle \langle 0| + |0\rangle \langle 1|$ explicitly as: $\begin{bmatrix}
 0 & 1 \\
 1 & 0 \\
-\end{bmatrix}$:
+\end{bmatrix}$
 </p>
 
+<p>
+This is precisely the Pauli-$X$ matrix which we now denote as, $\sigma_x$. So we can write our effective Hamiltonian as:
+</p>
+  
 <p>
 \[
 \ \hat H_{eff} = \frac{\hbar \Omega}{2} \sigma_x
@@ -1067,7 +1071,26 @@ The time evolution operator is then:
 </p>
 
 <p>
-where $\theta = \Omega t$. So the Hamiltonian which generates Rabi oscilliation under $\pi$-pulses can also be understood as a rotation operator. It acts like the Pauli-$X$ gates we saw in the Postulate 2 section. So we have discovered a physical way to implement such a gate which was previously described rather abstractly. Controlling the laser pulse duration determines the rotation because $t = \frac{\theta}{\Omega}$.
+where $\theta = \Omega t$. So while the Hamiltonian generates continuous coherent rotations (Rabi oscillations), a pulse duration of $\pi$-pulses produces a produces a bit flip via state population change. The Hamiltonian acts like the Pauli-$X$ gates we saw in the Postulate 2 section.
+</p>
+  
+<p>
+In general, if the laser carries a controllable phase $\phi$, the effective Hamiltonian becomes:
+</p> 
+
+<p>
+\[
+\ \hat H_{eff} = \frac{\hbar \Omega}{2} \Big(\cos \phi \sigma_x + \sin \phi \sigma_y \Big)
+\tag{4.77}
+\]
+</p>
+
+<p>
+where $\sigma_y$ is the Pauli-$Y$ matrix. This generates rotations about an arbitrary axis in the equatorial plane of the Bloch sphere. Therefore, by controlling the pulse duration and phase of the laser, arbitrary single-qubit rotations can be implemented.
+</p>
+  
+<p>
+We have now identified the physical mechanism by which abstract single-qubit gates are realized in trapped-ion systems. Controlling the laser pulse duration determines the rotation because $t = \frac{\theta}{\Omega}$.
 </p>
   
 <p>
@@ -1075,7 +1098,7 @@ where $\theta = \Omega t$. So the Hamiltonian which generates Rabi oscilliation 
 </p>
 
 <p>
-In this section, we explain why the removal of a phonon during the red sideband transition is important for trapped-ion quantum computing. Before computing we must cool the ion because thermal motion reduces the fidelity of any computations. The goal is to achieve ground state cooling so that $|n\rangle \rightarrow |0\rangle$. This is important for entangling gates, as we will describe later, as these gates require a well-defined motional state.
+In this section, we explain why the removal of a phonon during the red sideband transition is important for trapped-ion quantum computing. Before computing we must cool the ion because thermal motion reduces the fidelity of any computations. A standard cooling techniques known as <b>Doppler Cooling</b> cannot by itself reach the motional ground state because it is limited by the natural linewidth of the transition. Sideband cooling overcomes this limit by selectively removing individual phonons. Doppler Cooling and Sideband Cooling are used in conjunction to achieve ground state cooling. We require that $|n\rangle \rightarrow |0\rangle$. This is important for entangling gates, described later, as these gates require a well-defined motional state.
 </p>
   
 <p>
@@ -1085,12 +1108,24 @@ Recall that the effective Hamiltonian for the red sideband is:
 <p>
 \[
 \ \hat H_{red} = \frac{\hbar \Omega \eta_z \sqrt{n}}{2} \Big(|e,n -1 \rangle \langle g,n| + |g,n\rangle \langle e, n - 1| \Big)
-\tag{4.77}
+\tag{4.78}
 \]
 </p>
 
 <p>
-Using the probability of the excited state from exercise 4.2, a $\pi$-pulse performs $|g,n\rangle \rightarrow |e,n-1\rangle$. Thus, removing one phonon while exciting the atom. After excitation, it is possible for the atom to spontaneously decay such that $|e\rangle \rightarrow |g\rangle$. Two important factors to note are: Spontaneous decay is fast compared to the motional dynamics and in the Lamb-Dicke regime, the emitted photon is much larger than the ion's spatial extent therefore, the recoil does not significantly change the phonon number. This means we can achieve $|e,n -1 \rangle \rightarrow |g, n - 1 \rangle$ which is the cooling step.
+Using the probability of the excited state from exercise 4.2, a $\pi$-pulse performs $|g,n\rangle \rightarrow |e,n-1\rangle$. Thus, removing one phonon while exciting the atom. After excitation, it is possible for the atom to spontaneously decay such that $|e\rangle \rightarrow |g\rangle$. Two important factors to note are:
+</p>
+  
+<p>
+<b>1.</b> Spontaneous decay is fast compared to the motional dynamics
+</p>
+  
+<p>
+<b>2.</b> In the Lamb-Dicke regime, the spatial extent of the ion’s motion is much smaller than the photon wavelength. As a result, recoil does not significantly change the phonon number.
+</p>
+  
+<p>
+This means we can achieve $|e,n -1 \rangle \rightarrow |g, n - 1 \rangle$ which is the cooling step.
 </p>
 
 <p>
@@ -1100,25 +1135,28 @@ Putting it all together, the net effect of a red sideband $\pi$-pulse is:
 <p>
 \[
 \ |g,n\rangle \rightarrow |g, n - 1\rangle
-\tag{4.78}
-\]
-</p>
-
-<p>
-Continuing this process eventually leads to $|g,0\rangle$. Of course, there is a limit imposed by the annihilation operator! Notice that the red sideband frequency is:
-</p>
-
-<p>
-\[
-\ \Omega_{red} = \Omega \eta_z \sqrt{n}
 \tag{4.79}
 \]
 </p>
 
 <p>
-If $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g,0\rangle \rightarrow |e,-1\rangle$ because $\hat a|0\rangle = 0$. The ground motional state is then the dark state of red sideband where cooling naturally stops. Remember, our major assumption is that spontaneous emission does not causes changes to $n$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
+By repeatedly applying red sideband excitation followed by spontaneous decay, phonons are removed one by one. Continuing this process eventually leads to $|g,0\rangle$. Of course, there is a limit imposed by the annihilation operator! Notice that the red sideband frequency is:
 </p>
 
+<p>
+\[
+\ \Omega_{red} = \Omega \eta_z \sqrt{n}
+\tag{4.80}
+\]
+</p>
+
+<p>
+If $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g,0\rangle \rightarrow |e,-1\rangle$ because $\hat a|0\rangle = 0$. Therefore motional ground state is becomes a dark state of red sideband interaction, and cooling naturally stops. Remember, our major assumption is that spontaneous emission does not causes changes to $n$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
+</p>
+
+<p>
+Preparing the ion in the $|g, 0\rangle$ state ensures that the shared motional mode begins in a well-defined quantum state, which is essential for high-fidelity entangling gates.
+</p>
 
 
 
