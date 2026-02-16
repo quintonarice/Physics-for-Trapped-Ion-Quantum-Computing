@@ -948,13 +948,24 @@ Using the intial conditions, starting in the ground state $c_{g,n}(0) = 1$ and $
 </p>
 
 <p>
-The excited state population probability is then the square modulus of the amplitude:
+Plugging these back into equation 4.65, the wavefunction is then:
+</p>
+
+<p>
+\[
+\ |\psi(t)\rangle = \cos(\frac{\Omega t}{2}) |g,n\rangle - i \sin(\frac{\Omega t}{2}) |e,n\rangle
+\tag{4.70}
+\]
+</p>
+  
+<p>
+The excited state population probability is then the square modulus of the excited state amplitude:
 </p>
 
 <p>
 \[
 \ P_{e,n}(t) = |c_{e,n}(t)|^2 = \sin^2 (\frac{\Omega t}{2})
-\tag{4.70}
+\tag{4.71}
 \]
 </p>
 
@@ -1000,8 +1011,65 @@ In the next exercise, you will work through the same process above for both the 
 <p>
 <b>Single Qubit Rotation Examples</b>
 </p>
+<p>If we analyze the effective Hamiltonian of the carrier transition from earlier:</p>
 
 
+<p>
+\[
+\ \hat H_{eff} = \frac{\hbar \Omega}{2} \Big(|e,n\rangle \langle g,n| + |g,n\rangle \langle e,n| \Big)
+\tag{4.72}
+\]
+</p>
+
+<p>
+We now assign the states: $|g,n\rangle \equiv |0\rangle$ and $|e,n\rangle \equiv |1\rangle$ so that:
+</p>
+
+<p>
+\[
+\ \hat H_{eff} = \frac{\hbar \Omega}{2} \Big(|1\rangle \langle 0| + |0\rangle \langle 1| \Big)
+\tag{4.73}
+\]
+</p>
+
+<p>
+Using the standard basis, we can write our effective Hamiltonian in terms of the Pauli-$X$ matrix, $\sigma_x = \begin{bmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{bmatrix}$:
+</p>
+
+<p>
+\[
+\ \hat H_{eff} = \frac{\hbar \Omega}{2} \sigma_x
+\tag{4.74}
+\]
+</p>
+
+<p>
+The time evolution operator is then:
+</p>
+
+<p>
+\[
+\ \hat U(t) = e^{-i \hat H_{eff} t/\hbar} = e^{-i \frac{\Omega t}{2} \sigma_x}
+\tag{4.75}
+\]
+</p>
+
+<p>And this is a standard <b>rotation operator</b> commonly expressed as:</p>
+
+<p>
+\[
+\ \hat U(t) = \Rightarrow R_x (\theta) = e^{-i \frac{\theta}{2} \sigma_x}
+\tag{4.76}
+\]
+</p>
+
+<p>
+where $\theta = \Omega t$. So the Hamiltonian which generates Rabi oscilliation under $\pi$-pulses can also be understood as a rotation operator. It acts like the Pauli-$X$ gates we saw in the Postulate 2 section. So we have discovered a physical way to implement such a gate which was previously described rather abstractly. Controlling the laser pulse duration determines the rotation because $t = \frac{\theta}{\Omega}$.
+</p>
+  
 <p>
 <b>Sideband Cooling</b>
 </p>
@@ -1017,7 +1085,7 @@ Recall that the effective Hamiltonian for the red sideband is:
 <p>
 \[
 \ \hat H_{red} = \frac{\hbar \Omega \eta_z \sqrt{n}}{2} \Big(|e,n -1 \rangle \langle g,n| + |g,n\rangle \langle e, n - 1| \Big)
-\tag{4.71}
+\tag{4.72}
 \]
 </p>
 
@@ -1032,7 +1100,7 @@ Putting it all together, the net effect of a red sideband $\pi$-pulse is:
 <p>
 \[
 \ |g,n\rangle \rightarrow |g, n - 1\rangle
-\tag{4.72}
+\tag{4.73}
 \]
 </p>
 
@@ -1043,12 +1111,12 @@ Continuing this process eventually leads to $|g,0\rangle$. Of course, there is a
 <p>
 \[
 \ \Omega_{red} = \Omega \eta_z \sqrt{n}
-\tag{4.73}
+\tag{4.74}
 \]
 </p>
 
 <p>
-If $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g,0\rangle \rightarrow |e,-1\rangle$ because $\hat a|0\rangle = 0$. The ground motinal state is then the dark state of red sideband where cooling naturally stops. Remember, our major assumption is that spontaneous emission does not causes changes to $n$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
+If $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g,0\rangle \rightarrow |e,-1\rangle$ because $\hat a|0\rangle = 0$. The ground motional state is then the dark state of red sideband where cooling naturally stops. Remember, our major assumption is that spontaneous emission does not causes changes to $n$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
 </p>
 
 
