@@ -892,7 +892,7 @@ Since all other states are irrelevant for the carrier transition, the Hilbert sp
 
 <p>
 \[
-\ \psi(t)\rangle = c_{g,n}(t) |g,n\rangle + c_{e,n}(t)|e,n\rangle
+\ |\psi(t)\rangle = c_{g,n}(t) |g,n\rangle + c_{e,n}(t)|e,n\rangle
 \tag{4.65}
 \]
 </p>
@@ -904,7 +904,7 @@ Plugging this into the Schrodinger equation for our effective Hamiltonian we obt
 <p>
 \[
 \begin{align}
-\ i \dot c_{g,n}(t) & = \frac{\Omega}{2} c_{e.n}(t) \\
+\ i \dot c_{g,n}(t) & = \frac{\Omega}{2} c_{e,n}(t) \\
   i \dot c_{e,n}(t) & = \frac{\Omega}{2} c_{g,n}(t) \\
 \end{align}
 \tag{4.66}
@@ -917,7 +917,7 @@ If we now differentiate again and plug in $\dot c_{g,n}(t)$ into the second expr
 
 <p>
 \[
-\ \ddot c_{e,n}(t) = -\frac{\Omega^2}{4} c_{g,n}(t)
+\ \ddot c_{e,n}(t) = -\frac{\Omega^2}{4} c_{e,n}(t)
 \tag{4.67}
 \]
 </p>
@@ -959,7 +959,7 @@ The excited state population probability is then the square modulus of the ampli
 </p>
 
 <p>
-Therefore, the system oscillates coherently from the ground state to the excited state. Energy is continuously exchanged between the excited state and the field. In the next example you will show how the laser pulse duration controls the population of the electronic states. Essentially, this is how qubit rotations are implemented in trapped-ion systems.
+Therefore, the population oscillates coherently between the ground state to the excited states at the Rabi frequency. In the next example you will show how the laser pulse duration controls the population of the electronic states. Essentially, this is how qubit rotations are implemented in trapped-ion systems.
 </p>
 
 
@@ -987,19 +987,67 @@ In the next exercise, you will work through the same process above for both the 
 (a) Show that the effective Hamiltonian for the red sideband is expressed as: $\hat H_{red} = \frac{\hbar \Omega \eta_z \sqrt{n}}{2} \Big(|e,n -1 \rangle \langle g,n| + |g,n\rangle \langle e, n - 1| \Big)$
 </p>
 <p>
-(b) Show that the excited state probability is $P_{e,n} = \sin^2 (\frac{\Omega_{red} t}{2})$ where $\Omega_{red} = \Omega \eta_z \sqrt{n}$
+(b) Show that the excited state probability is $P_{e,n}(t) = \sin^2 (\frac{\Omega_{red} t}{2})$ where $\Omega_{red} = \Omega \eta_z \sqrt{n}$
 </p>
 <p>
 (c) Show that the effective Hamiltonian for the blue sideband is expressed as: $\hat H_{blue} = \frac{\hbar \Omega \eta_z \sqrt{n+1}}{2} \Big(|e,n +1 \rangle \langle g,n| + |g,n\rangle \langle e, n + 1| \Big)$
 </p>
 <p>
-(d) Show that the excited state probability is $P_{e,n} = \sin^2 (\frac{\Omega_{blue} t}{2})$ where $\Omega_{blue} = \Omega \eta_z \sqrt{n+1}$
+(d) Show that the excited state probability is $P_{e,n}(t) = \sin^2 (\frac{\Omega_{blue} t}{2})$ where $\Omega_{blue} = \Omega \eta_z \sqrt{n+1}$
 </p>
 </div>
 
 
 
 
+<p>
+<b>Sideband Cooling</b>
+</p>
+
+<p>
+In this section, we explain why the removal of a phonon during the red sideband transition is important for trapped-ion quantum computing. Before computing we must cool the ion because thermal motion reduces the fidelity of any computations. The goal is to achieve ground state cooling so that $|n\rangle \rightarrow |0\rangle$. This is important for entangling gates, as we will describe later, as these gates require a well-defined motional state.
+</p>
+  
+<p>
+Recall that the effective Hamiltonian for the red sideband is:
+</p>
+
+<p>
+\[
+\ \hat H_{red} = \frac{\hbar \Omega \eta_z \sqrt{n}}{2} \Big(|e,n -1 \rangle \langle g,n| + |g,n\rangle \langle e, n - 1| \Big)
+\tag{4.71}
+\]
+</p>
+
+<p>
+Using the probability of the excited state from exercise 4.2, a $\pi$-pulse performs $|g,n\rangle \rightarrow |e,n-1\rangle$. Thus, removing one phonon while exciting the atom. After excitation, it is possible for the atom to spontaneously decay such that $|e\rangle \rightarrow |g\rangle$. Two important factors to note are: Spontaneous decay is fast compared to the motional dynamics and in the Lamb-Dicke regime, the emitted photon is much larger than the ion's spatial extent therefore, the recoil does not significantly change the phonon number. This means we can achieve $|e,n -1 \rangle \rightarrow |g, n - 1 \rangle$ which is the cooling step.
+</p>
+
+<p>
+Putting it all together, the net effect of a red sideband $\pi$-pulse is:
+</p>
+
+<p>
+\[
+\ |g,n\rangle \rightarrow |g, n - 1\rangle
+\tag{4.72}
+\]
+</p>
+
+<p>
+Continuing this process eventually leads to $|g,0\rangle$. Of course, there is a limit imposed by the annihilation operator! Notice that the red sideband frequency is:
+</p>
+
+<p>
+\[
+\ \Omega_{red} = \Omega \eta_z \sqrt{n}
+\tag{4.73}
+\]
+</p>
+
+<p>
+If $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g,0\rangle \rightarrow |e,-1\rangle$ because $\hat a|0\rangle = 0$. The ground motinal state is then the dark state of red sideband where cooling naturally stops. Remember, our major assumption is that spontaneous emission does not causes changes to $n$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
+</p>
 
 
 
@@ -1011,8 +1059,7 @@ In the next exercise, you will work through the same process above for both the 
 
 
 
-
-
+  
   
   
 </div>
