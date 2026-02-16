@@ -165,7 +165,7 @@ There are some widely used unitary operators which are applicable to quantum com
 <h2>Pauli Matrices</h2>
 
 <p>
-The Pauli matrices are operators which act on the quantum state spaces. The three Pauli matrices are commonly known as the X-gate, Y-gate, and Z-gate and can be represented as:
+The Pauli matrices are operators which act on the quantum state spaces. The three Pauli matrices are commonly known as the $X$-gate, $Y$-gate, and $Z$-gate and can be represented as:
 </p>
 
 <p>
@@ -232,11 +232,11 @@ Z|\psi\rangle = \alpha|0\rangle - \beta|1\rangle
 </p>
 
 <p>
-Where we have dropped the a factor of $i$ from the Y-gate which is explained later in the section on global phase.
+Where we have dropped the a factor of $i$ from the $Y$-gate which is explained later in the section on global phase.
 </p>
   
 <p>
-Comparing the results to the initial qubit state we can see that the X-gate causes a bit flip, the Y-gate yields a bit flip and a phase flip, and the Z-gate does a phase flip only. There are many gates or unitary operators that exist, many of which we explore when discussing basic quantum computation.
+Comparing the results to the initial qubit state we can see that the $X$-gate causes a bit flip, the $Y$-gate yields a bit flip and a phase flip, and the $Z$-gate does a phase flip only. There are many gates or unitary operators that exist, many of which we explore when discussing basic quantum computation.
 </p>
 
 <p>
@@ -255,11 +255,11 @@ To do this, first we write the complex amplitudes in polar form by drawing them 
 </p>
 
 <p>
-Conventionally, α = r₀e^{iϕ₀}.
+Conventionally, $\alpha = r_0 e^{i \phi_0}$.
 </p>
 
 <p>
-The same process can be done for β so that we have:
+The same process can be done for $\beta$ so that we have:
 </p>
 
 <p>
@@ -270,7 +270,7 @@ The same process can be done for β so that we have:
 </p>
 
 <p>
-Now we have a relationship between α, β and their phases ϕ₀ and ϕ₁.
+Now we have a relationship between $\alpha $, $\beta$, and their phases $\phi_0$ and $\phi_1$.
 </p>
 
 <p>
@@ -328,7 +328,6 @@ Now we make a slight notation change to match conventions:
 \tag{1.36}
 \]
 </p>
->
 
 <p>
 We will prove later that the global phase does not change anything upon measurement and therefore can be dropped.
@@ -353,11 +352,11 @@ e^{i\phi}\sin\frac{\theta}{2}|1\rangle
 
 <button class="collapsible">Exercise 1.4</button>
 <div class="content-box">
-Show that the Bloch sphere parameterization automatically satisfies |α|² + |β|² = 1.
+Show that the Bloch sphere parameterization automatically satisfies $|\alpha|^2 + |\beta|^2 = 1$.
 </div>
 
 <p>
-As an exercise, let us apply the X-gate to the general qubit equation with the knowledge that…
+As an exercise, let us apply the $X$-gate to the general qubit equation with the knowledge that:
 </p>
 
 <p>
@@ -385,7 +384,7 @@ e^{i\phi}\sin\frac{\theta}{2}|0\rangle +
 
 
 <p>
-Now we are free to multiply by a global phase factor because nothing physically changes upon doing so. We choose −i for convenience.
+Now we are free to multiply by a global phase factor because nothing physically changes upon doing so. We choose $−i$ for convenience.
 </p>
 
 <p>
@@ -425,7 +424,7 @@ Comparing to these last two equations we can see that:
 
 
 <p>
-We know that sine is shifted by π/2 from cosine leading to:
+We know that sine is shifted by $\pi / 2$ from cosine leading to:
 </p>
 
 <p>
@@ -449,7 +448,7 @@ Therefore,
 
 
 <p>
-We use this result to get a relation between φ and φ′.
+We use this result to get a relation between $\phi$ and $\phi'$.
 </p>
 
 <p>
@@ -461,7 +460,7 @@ e^{i\phi'} = -ie^{i\phi}
 
 
 <p>
-Again, sine is shifted by π/2 from cosine which gives:
+Again, sine is shifted by $\pi / 2$ from cosine which gives:
 </p>
 
 <p>
@@ -473,13 +472,13 @@ Again, sine is shifted by π/2 from cosine which gives:
 
 
 <p>
-These angular relations confirm for an arbitrary qubit, the X-gate flips the state about the x-axis by 180°.
+These angular relations confirm for an arbitrary qubit, the $X$-gate flips the state about the $x$-axis by 180°.
 </p>
 
 <h3>Example:</h3>
 
 <p>
-Given that |ψ⟩ is 45° from the z-axis in the y-z plane, apply the X-gate and determine which 2D quadrant |ψ′⟩ lies.
+Given that $|\psi\rangle$ is 45° from the $z$-axis in the $y$-$z$ plane, apply the $X$-gate and determine which 2D quadrant $|\psi'\rangle$ lies.
 </p>
 
 <p>
@@ -505,12 +504,12 @@ Then,
 
 
 <p>
-The combination produces a resultant state in quadrant III. For clarity, X first puts us in quadrant IV, then Z rotates about the z-axis placing essentially giving a symmetric mirroring about z to give quadrant III as the result.
+The combination produces a resultant state in quadrant III. For clarity, $X$ first puts us in quadrant IV, then $Z$ rotates about the $z$-axis placing essentially giving a symmetric mirroring about $z$ to give quadrant III as the result.
 </p>
 
 <button class="collapsible">Exercise 1.5</button>
 <div class="content-box">
-Perform the same analysis above for the Y- and Z-gates and discuss the result on the general qubit.
+Perform the same analysis above for the $Y$- and $Z$-gates and discuss the result on the general qubit.
 </div>
 
 <h2>The Hadamard Gate</h2>
@@ -532,7 +531,7 @@ H = \frac{1}{\sqrt{2}}
 
 
 <p>
-When a Hadamard gate acts on a single bit such as |0⟩ the following is the result:
+When a Hadamard gate acts on a single bit such as $|0\rangle$ the following is the result:
 </p>
 
 <p>
@@ -555,8 +554,8 @@ Hint: invoke Postulate 1 (normalization).
 </div>
 
 <p>
-To do this, invoke Postulate 1. Meaning, does ⟨ψ|ψ⟩ = 1?  
-Since |0⟩ and |1⟩ are orthonormal, then ⟨0|0⟩ = 1 and ⟨1|1⟩ = 1.
+To do this, invoke Postulate 1. Meaning, does $\langle \psi | \psi \rangle = 1$?  
+Since $|0\rangle$ and $|1\rangle$ are orthonormal, then $\langle 0 | 0 \rangle = 1$ and $\langle 1 | 1 \rangle = 1$.
 </p>
 
 <p>
@@ -575,7 +574,7 @@ Since |0⟩ and |1⟩ are orthonormal, then ⟨0|0⟩ = 1 and ⟨1|1⟩ = 1.
 </p>
 
 <p>
-You can verify that the Hadamard operator is unitary so that H†H = I, therefore:
+You can verify that the Hadamard operator is unitary so that $H^\dagger H = I$, therefore:
 </p>
 
 <p>
@@ -619,13 +618,13 @@ Where H is the Hamiltonian (not the Hadamard gate; be careful!). The Hamiltonian
 
 
 <p>
-Where |ψ(t)⟩ is the quantum state vector at some time t, |ψ(0)⟩ is the quantum state vector at some initial time t = 0, and U(t) is a time-evolution operator that tells us how the initial state changes.  
+Where |ψ(t)⟩ is the quantum state vector at some time t, $|\psi (0) \rangle$ is the quantum state vector at some initial time $t = 0$, and $U(t)$ is a time-evolution operator that tells us how the initial state changes.  
 We require that:
 </p>
 
 <p>
-1. The state changes smoothly with t.<br>
-2. Evolving first by t₁ and then by t₂ should be the same as evolving by t₁ + t₂:
+1. The state changes smoothly with $t$.<br>
+2. Evolving first by $t_1$ and then by $t_2$ should be the same as evolving by $t_1 + t_2$:
 </p>
 
 <p>
@@ -637,7 +636,7 @@ U(t_1)U(t_2) = U(t_1+t_2)
 
 
 <p>
-3. U(t) must be unitary to preserve the inner product.
+3. $U(t)$ must be unitary to preserve the inner product.
 </p>
 
 <p>
@@ -653,7 +652,7 @@ U(t) = e^{-iAt}
 
 
 <p>
-Where A is a Hermitian operator. A Hermitian operator obeys the following:
+Where $A$ is a Hermitian operator. A Hermitian operator obeys the following:
 </p>
 
 <p>
@@ -665,7 +664,7 @@ A^\dagger = A
 
 
 <p>
-Why should A be Hermitian? Because U(t) must be unitary:
+Why should $A$ be Hermitian? Because $U(t)$ must be unitary:
 </p>
 
 <p>
@@ -677,7 +676,7 @@ U^\dagger U = I \;\Rightarrow\; A^\dagger = A
 
 
 <p>
-Now we take the time derivative of U(t) to see what happens.
+Now we take the time derivative of $U(t)$ to see what happens.
 </p>
 
 <p>
@@ -689,8 +688,8 @@ Now we take the time derivative of U(t) to see what happens.
 
 
 <p>
-Which is the general form of the Schrodinger equation with the implication that A = H/ħ.  
-Therefore, if we know H we know how the system evolves in time.
+Which is the general form of the Schrodinger equation with the implication that $A = \frac{H}{\hbar}$.  
+Therefore, if we know $H$ we know how the system evolves in time.
 The time-evolution unitary operator can then be written as:
 </p>
 
