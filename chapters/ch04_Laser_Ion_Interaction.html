@@ -1168,16 +1168,109 @@ If $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g,0\rangle 
 Preparing the ion in the $|g, 0\rangle$ state ensures that the shared motional mode begins in a well-defined quantum state, which is essential for high-fidelity entangling gates.
 </p>
 
+<b>Jaynes-Cummings Model</b>
+<p>
+The red and blue sideband Hamiltonians derived above describe a two-level system coupled to a quantized harmonic oscillator. This structure is not unique to trapped-ion physics; it is the canonical interaction studied in quantum optics and is known as the <b>Jaynes–Cummings model</b>. In fact, without assuming it a priori, we have derived this interaction directly from the laser–ion coupling in the Lamb–Dicke regime. We now recast the sideband Hamiltonian in its familiar Jaynes–Cummings form to connect our derivation with the standard framework used throughout modern quantum optics and quantum information theory.
+</p>
 
+<p>
+Starting with the Hamiltonian of the red sideband, we now remove the fixed-$n$ assumption and restore the oscillator operators $\hat a$ and $\hat a^\dagger$. The tensor products in equation 4.78 can be factored as:
+</p>
 
+<p>
+\[
+\begin{align}
+\ |e, n - 1\rangle & = |e\rangle \otimes |n - 1\rangle \\
+  |g, n \rangle & = |g\rangle \otimes |n\rangle \\
+\end{align}
+\tag{4.81}
+\]
+</p>
 
+<p>
+So that:
+</p>
 
+<p>
+\[
+\begin{align}
+\ |e, n - 1\rangle \langle g, n| & = |e\rangle \langle g| \otimes |n - 1\rangle \langle n| \\
+  |g, n \rangle \langle e, n - 1| & = |g\rangle \langle e| \otimes |n\rangle \langle n - 1|\\
+\end{align}
+\tag{4.82}
+\]
+</p>
 
-
-
-
-
+<p>
+Which we will replace in equation 4.78. Now, recall that the annihilation operator acting on $|n\rangle$ is:
+</p>
   
+<p>
+\[
+\ \hat a | n \rangle = \sqrt{n} |n - 1\rangle
+\tag{4.83}
+\]
+</p>
+
+<p>
+From this, we could write the operator as:
+</p>
+
+<p>
+\[
+\ \hat a = \sqrt{n} |n - 1\rangle \langle n |
+\tag{4.84}
+\]
+</p>
   
+<p>
+You can check for yourself that this works by applying it directly to $|n\rangle$. Now, equation 4.78 reads:
+</p>  
+
+<p>
+\[
+\ \hat H_{red} = \frac{\hbar \Omega \eta_z }{2} \Big(|e\rangle \langle g| \otimes \underbrace{\sqrt{n} |n - 1\rangle \langle n|}_\textrm{\hat a} + |g\rangle \langle e| \otimes \underbrace{\sqrt{n} |n\rangle \langle n - 1|}_\textrm{\hat a^\dagger} \Big)
+\tag{4.85}
+\]
+</p>
+
+<p>
+Where we have use the Hermitian conjugate of $\hat a$ for the second term. Similar to above, we define $|g\rangle \equiv |0\rangle$ and $|e\rangle \equiv |1\rangle$ so that:
+</p>
+
+<p>
+\[
+\ \hat H_{red} = \frac{\hbar \Omega \eta_z }{2} \Big( \hat a |1\rangle \langle 0|  + \hat a^\dagger |0\rangle \langle 1| \Big)
+\tag{4.86}
+\]
+</p>
+
+<p>
+In standard quantum optics, we define $\sigma_+ \equiv |1\rangle \langle 0|$ and $\sigma_- \equiv |0\rangle \langle 1|$ so we write:
+</p>
+
+<p>
+\[
+\ \hat H_{red} = \hbar g \Big( \hat a \sigma_+  + \hat a^\dagger \sigma_- \Big)
+\tag{4.87}
+\]
+</p>
+
+<p>
+where $g = \frac{\Omega \eta_z}{2}$
+</p>
+
+<button class="collapsible">Exercise 4.3</button>
+<div class="content-box">
+<p>
+Show that the blue sideband Hamiltonian can be written as: $\hat H_{blue} = \hbar g \Big( \hat a^\dagger \sigma_+  + \hat a \sigma_- \Big) $
+</div>
+  
+<p>
+The red and blue sideband Hamiltonians therefore take the form of the Jaynes–Cummings and anti–Jaynes–Cummings models, respectively. This reveals that trapped-ion systems implement the same fundamental light–matter interaction studied throughout quantum optics: a two-level system coherently exchanging excitations with a quantized harmonic oscillator. By tuning the laser frequency, we selectively activate either excitation exchange (red sideband) or joint excitation creation (blue sideband), while the carrier interaction remains a pure two-level rotation. This unified framework makes clear that cooling, single-qubit rotations, and entangling operations are not separate mechanisms, but rather different regimes of the same underlying Hamiltonian. In the next section, we will exploit this structure to understand how a shared motional mode enables entanglement between multiple ions.
+</p>
+
+
+
   
 </div>
