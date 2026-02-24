@@ -131,37 +131,37 @@ figcaption {
 }
 
 /* ============================
-   Collapsible Arrow Styling
+   Collapsible Button Styling
    ============================ */
 
-.collapsible {
+button.collapsible {
   cursor: pointer;
-  border: none;
-  background: none;
-  font-weight: bold;
-  padding: 8px 0;
   width: 100%;
   text-align: left;
+  padding: 10px 14px;
+
+  background-color: #1f4e79;   /* MATCH YOUR SIDEBAR */
+  color: white;                /* TEXT COLOR */
+  border: none;
+  border-radius: 4px;
+
   display: flex;
   align-items: center;
-  gap: 8px; /* space between arrow and text */
-  color: #1e3d59; /* match sidebar */
+  gap: 8px;
+
+  font-weight: 600;
 }
 
-.collapsible::before {
+button.collapsible::before {
   content: "▶";
   transition: transform 0.2s ease;
-  color: #f0f2f5; /* match sidebar */
+  color: white;
 }
 
-.collapsible.active::before {
+button.collapsible.active::before {
   transform: rotate(90deg);
 }
-.collapsible {
-  padding: 10px 12px;
-  border-radius: 4px;
-}
 
-.collapsible:hover {
-  background-color: rgba(31, 78, 121, 0.08);
+button.collapsible:hover {
+  background-color: #163a5c;  /* slightly darker on hover */
 }
