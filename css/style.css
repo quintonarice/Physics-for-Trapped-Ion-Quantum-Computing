@@ -6,7 +6,7 @@ body { margin:0; font-family:Georgia,serif; background:#f8f8f8; }
 .content { margin-left:280px; padding:20px; }
 .collapsible { background:#235784; color:white; cursor:pointer; padding:10px; border:none; text-align:left; margin-top:10px; width:100%; }
 .active, .collapsible:hover { background:#1d466a; }
-.content-box { padding:0 15px; display:none; background:#eef4fb; border-left:3px solid #235784; }
+.content-box { padding:0 15px; display:none; background:#90bbe0; border-left:3px solid #235784; }
 
 /* ===== Normalize section heading sizes ===== */
 
