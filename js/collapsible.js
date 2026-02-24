@@ -6,8 +6,6 @@ document.addEventListener("click", function (e) {
   if (!exerciseBtn) return;
 
   exerciseBtn.classList.toggle("active");
-
-  this.classList.toggle("active");
   
   const content = exerciseBtn.nextElementSibling;
   if (!content) return;
