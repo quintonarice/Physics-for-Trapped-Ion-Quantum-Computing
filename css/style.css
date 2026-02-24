@@ -130,4 +130,23 @@ figcaption {
   background: #ffffff;
 }
 
+.collapsible {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 8px 0;
+  width: 100%;
+  text-align: left;
+}
 
+.collapsible::after {
+  content: "▶";
+  float: right;
+  transition: transform 0.2s ease;
+}
+
+.collapsible.active::after {
+  transform: rotate(90deg);
+}
