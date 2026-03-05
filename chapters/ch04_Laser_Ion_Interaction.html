@@ -168,13 +168,89 @@ The detailed perturbative Schrodinger picutre derivation is included at the end 
 <b>Two-Level Systems</b>
 </p>
 
+<p>
+We now describe a system with two levels, namely, the ground state, $|g\rangle$, and the excited state, $|e\rangle$. This system will evolve based on its free Hamiltonian, $\hat H_0$, and the interaction Hamiltonian, $\hat H_{int}$, described above so that the total Hamiltonian is:
+</p>
+
+<p>
+\[
+\ \hat H = \hat H_0 + \hat H_{int}
+\tag{4.10}
+\]
+</p>
+
+<p>
+Where the free Hamiltonian consists of the electronic and motional Hamiltonians, $\hat H_0 = \hat H_{el} + \hat H_{mot}$. The electronic Hamiltonian does the following:
+</p>  
+
+<p>
+\[
+\begin{align}
+\ \hat H_{el} |g\rangle = E_g |g\rangle \\
+  \hat H_{el} |e\rangle = E_e |e\rangle \\
+\end{align}
+\tag{4.11}
+\]
+</p>
+
+<p>
+where $E_g$ and $E_e$ are the energies of the ground and excited states, resepctively. We typically define $E_g = - \frac{\hbar \omega_0}{2}$ and $E_e = \frac{\hbar \omega_0}{2}$ so that:
+</p>
+  
+<p>
+\[
+\ E_e - E_g = \hbar \omega_0
+\tag{4.12}
+\]
+</p>
+
+<p>
+Now, according to the spectral theory we can expand the electronic Hamiltonian as:
+</p>
+
+<p>
+\[
+\ \hat H_{el} = E_g |g\rangle \langle g| + E_e |e\rangle \langle e|
+\tag{4.13}
+\]
+</p>
+
+<button class="collapsible">Exercise 4.1</button>
+<div class="content-box">  
+Verify equation 4.13 using equation 4.11. 
+</div>
+
+<p>
+If we now assign $|g\rangle = |0\rangle$ and $|e\rangle = |1\rangle$, then using our energy definitions and equation 4.13 we see that:
+</p>
+
+<p>
+\[
+\ \hat H_{el} = \frac{\hbar \omega_0}{2} \sigma_z
+\tag{4.13}
+\]
+</p>
+
+<p>
+where $\sigma_z$ is the Pauli-$Z$ matrix, $\begin{pmatrix} 1 & 0 \\
+0 & -1
+\end{pmatrix}
+\]$
+</p>
+
+
+
+
+
+
+
 
 
 
   
+We previously considered detunings chosen to selectively activate the carrier or sideband transitions. In those cases, the detuning was comparable to the motional frequency $\omega_z$ and served to determine which interaction term survives under the rotating wave approximation.
 
-
-
+However, once a particular transition (e.g., the carrier) has been selected, the laser may still be slightly off resonance with that transition. This small residual detuning modifies the system dynamics and alters the Rabi oscillations.
 
 <button class="collapsible">Carrier and Sideband Transition Origins</button>
 <div class="content-box">  
