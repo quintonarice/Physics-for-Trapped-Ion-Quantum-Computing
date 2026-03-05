@@ -234,20 +234,78 @@ If we now assign $|g\rangle = |0\rangle$ and $|e\rangle = |1\rangle$, then using
 <p>
 where $\sigma_z$ is the Pauli-$Z$ matrix, $\begin{pmatrix} 1 & 0 \\
 0 & -1
-\end{pmatrix}
-\]$
+\end{pmatrix}$
+</p>
+
+<p>
+Previously, we quantized the motion of a single ion in and found that the motional Hamiltonian is:
+</p>
+
+<p>
+\[
+\ \hat H_{mot} = \hbar \omega_z \Big(\hat a \hat a^\dagger + \frac{1}{2} \Big)
+\tag{4.14}
+\]
+</p>
+
+<p>
+Conventionally, the term $\frac{\hbar \omega_z}{2}$ is dropped because it's just a number which does not affect th dynamics but simply adds an irrelevant global phase. So out total Hamiltonian can be expressed as:
+</p>
+
+<p>
+\[
+\ \hat H = \frac{\hbar \omega_0}{2} \sigma_z + \hbar \omega_z \hat a \hat a^\dagger + \hat H_{int}
+\tag{4.15}
+\]
+</p>
+
+<p>
+Our task now is to expand $H_{int}$ in the Lamb-Dicke regime as described above and show how moving to the interaction-picture simplifies our expression significantly. But first, we explain how the role of dipole operator on the electronic states of our two-level system.
+</p>
+
+<p>
+We note that the dipole operator (dotted with the electric field amplitude) only acts on internal electronic states. The dipole operator is also odd under parity. Follwing the full explanation in the Appendix, we may write:
+</p>
+
+<p>
+\[
+\ \mathbf{\hat p} \dot \mathbf{E_0} = |p_{01}| E_0 \Big( |0\rangle \langle 1| + |1\rangle \langle 0| \Big)
+\tag{4.16}
+\]
+</p>
+
+where $p_{01}$ is the $i = 0$ and $j = 1$ term of from the completeness relation for $\mathbf{\hat p}$. As is standard, we define the <b>Rabi Frequency</b> as:
+
+<p>
+\[
+\ \hbar \Omega \equiv |p_{01}| E_0
+\tag{4.17}
+\]
+</p>
+
+<p>
+Also note that,
 </p>
 
 
+<p>
+\sigma_+ = |1\rangle \langle 0| =
+\begin{pmatrix}
+0 & 0 \\
+1 & 0
+\end{pmatrix}
 
-
-
-
-
-
-
+\sigma_- = |0\rangle \langle 1| =
+\begin{pmatrix}
+0 & 1\\
+0 & 0
+\end{pmatrix}
+\tag{4.18}
+</p>
 
   
+
+ 
 We previously considered detunings chosen to selectively activate the carrier or sideband transitions. In those cases, the detuning was comparable to the motional frequency $\omega_z$ and served to determine which interaction term survives under the rotating wave approximation.
 
 However, once a particular transition (e.g., the carrier) has been selected, the laser may still be slightly off resonance with that transition. This small residual detuning modifies the system dynamics and alters the Rabi oscillations.
