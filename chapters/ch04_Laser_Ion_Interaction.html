@@ -94,13 +94,13 @@ where $\mathbf{p}$ is the electric dipole moment. Since the electron cloud surro
 
 <p>
 \[
-\ \hat H_{int} (t) = - \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(k_z \hat Z - \omega t)
+\ \hat H_{int} (t) = - \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(k_z \hat Z - \omega t) = \frac{1}{2} \mathbf{\hat p} \cdot \mathbf{E}_0  \Big( e^{i (k_z \hat Z - \omega t)} + e^{-i(k_z \hat Z - \omega t)} \Big)
 \tag{4.4}
 \]
 </p> 
 
 <p>
-where $\mathbf{E}_0$ is the electric field amplitude. Now recall the expression for the position operator $\hat Z$ from the last section.
+where $\mathbf{E}_0$ is the electric field amplitude and we have rewritten the cosine in terms of exponentials. Now recall the expression for the position operator $\hat Z$ from the last section.
 </p>
 
 <p>
@@ -116,7 +116,7 @@ So that:
 
 <p>
 \[
-\ \hat H_{int} (t) = - \mathbf{\hat p} \cdot \mathbf{E}_0 \cos \big (k_z \sqrt{\frac{\hbar}{2 m \omega_z}} \big (\hat a + \hat a^\dagger \big ) - \omega t \big )
+\ \hat H_{int} (t) = - \frac{1}{2} \mathbf{\hat p} \cdot \mathbf{E}_0 \Big( e^{i (k_z \sqrt{\frac{\hbar}{2 m \omega_z}} \Big(\hat a + \hat a^\dagger \Big) - \omega t)} + e^{-i(k_z \sqrt{\frac{\hbar}{2 m \omega_z}} \Big(\hat a + \hat a^\dagger \Big) - \omega t)} \Big)
 \tag{4.6}
 \]
 </p> 
@@ -147,7 +147,7 @@ Under this approximation, we may expand the cosine term of the interaction Hamil
 
 <p>
 \[
-\ \cos \big( \eta_z (\hat a + \hat a^\dagger) - \omega t \big) \approx \cos(\omega t) - \eta_z (\hat a + \hat a^\dagger) \sin(\omega t) + \mathcal O (\eta_z^2)
+\ e^{\pm i \eta_z \Big(\hat a + \hat a^\dagger \Big)} \approx 1 \pm i \eta_z \Big(\hat a + \hat a^\dagger \Big)
 \tag{4.9}
 \]
 </p> 
@@ -306,9 +306,16 @@ Also note that,
 \]
 </p>
 
-  
+<p>
+So the interaction Hamiltonian becomes:
+</p>  
 
-
+<p>
+\[
+\ \hat H_{int} = \frac{\hbar \Omega}{2} \Big( \sigma_+ + \sigma_- \Big) \Big( e^{i (k_z \hat Z - \omega t)} + e^{-i(k_z \hat Z - \omega t)} \Big)
+\tag{4.19}
+\]
+</p>
 
 
 
