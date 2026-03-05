@@ -94,7 +94,7 @@ where $\mathbf{p}$ is the electric dipole moment. Since the electron cloud surro
 
 <p>
 \[
-\ \hat H_{int} (t) = - \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(k_z \hat Z - \omega t) = \frac{1}{2} \mathbf{\hat p} \cdot \mathbf{E}_0  \Big( e^{i (k_z \hat Z - \omega t)} + e^{-i(k_z \hat Z - \omega t)} \Big)
+\ \hat H_{int} (t) = - \mathbf{\hat p} \cdot \mathbf{E}_0 \cos(k_z \hat Z - \omega t) = - \frac{1}{2} \mathbf{\hat p} \cdot \mathbf{E}_0  \Big( e^{i (k_z \hat Z - \omega t)} + e^{-i(k_z \hat Z - \omega t)} \Big)
 \tag{4.4}
 \]
 </p> 
@@ -116,7 +116,7 @@ So that:
 
 <p>
 \[
-\ \hat H_{int} (t) = - \frac{1}{2} \mathbf{\hat p} \cdot \mathbf{E}_0 \Big( e^{i (k_z \sqrt{\frac{\hbar}{2 m \omega_z}} \Big(\hat a + \hat a^\dagger \Big) - \omega t)} + e^{-i(k_z \sqrt{\frac{\hbar}{2 m \omega_z}} \Big(\hat a + \hat a^\dagger \Big) - \omega t)} \Big)
+\ \hat H_{int} (t) = - \frac{1}{2} \mathbf{\hat p} \cdot \mathbf{E}_0 \Big( e^{i \big(k_z \sqrt{\frac{\hbar}{2 m \omega_z}} (\hat a + \hat a^\dagger) - \omega t \big)} + e^{-i \big(k_z \sqrt{\frac{\hbar}{2 m \omega_z}} (\hat a + \hat a^\dagger) - \omega t \big)} \Big)
 \tag{4.6}
 \]
 </p> 
@@ -142,7 +142,7 @@ In what's known as the <b>Lamb-Dicke regime</b> the ion's spatial extent is much
 </p> 
 
 <p>
-Under this approximation, we may expand the cosine term of the interaction Hamiltonian as:
+Under this approximation, we may expand the exponential term associated with $\eta_z$ as:
 </p>
 
 <p>
@@ -153,7 +153,7 @@ Under this approximation, we may expand the cosine term of the interaction Hamil
 </p> 
 
 <p>
-where $\mathcal O(\eta_z^2)$ represents higher order terms in the expansion. The zeroth-order term, $\cos(\omega t)$, corresponds to laser-driven internal transitions that do not affect the ion’s motional state. Note that motion is invisible to the laser, the ion behaves point-like, and the motional quantum number $n$ does not change. This is known as the <b>carrier transition</b>. The first-order term, $ \eta_z (\hat a + \hat a^\dagger) \sin(\omega t)$ accounts for the finite spatial extent of the ion’s motion and allows the laser to exchange energy with the motional degree of freedom. We already know that $\hat a^\dagger$ adds one phonon and $\hat a$ removes one phonon. This terms also informs us that the internal and motional energies are coupled. Additionally, the creation and annihilation of phonons correspond to what are known as <b>blue</b> and <b>red sidebands</b>, respectively. We will explore these in detail next. Lastly, the higher-order terms, $\mathcal O (\eta_z^2)$ correspond to multi-phonon processes and are suppressed by higher powers of $\eta_z$ in the Lamb–Dicke regime.
+where we have truncated the higher order terms in the expansion corresponding to multi-phonon processes. These are suppressed by higher order powers of $\eta_z$ in the Lamb-Dicke regime.The zeroth-order term, $e^{\pm i \omega t}$, corresponds to laser-driven internal transitions that do not affect the ion’s motional state. Note that motion is invisible to the laser, the ion behaves point-like, and the motional quantum number $n$ does not change. This is known as the <b>carrier transition</b>. The first-order term, $ \eta_z (\hat a + \hat a^\dagger) e^{\pm i \omega t}$ accounts for the finite spatial extent of the ion’s motion and allows the laser to exchange energy with the motional degree of freedom. We already know that $\hat a^\dagger$ adds one phonon and $\hat a$ removes one phonon. This terms also informs us that the internal and motional energies are coupled. Additionally, the creation and annihilation of phonons correspond to what are known as <b>blue</b> and <b>red sidebands</b>, respectively. We will explore these in detail next.
 </p>
 
 <p>
@@ -161,7 +161,7 @@ At this stage, the physical origin of the carrier and sideband transitions can b
 </p>
   
 <p>
-The detailed perturbative Schrodinger picutre derivation is included at the end of this section for completeness. The next section discusses Two-Level Systems in the interaction picture which extends nicely to multi-ion systems.
+The detailed perturbative Schrodinger-picutre derivation is included at the very end of this section for completeness but it not required to understand the physical source of quantum gates or entanglement. The next section we choose to discuss Two-Level Systems in the interaction-picture which because it extends nicely to multi-ion systems.
 </p>
 
 <p>
@@ -291,28 +291,30 @@ Also note that,
 
 
 <p>
-\[ \sigma_+ = |1\rangle \langle 0| =
+\[
+\begin{align}
+\sigma_+ = |1\rangle \langle 0| =
 \begin{pmatrix}
 0 & 0 \\
 1 & 0
-\end{pmatrix}
+\end{pmatrix} \\
 
 \sigma_- = |0\rangle \langle 1| =
 \begin{pmatrix}
 0 & 1\\
 0 & 0
-\end{pmatrix}
+\end{pmatrix} \\
 \tag{4.18}
 \]
 </p>
 
 <p>
-So the interaction Hamiltonian becomes:
+Using the approximation above, the interaction Hamiltonian becomes:
 </p>  
 
 <p>
 \[
-\ \hat H_{int} = \frac{\hbar \Omega}{2} \Big( \sigma_+ + \sigma_- \Big) \Big( e^{i (k_z \hat Z - \omega t)} + e^{-i(k_z \hat Z - \omega t)} \Big)
+\ \hat H_{int} = \frac{\hbar \Omega}{2} \Big( \sigma_+ + \sigma_- \Big) \Big [ (1 + i \eta_z (\hat a + \hat a^\dagger)) e^{-i \omega t} + (1 - i \eta_z (\hat a + \hat a^\dagger))e^{i \omega t}]
 \tag{4.19}
 \]
 </p>
