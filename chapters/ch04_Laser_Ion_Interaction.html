@@ -304,6 +304,7 @@ Also note that,
 0 & 1\\
 0 & 0
 \end{pmatrix} \\
+\end{align}
 \tag{4.18}
 \]
 </p>
@@ -336,7 +337,7 @@ At first glance this Hamiltonian appears quite complicated. Fortunately, we can 
 </p>
 
 <p>
-In the interaction picture, any operator is expressed as:
+In the interaction picture, an operator is transformed from its Schrodinger representation as:
 </p>
 
 <p>
@@ -378,18 +379,37 @@ It can be shown (see the Appendix) using commutation relations/identities that t
 </p>
 
 <p>
-The interaction picture removes the free evolution by transforming into a frame that rotates with the natural frequencies of the system.
+The interaction picture removes the free evolution by transforming into a frame that rotates with the natural frequencies of the system. So our transformed Hamiltonian, $H_I$ is:
 </p>
 
+<p>
+\[
+\ \hat H_I = \frac{\hbar \Omega}{2} \Big( \sigma_+ e^{i \omega_0 t} + \sigma_- e^{i \omega_0 t} \Big) \Big [ (1 + i \eta_z (\hat a e^{-i \omega_z t} + \hat a^\dagger e^{i \omega_z t})) e^{-i \omega t} + (1 - i \eta_z (\hat a e^{-i \omega_z t} + \hat a^\dagger e^{i \omega_z t}))e^{i \omega t}]
+\tag{4.24}
+\]
+</p>
 
+<p>
+It is mostly an algebraic exercise to distribute the terms from here. What is important is that we will end up with several terms that involve $e^{\pm i (\omega_0 + \omega)$. Typically, $\omega_0 \propto 10^14 Hz$, so the sum of $\omega_0 + \omega$ is very large and effectively averages out since it corresponds to frequent oscillation. Dropping these terms is commonly known as the optical <b>rotating wave approximation</b> (RWA). So we are left with six terms:
+</p>
 
+<p>
+\[
+\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ sigma_+ e^{i(\omega_0 - \omega)t} + i \eta_z \hat a sigma_+ e^{i (\omega_0 - \omega - \omega_z)t} + i \eta_z \hat a^\dagger \sigma_+ e^{i(\omega_0 - \omega + \omega_z)t} + sigma_- e^{i(\omega_0 - \omega)t} - i \eta_z \hat a \sigma_- e^{-i(\omega_0 - \omega + \omega_z)t} - i \eta_z \hat a^\dagger \sigma_- e^{-i(\omega_0 - \omega - \omega_z)t} \Big]
+\tag{4.25}
+\]
+</p>
 
+<p>
+Now, we define the <b>detuning</b> as $\delta \equiv \omega - \omega_0$, then we more compactly write:
+</p>
 
-
-
-
-
-
+<p>
+\[
+\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ sigma_+ e^{-i \delta t} + i \eta_z \hat a sigma_+ e^{-i (\delta + \omega_z)t} + i \eta_z \hat a^\dagger \sigma_+ e^{-i(\delta - \omega_z)t} + sigma_- e^{-i \delta t} - i \eta_z \hat a \sigma_- e^{i(\delta - \omega_z)t} - i \eta_z \hat a^\dagger \sigma_- e^{i(\delta + \omega_z)t} \Big]
+\tag{4.26}
+\]
+</p>
 
 
 
