@@ -315,7 +315,7 @@ Using the approximation above, the interaction Hamiltonian becomes:
 
 <p>
 \[
-\ \hat H_{int} = \frac{\hbar \Omega}{2} \Big( \sigma_+ + \sigma_- \Big) \Big [ (1 + i \eta_z (\hat a + \hat a^\dagger)) e^{-i \omega t} + (1 - i \eta_z (\hat a + \hat a^\dagger))e^{i \omega t}]
+\ \hat H_{int} = \frac{\hbar \Omega}{2} \Big( \sigma_+ + \sigma_- \Big) \Big [ (1 + i \eta_z (\hat a + \hat a^\dagger)) e^{-i \omega t} + (1 - i \eta_z (\hat a + \hat a^\dagger))e^{i \omega t} \Big]
 \tag{4.19}
 \]
 </p>
@@ -327,7 +327,7 @@ So the total Hamiltonian is:
 
 <p>
 \[
-\ \hat H = \frac{\hbar \omega_0}{2} \sigma_z + \hbar \omega_z \hat a^\dagger \hat a + \frac{\hbar \Omega}{2} \Big( \sigma_+ + \sigma_- \Big) \Big [ (1 + i \eta_z (\hat a + \hat a^\dagger)) e^{-i \omega t} + (1 - i \eta_z (\hat a + \hat a^\dagger))e^{i \omega t}]
+\ \hat H = \frac{\hbar \omega_0}{2} \sigma_z + \hbar \omega_z \hat a^\dagger \hat a + \frac{\hbar \Omega}{2} \Big( \sigma_+ + \sigma_- \Big) \Big [ (1 + i \eta_z (\hat a + \hat a^\dagger)) e^{-i \omega t} + (1 - i \eta_z (\hat a + \hat a^\dagger))e^{i \omega t} \Big]
 \tag{4.20}
 \]
 </p>
@@ -384,18 +384,18 @@ The interaction picture removes the free evolution by transforming into a frame 
 
 <p>
 \[
-\ \hat H_I = \frac{\hbar \Omega}{2} \Big( \sigma_+ e^{i \omega_0 t} + \sigma_- e^{i \omega_0 t} \Big) \Big [ (1 + i \eta_z (\hat a e^{-i \omega_z t} + \hat a^\dagger e^{i \omega_z t})) e^{-i \omega t} + (1 - i \eta_z (\hat a e^{-i \omega_z t} + \hat a^\dagger e^{i \omega_z t}))e^{i \omega t}]
+\ \hat H_I = \frac{\hbar \Omega}{2} \Big( \sigma_+ e^{i \omega_0 t} + \sigma_- e^{i \omega_0 t} \Big) \Big [ (1 + i \eta_z (\hat a e^{-i \omega_z t} + \hat a^\dagger e^{i \omega_z t})) e^{-i \omega t} + (1 - i \eta_z (\hat a e^{-i \omega_z t} + \hat a^\dagger e^{i \omega_z t}))e^{i \omega t} \Big]
 \tag{4.24}
 \]
 </p>
 
 <p>
-It is mostly an algebraic exercise to distribute the terms from here. What is important is that we will end up with several terms that involve $e^{\pm i (\omega_0 + \omega)$. Typically, $\omega_0 \propto 10^14 Hz$, so the sum of $\omega_0 + \omega$ is very large and effectively averages out since it corresponds to frequent oscillation. Dropping these terms is commonly known as the optical <b>rotating wave approximation</b> (RWA). So we are left with six terms:
+It is mostly an algebraic exercise to distribute the terms from here. What is important is that we will end up with several terms that involve $e^{\pm i (\omega_0 + \omega)}$. Typically, $\omega_0 \propto 10^14 Hz$, so the sum of $\omega_0 + \omega$ is very large and effectively averages out since it corresponds to frequent oscillation. Dropping these terms is commonly known as the optical <b>rotating wave approximation</b> (RWA). So we are left with six terms:
 </p>
 
 <p>
 \[
-\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ sigma_+ e^{i(\omega_0 - \omega)t} + i \eta_z \hat a sigma_+ e^{i (\omega_0 - \omega - \omega_z)t} + i \eta_z \hat a^\dagger \sigma_+ e^{i(\omega_0 - \omega + \omega_z)t} + sigma_- e^{i(\omega_0 - \omega)t} - i \eta_z \hat a \sigma_- e^{-i(\omega_0 - \omega + \omega_z)t} - i \eta_z \hat a^\dagger \sigma_- e^{-i(\omega_0 - \omega - \omega_z)t} \Big]
+\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ \sigma_+ e^{i(\omega_0 - \omega)t} + i \eta_z \hat a \sigma_+ e^{i (\omega_0 - \omega - \omega_z)t} + i \eta_z \hat a^\dagger \sigma_+ e^{i(\omega_0 - \omega + \omega_z)t} + \sigma_- e^{i(\omega_0 - \omega)t} - i \eta_z \hat a \sigma_- e^{-i(\omega_0 - \omega + \omega_z)t} - i \eta_z \hat a^\dagger \sigma_- e^{-i(\omega_0 - \omega - \omega_z)t} \Big]
 \tag{4.25}
 \]
 </p>
@@ -406,26 +406,47 @@ Now, we define the <b>detuning</b> as $\delta \equiv \omega - \omega_0$, then we
 
 <p>
 \[
-\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ sigma_+ e^{-i \delta t} + i \eta_z \hat a sigma_+ e^{-i (\delta + \omega_z)t} + i \eta_z \hat a^\dagger \sigma_+ e^{-i(\delta - \omega_z)t} + sigma_- e^{-i \delta t} - i \eta_z \hat a \sigma_- e^{i(\delta - \omega_z)t} - i \eta_z \hat a^\dagger \sigma_- e^{i(\delta + \omega_z)t} \Big]
+\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ \sigma_+ e^{-i \delta t} + i \eta_z \hat a \sigma_+ e^{-i (\delta + \omega_z)t} + i \eta_z \hat a^\dagger \sigma_+ e^{-i(\delta - \omega_z)t} + \sigma_- e^{-i \delta t} - i \eta_z \hat a \sigma_- e^{i(\delta - \omega_z)t} - i \eta_z \hat a^\dagger \sigma_- e^{i(\delta + \omega_z)t} \Big]
 \tag{4.26}
 \]
 </p>
 
+<p>
+If we carefully select the detuning, the result is are three different transitions. Additionally, the Rabi Frequency $\Omega$ is typically on the order of $10^5 Hz$ while $\omega_z$ is on the order of $10^6 Hz$, so we can drop the terms involving $\omega_z$ because they are fast compared to the Rabi Frequency. This is commonly known as the motional RWA. So first we select a detuning to choose a transition, then apply motional RWA to obtain the approximate Hamiltonians.
+</p>
 
+<p>
+When $\delta = 0$, we obtain what's known as the <b>carrier transition</b>:
+</p>
 
+<p>
+\[
+\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ \sigma_+ + \sigma_- \Big]
+\tag{4.27}
+\]
+</p>
 
+<p>
+When $\delta = -\omega_z$, we obtain what's known as the <b>red sideband transition</b>:
+</p>
 
+<p>
+\[
+\ \hat H_I = \frac{\hbar \Omega \eta_z}{2} \Big [ \sigma_+ \hat a + \sigma_- \hat a^\dagger \Big]
+\tag{4.28}
+\]
+</p>
 
+<p>
+And when $\delta = +\omega_z$, we obtain what's known as the <b>blue sideband transition</b>:
+</p>
 
-
-
-
-
-
-
-
-
-
+<p>
+\[
+\ \hat H_I = \frac{\hbar \Omega \eta_z}{2} \Big [ \sigma_+ \hat a^\dagger + \sigma_- \hat a \Big]
+\tag{4.29}
+\]
+</p>
 
 
 
