@@ -421,7 +421,7 @@ When $\delta = 0$, we obtain what's known as the <b>carrier transition</b>:
 
 <p>
 \[
-\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ \sigma_+ + \sigma_- \Big]
+\ \hat H_{carrier} = \frac{\hbar \Omega}{2} \Big [ \sigma_+ + \sigma_- \Big]
 \tag{4.27}
 \]
 </p>
@@ -432,7 +432,7 @@ When $\delta = -\omega_z$, we obtain what's known as the <b>red sideband transit
 
 <p>
 \[
-\ \hat H_I = \frac{\hbar \Omega \eta_z}{2} \Big [ \sigma_+ \hat a + \sigma_- \hat a^\dagger \Big]
+\ \hat H_{red} = \frac{\hbar \Omega \eta_z}{2} \Big [ \sigma_+ \hat a + \sigma_- \hat a^\dagger \Big]
 \tag{4.28}
 \]
 </p>
@@ -443,7 +443,7 @@ And when $\delta = +\omega_z$, we obtain what's known as the <b>blue sideband tr
 
 <p>
 \[
-\ \hat H_I = \frac{\hbar \Omega \eta_z}{2} \Big [ \sigma_+ \hat a^\dagger + \sigma_- \hat a \Big]
+\ \hat H_{blue} = \frac{\hbar \Omega \eta_z}{2} \Big [ \sigma_+ \hat a^\dagger + \sigma_- \hat a \Big]
 \tag{4.29}
 \]
 </p>
@@ -456,7 +456,7 @@ And when $\delta = +\omega_z$, we obtain what's known as the <b>blue sideband tr
 
 
 <p>
-We now examine the dynamics of the carrier transition to demonstrate <b>Rabi Oscillations</b> and explain the physical origin of quantum gates. It is convenient to express the carrier Hamiltonian in terms of $\sigma_x$ rather than $\sigma_+ + sigma_-$ for this demonstration, however, when we shift to multi-ion systems we will use the Hamiltonians as presented in equations 4.27, 4.28, and 4.29 for clarity.
+We now examine the dynamics of the carrier transition to demonstrate <b>Rabi Oscillations</b> and explain the physical origin of quantum gates. It is convenient to express the carrier Hamiltonian in terms of $\sigma_x$ rather than $\sigma_+ + \sigma_-$ for this demonstration, however, when we shift to multi-ion systems we will use the Hamiltonians as presented in equations 4.27, 4.28, and 4.29 for clarity.
 </p>
 
 <p>
@@ -466,7 +466,7 @@ The carrier Hamiltonian can be written as:
 
 <p>
 \[
-\ \hat H_I = \frac{\hbar \Omega}{2} \sigma_x
+\ \hat H_{carrier} = \frac{\hbar \Omega}{2} \sigma_x
 \tag{4.30}
 \]
 </p>
@@ -477,7 +477,7 @@ The Schrodinger equation tells us that this Hamiltonian evolves according to:
 
 <p>
 \[
-\ U(t) = e^{-i H_I t/ \hbar} = e^{-i \frac{\Omega}{2} \sigma_x t}
+\ U(t) = e^{-i H t/ \hbar} = e^{-i \frac{\Omega}{2} \sigma_x t}
 \tag{4.31}
 \]
 </p>
@@ -527,7 +527,7 @@ So our physical qubit is the ground and excited states of the ion which is usual
 </p>
 
 <p>
-Which is known as <b>Rabi Oscillation</b>. The ion will oscillate between the excited and ground state at the Rabi frequency. In fact, it is possible to control this oscillation depending on the laser pulse time. Notice that the unitary evolution of $H_I$ performs a rotation on the Bloch sphere:
+Which is known as <b>Rabi Oscillation</b>. The ion will oscillate between the excited and ground state at the Rabi frequency. In fact, it is possible to control this oscillation depending on the laser pulse time. Notice that the unitary evolution of $\hat H_{carrier}$ performs a rotation on the Bloch sphere:
 </p>
 
 <p>
@@ -551,46 +551,175 @@ where $\theta = \Omega t$. This is the Pauli-$X$ <b>rotation operator</b> and ha
 </p>
 </div>
 
-
-<button class="collapsible">Exercise 4.2</button>
-<div class="content-box">
 <p>
-(a) Show that the excited state probability for the red sideband is $P_{e,n}(t) = \sin^2 (\frac{\Omega_{red} t}{2})$ where $\Omega_{red} = \Omega \eta_z \sqrt{n}$
+The last exercise demonstrate how qubits are manipulated in real trapped-ion systems. Here we have use the electronic states but most research and industry grade trapped-ion systems use the hyper-fine states instead as they are more stable and typically have longer lifetimes. Nonetheless, the idea is the same.
+</p>
+
+
+
+
+
+
+<p>
+<b>Sideband Cooling</b>
 </p>
 
 <p>
-(b) Show that the excited state probability for the blue sideband is $P_{e,n}(t) = \sin^2 (\frac{\Omega_{blue} t}{2})$ where $\Omega_{blue} = \Omega \eta_z \sqrt{n+1}$
+The removal of a phonon during the red sideband transition is important for trapped-ion quantum computing. Before computing we must cool the ion because thermal motion reduces the fidelity of any computations. A standard cooling techniques known as <b>Doppler Cooling</b> cannot by itself reach the motional ground state because it is limited by the natural linewidth of the transition. Sideband cooling overcomes this limit by selectively removing individual phonons. Doppler Cooling and Sideband Cooling are used in conjunction to achieve ground state cooling. We require that $|n\rangle \rightarrow 0$. This is important for entangling gates, described later, as these gates require a well-defined motional state.
+</p>
+
+<p>
+We will now show explicitly that exciting the red sideband results in the removal of a phonon. The red sideband Hamiltonian was from equation 4.28 can be written as:
+</p>
+
+<p>
+\[
+\ \hat H_{red} = \hbar g \Big [ \sigma_+ \hat a + \sigma_- \hat a^\dagger \Big]
+\tag{4.37}
+\]
+</p>
+
+<p>
+where we define $g \equiv \frac{\Omega \eta_z}{2}$ for convenience. The Hamiltonian affects both the electronic and motional states of the ion as opposed to the carrier which only affects the electronics states. If we begin in an electronic groundstate with $n$ phonons, $|\psi(0)\rangle = |g,n\rangle = |0, n\rangle $, we want to determine the result of applying the red sideband Hamiltonian.
+</p>
+
+<p>
+\[
+\ \hat H_{red} |g,n\rangle = \hbar g \Big [ \sigma_+ \hat a + \sigma_- \hat a^\dagger \Big] |g,n\rangle
+\tag{4.38}
+\]
+</p>
+
+<p>
+Upon distributing and recognizing that $\sigma_+$ and $\sigma_-$ only act on electronic states while $\hat a$ and $\hat a^\dagger$ only act on motional states, we arrive at:
+</p>
+
+<p>
+\[
+\ \hat H_{red} |g,n\rangle = \hbar g \Big [ \sigma_+ |g\rangle \otimes \hat a |n\rangle + \sigma_- |g\rangle \otimes \hat a^\dagger |n\rangle \Big]
+\tag{4.39}
+\]
+</p>
+
+<p>
+Applying the definitions of $\sigma_+$, $\sigma_-$, $\hat a$, and $\hat a^\dagger$, the result is:
+</p>
+
+<p>
+\[
+\ \hat H_{red} |g,n\rangle = \hbar g \sqrt{n} |e, n-1\rangle
+\tag{4.40}
+\]
+</p>
+
+<p>
+So, $\hat H_{red}$ can produce and excited electronic state with a reduced motional state. The pupulation dynamics are of course governed by unitary time-evolution just as before.
+</p>
+
+<p>
+\[
+\ \U(t) = e^{-i \hat H_{red} t / \hbar}
+\tag{4.41}
+\]
+</p>
+
+<p>
+The exponentiation of this Hamiltonian is not as straight forward as the carrier due to inifinite dimensional nature of the ladder operators. Instead, we notice that, in a similar process shown above:
+</p>
+  
+<p>
+\[
+\ \hat H_{red} |e, n-1\rangle = \hbar g \sqrt{n} |g,n\rangle
+\tag{4.42}
+\]
+</p>
+
+<p>
+We encourage you to prove this yourself if it is not clear. Equations 4.40 and 4.42 are used to determine a general $2 \times 2$ matrix which generates these results when $|g,n\rangle = |0\rangle$ and $|e,n-1\rangle = |1\rangle$. The matrix can be expressed as:
+</p>
+
+<p>
+\[
+\ \hat H_{red} = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix} \hbat g \sqrt{n} = \hbar g \sqrt(n) \sigma_x
+\tag{4.43}
+\]
+</p>
+
+<p>
+Now we have a form which is similar to the carrier Hamiltonian so the unitary evolution can be written:
+</p>
+
+<p>
+\[
+\ \U(t) = e^{-i g \sqrt{n} \sigma_x t}
+\tag{4.44}
+\]
+</p>
+
+<p>
+So that,
+</p>
+
+<p>
+\[
+\ |\psi(t)\rangle = \cos (g \sqrt{n} t) |g,n\rangle - i \sin(g \sqrt{n} t) |e, n-1\rangle
+\tag{4.45}
+\]
+</p>
+
+<p>
+The probability of finding the ion in the excited electronic state with a reduced phonon number is then:
+</p>
+
+<p>
+\[
+\begin{align}
+\ P_{e,n-1} (t) & = \sin^2 (g \sqrt{n} t) |e, n-1\rangle \\
+  & = \sin^2 ( \frac{\Omega \eta_z \sqrt{n}}{2} t) \\
+  & = \sin^2 ( \frac{\Omega_{red}}{2} t)
+\tag{4.46}
+\]
+</p>
+
+<p>
+where $\Omega_{red} = \Omega \eta_z \sqrt(n)$. Just as in exercise 4.1 after a pulse duration of $t = \frac{\pi}{\Omega_{red}}$ the probability that the ion is found in $|e, n-1\rangle$ is $1$. If we now wait some time, <b>spontaneous emission</b> can occur, which only affects the electronic state resulting in $|e, n-1\rangle \longrightarrow |g, n-1\rangle$. This is the first step in the chain of sideband cooling. If we continously apply a $\pi$-pulses at select intervals we will have:
+</p>
+
+<p>
+\[
+\ |g, n\rangle \longrightarrow |e, n-1\rangle \longrightarrow |g, n-1\rangle \longrightarrow |e, n-2\rangle \longrightarrow |g, n-2\rangle...
+\tag{4.47}
+\]
+</p>
+
+<p>
+and so on. Note that if $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g, 0\rangle \longrightarrow |e, -1\rangle$ because $\hat a |0\rangle = 0$. Therefore motional ground state becomes a dark state of red sideband interaction, and cooling naturally stops. Our major assumption is that spontaneous emission does not causes changes to  because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
+</p>
+  
+  
+<button class="collapsible">Exercise 4.2</button>
+<div class="content-box">
+Show that the excited state probability for the blue sideband is $P_{e,n}(t) = \sin^2 (\frac{\Omega_{blue} t}{2})$ where $\Omega_{blue} = \Omega \eta_z \sqrt{n+1}$
 </p>
 </div>
 
-<p>
-The last two exercises demonstrate how qubits manipulated in real trapped-ion systems and how exciting the sidebands decreases the Rabi frequency.
+  
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  
+ <p>
+<b>Detuning</b>
 </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
- 
+<p>
 We previously considered detunings chosen to selectively activate the carrier or sideband transitions. In those cases, the detuning was comparable to the motional frequency $\omega_z$ and served to determine which interaction term survives under the rotating wave approximation.
+</p>
 
+<p>
 However, once a particular transition (e.g., the carrier) has been selected, the laser may still be slightly off resonance with that transition. This small residual detuning modifies the system dynamics and alters the Rabi oscillations.
+</p>
+
 
 <button class="collapsible">Carrier and Sideband Transition Origins</button>
 <div class="content-box">  
@@ -1589,7 +1718,7 @@ By repeatedly applying red sideband excitation followed by spontaneous decay, ph
 </p>
 
 <p>
-If $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g,0\rangle \rightarrow |e,-1\rangle$ because $\hat a|0\rangle = 0$. Therefore motional ground state is becomes a dark state of red sideband interaction, and cooling naturally stops. Remember, our major assumption is that spontaneous emission does not causes changes to $n$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
+If $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g,0\rangle \rightarrow |e,-1\rangle$ because $\hat a|0\rangle = 0$. Therefore motional ground state becomes a dark state of red sideband interaction, and cooling naturally stops. Remember, our major assumption is that spontaneous emission does not causes changes to $n$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
 </p>
 
 <p>
