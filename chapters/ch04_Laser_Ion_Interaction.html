@@ -153,7 +153,7 @@ Under this approximation, we may expand the exponential term associated with $\e
 </p> 
 
 <p>
-where we have truncated the higher order terms in the expansion corresponding to multi-phonon processes. These are suppressed by higher order powers of $\eta_z$ in the Lamb-Dicke regime.The zeroth-order term, $e^{\pm i \omega t}$, corresponds to laser-driven internal transitions that do not affect the ion’s motional state. Note that motion is invisible to the laser, the ion behaves point-like, and the motional quantum number $n$ does not change. This is known as the <b>carrier transition</b>. The first-order term, $ \eta_z (\hat a + \hat a^\dagger) e^{\pm i \omega t}$ accounts for the finite spatial extent of the ion’s motion and allows the laser to exchange energy with the motional degree of freedom. We already know that $\hat a^\dagger$ adds one phonon and $\hat a$ removes one phonon. This terms also informs us that the internal and motional energies are coupled. Additionally, the creation and annihilation of phonons correspond to what are known as <b>blue</b> and <b>red sidebands</b>, respectively. We will explore these in detail next.
+where we have truncated the higher order terms in the expansion corresponding to multi-phonon processes. These are suppressed by higher order powers of $\eta_z$ in the Lamb-Dicke regime.The zeroth-order term is the part of the interaction Hamiltonian that contains no factor of $(\hat a + \hat a^\dagger)$. It therefore does not change the motional quantum number and gives the <b>carrier transition</b>. The first-order term, $ \eta_z (\hat a + \hat a^\dagger) e^{\pm i \omega t}$ accounts for the finite spatial extent of the ion’s motion and allows the laser to exchange energy with the motional degree of freedom. We already know that $\hat a^\dagger$ adds one phonon and $\hat a$ removes one phonon. This terms also informs us that the internal and motional energies are coupled. When the internal and motional states are coupled, we obtain what are known as <b>blue</b> and <b>red sidebands</b>. We will explore these in detail next.
 </p>
 
 <p>
@@ -161,15 +161,19 @@ At this stage, the physical origin of the carrier and sideband transitions can b
 </p>
   
 <p>
-The detailed perturbative Schrodinger-picutre derivation is included at the very end of this section for completeness but it not required to understand the physical source of quantum gates or entanglement. The next section we choose to discuss Two-Level Systems in the interaction-picture which because it extends nicely to multi-ion systems.
+The detailed perturbative Schrödinger-picutre derivation is included at the very end of this section for completeness but it is not required to understand the physical source of quantum gates or entanglement. In the next section, we discuss Two-Level Systems in the interaction-picture which because it extends nicely to multi-ion systems.
 </p>
 
+<p>
+The Lamb–Dicke expansion shows where motional sidebands come from, but it does not yet tell us which terms are resonant or how the ion actually evolves in time. To answer those questions, we now combine the motional degree of freedom with a two-level internal system and move to the interaction picture.
+</p>
+  
 <p>
 <b>Two-Level Systems</b>
 </p>
 
 <p>
-We now describe a system with two levels, namely, the ground state, $|g\rangle$, and the excited state, $|e\rangle$. This system will evolve based on its free Hamiltonian, $\hat H_0$, and the interaction Hamiltonian, $\hat H_{int}$, described above so that the total Hamiltonian is:
+We now describe a system with two electronic levels, namely, the ground state, $|g\rangle$, and the excited state, $|e\rangle$. This system will evolve based on its free Hamiltonian, $\hat H_0$, and the interaction Hamiltonian, $\hat H_{int}$, described above so that the total Hamiltonian is:
 </p>
 
 <p>
@@ -194,7 +198,7 @@ Where the free Hamiltonian consists of the electronic and motional Hamiltonians,
 </p>
 
 <p>
-where $E_g$ and $E_e$ are the energies of the ground and excited states, resepctively. We typically define $E_g = - \frac{\hbar \omega_0}{2}$ and $E_e = \frac{\hbar \omega_0}{2}$ so that:
+where $E_g$ and $E_e$ are the energies of the ground and excited states, respectively. We typically define $E_g = - \frac{\hbar \omega_0}{2}$ and $E_e = \frac{\hbar \omega_0}{2}$ so that:
 </p>
   
 <p>
@@ -217,17 +221,19 @@ Now, according to the spectral theory we can expand the electronic Hamiltonian a
 
 <button class="collapsible">Exercise 4.1</button>
 <div class="content-box">  
+<p>
 Verify equation 4.13 using equation 4.11. 
+</p> 
 </div>
 
 <p>
-If we now assign $|g\rangle = |0\rangle$ and $|e\rangle = |1\rangle$, then using our energy definitions and equation 4.13 we see that:
+If we now assign $|g\rangle \equiv |0\rangle$ and $|e\rangle \equiv |1\rangle$, then using our energy definitions and equation 4.13 we see that:
 </p>
 
 <p>
 \[
 \ \hat H_{el} = \frac{\hbar \omega_0}{2} \sigma_z
-\tag{4.13}
+\tag{4.14}
 \]
 </p>
 
@@ -238,55 +244,55 @@ where $\sigma_z$ is the Pauli-$Z$ matrix, $\begin{pmatrix} 1 & 0 \\
 </p>
 
 <p>
-Previously, we quantized the motion of a single ion in and found that the motional Hamiltonian is:
+Previously, we quantized the motion of a single ion and found that the motional Hamiltonian is:
 </p>
 
 <p>
 \[
 \ \hat H_{mot} = \hbar \omega_z \Big(\hat a^\dagger \hat a + \frac{1}{2} \Big)
-\tag{4.14}
-\]
-</p>
-
-<p>
-Conventionally, the term $\frac{\hbar \omega_z}{2}$ is dropped because it's just a number which does not affect th dynamics but simply adds an irrelevant global phase. So our total Hamiltonian can be expressed as:
-</p>
-
-<p>
-\[
-\ \hat H = \frac{\hbar \omega_0}{2} \sigma_z + \hbar \omega_z \hat a^\dagger \hat a + \hat H_{int}
 \tag{4.15}
 \]
 </p>
 
 <p>
-Our task now is to expand $H_{int}$ in the Lamb-Dicke regime as described above and show how moving to the interaction-picture simplifies our expression significantly. But first, we explain how the role of dipole operator on the electronic states of our two-level system.
-</p>
-
-<p>
-We again note that the dipole operator (dotted with the electric field amplitude) only acts on internal electronic states. The dipole operator is also odd under parity. Following the full explanation in the Appendix, we may write:
+Conventionally, the term $\frac{\hbar \omega_z}{2}$ is dropped because it's just a number which does not affect the dynamics but simply adds an irrelevant global phase. So our total Hamiltonian can be expressed as:
 </p>
 
 <p>
 \[
-\ \mathbf{\hat p} \cdot \mathbf{E_0} = |p_{01}| E_0 \Big( |0\rangle \langle 1| + |1\rangle \langle 0| \Big)
+\ \hat H = \frac{\hbar \omega_0}{2} \sigma_z + \hbar \omega_z \hat a^\dagger \hat a + \hat H_{int}
 \tag{4.16}
 \]
 </p>
 
 <p>
-where $p_{01}$ is the $i = 0$ and $j = 1$ term of from the completeness relation for $\mathbf{\hat p}$. As is standard, we define the <b>Rabi Frequency</b> such that:
+Our task now is to expand $H_{int}$ in the Lamb-Dicke regime as described above and show how moving to the interaction-picture simplifies our expression significantly. But first, we explain how dipole operator acts on the electronic states of our two-level system.
+</p>
+
+<p>
+We again note that the dipole operator (dotted with the electric field amplitude) only acts on internal electronic states. Following the full explanation in the Appendix, we may write:
 </p>
 
 <p>
 \[
-\ \hbar \Omega \equiv |p_{01}| E_0
+\ \mathbf{\hat p} \cdot \mathbf{E_0} = |p_{01}| E_0 \Big( |0\rangle \langle 1| + |1\rangle \langle 0| \Big)
 \tag{4.17}
 \]
 </p>
 
 <p>
-Also note that,
+where $p_{01}$ is the $i = 0$ and $j = 1$ term from the completeness relation for $\mathbf{\hat p}$. As is standard, we define the <b>Rabi Frequency</b>, $\Omega$, such that:
+</p>
+
+<p>
+\[
+\ \hbar \Omega \equiv |p_{01}| E_0
+\tag{4.18}
+\]
+</p>
+
+<p>
+Keep in mind that the Rabi Frequency, $\Omega$, is distinct from the RF drive frequency, $\Omega_{RF}$. It's important to remember that $\Omega_{RF}$ is associated with the trap frequency, $\omega_z$, while Rabi is associated with laser-ion coupling. Also note that,
 </p>
 
 
@@ -305,7 +311,7 @@ Also note that,
 0 & 0
 \end{pmatrix} \\
 \end{align}
-\tag{4.18}
+\tag{4.19}
 \]
 </p>
 
@@ -316,7 +322,7 @@ Using the approximation above, the interaction Hamiltonian becomes:
 <p>
 \[
 \ \hat H_{int} = \frac{\hbar \Omega}{2} \Big( \sigma_+ + \sigma_- \Big) \Big [ (1 + i \eta_z (\hat a + \hat a^\dagger)) e^{-i \omega t} + (1 - i \eta_z (\hat a + \hat a^\dagger))e^{i \omega t} \Big]
-\tag{4.19}
+\tag{4.20}
 \]
 </p>
 
@@ -328,7 +334,7 @@ So the total Hamiltonian is:
 <p>
 \[
 \ \hat H = \frac{\hbar \omega_0}{2} \sigma_z + \hbar \omega_z \hat a^\dagger \hat a + \frac{\hbar \Omega}{2} \Big( \sigma_+ + \sigma_- \Big) \Big [ (1 + i \eta_z (\hat a + \hat a^\dagger)) e^{-i \omega t} + (1 - i \eta_z (\hat a + \hat a^\dagger))e^{i \omega t} \Big]
-\tag{4.20}
+\tag{4.21}
 \]
 </p>
 
@@ -337,18 +343,18 @@ At first glance this Hamiltonian appears quite complicated. Fortunately, we can 
 </p>
 
 <p>
-In the interaction picture, an operator is transformed from its Schrodinger representation as:
+In the interaction picture, an operator is transformed from its Schrödinger representation as:
 </p>
 
 <p>
 \[
 \ \hat O_I (t) = e^{i \hat H_0 t / \hbar} \hat O_S (t) e^{-i \hat H_0 t / \hbar}
-\tag{4.21}
+\tag{4.22}
 \]
 </p>
 
 <p>
-where the subscripts $I$ and $S$ represent the interaction and Schrodinger pictures, respectively.
+where the subscripts $I$ and $S$ represent the interaction and Schrödinger pictures, respectively.
 </p>
 
 <p>
@@ -358,45 +364,45 @@ In our case,
 <p>
 \[
 \ \hat H_I = e^{i \hat H_0 t / \hbar} \hat H_{int} e^{-i \hat H_0 t / \hbar}
-\tag{4.22}
-\]
-</p>
-
-<p>
-It can be shown (see the Appendix) using commutation relations/identities that the interaction picture produces the following outcome for each operator of $H_{int}$:
-</p>
-
-<p>
-\[
-\begin{align}
-\ \sigma_+ & \longrightarrow \sigma_+ e^{i \omega_0 t} \\
-  \sigma_- & \longrightarrow \sigma_- e^{i \omega_0 t} \\
-  \hat a & \longrightarrow \hat a e^{-i \omega_z t} \\
-  \hat a^\dagger & \longrightarrow \hat a^\dagger e^{i \omega_z t} \\
-\end{align}
 \tag{4.23}
 \]
 </p>
 
 <p>
-The interaction picture removes the free evolution by transforming into a frame that rotates with the natural frequencies of the system. So our transformed Hamiltonian, $H_I$ is:
+In the Appendix, applying commutation relations/identities from the interaction picture produces the following outcome for each operator of $H_{int}$:
 </p>
 
 <p>
 \[
-\ \hat H_I = \frac{\hbar \Omega}{2} \Big( \sigma_+ e^{i \omega_0 t} + \sigma_- e^{i \omega_0 t} \Big) \Big [ (1 + i \eta_z (\hat a e^{-i \omega_z t} + \hat a^\dagger e^{i \omega_z t})) e^{-i \omega t} + (1 - i \eta_z (\hat a e^{-i \omega_z t} + \hat a^\dagger e^{i \omega_z t}))e^{i \omega t} \Big]
+\begin{align}
+\ e^{i \hat H_0 t/ \hbar} \sigma_+ e^{-i \hat H_0 t/ \hbar} & \longrightarrow \sigma_+ e^{i \omega_0 t} \\
+  e^{i \hat H_0 t/ \hbar} \sigma_- e^{-i \hat H_0 t/ \hbar} & \longrightarrow \sigma_- e^{-i \omega_0 t} \\
+  e^{i \hat H_0 t/ \hbar} \hat a e^{-i \hat H_0 t/ \hbar} & \longrightarrow \hat a e^{-i \omega_z t} \\
+  e^{i \hat H_0 t/ \hbar} \hat a^\dagger e^{-i \hat H_0 t/ \hbar} & \longrightarrow \hat a^\dagger e^{i \omega_z t} \\
+\end{align}
 \tag{4.24}
 \]
 </p>
 
 <p>
-It is mostly an algebraic exercise to distribute the terms from here. What is important is that we will end up with several terms that involve $e^{\pm i (\omega_0 + \omega)}$. Typically, $\omega_0 \sim 10^{14}$ Hz, so the sum of $\omega_0 + \omega$ is very large and effectively averages out since it corresponds to frequent oscillation. Dropping these terms is commonly known as the optical <b>rotating wave approximation</b> (RWA). So we are left with six terms:
+In the interaction picture, we factor out the evolution generated by the free Hamiltonian, $\hat H_0$. The rapidly oscillating phases associated with the uncoupled internal and motional motion are absorbed into the operators, allowing the laser-driven couplings to stand out clearly. So our transformed Hamiltonian, $H_I$ is:
 </p>
 
 <p>
 \[
-\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ \sigma_+ e^{i(\omega_0 - \omega)t} + i \eta_z \hat a \sigma_+ e^{i (\omega_0 - \omega - \omega_z)t} + i \eta_z \hat a^\dagger \sigma_+ e^{i(\omega_0 - \omega + \omega_z)t} + \sigma_- e^{i(\omega_0 - \omega)t} - i \eta_z \hat a \sigma_- e^{-i(\omega_0 - \omega + \omega_z)t} - i \eta_z \hat a^\dagger \sigma_- e^{-i(\omega_0 - \omega - \omega_z)t} \Big]
+\ \hat H_I = \frac{\hbar \Omega}{2} \Big( \sigma_+ e^{i \omega_0 t} + \sigma_- e^{-i \omega_0 t} \Big) \Big [ (1 + i \eta_z (\hat a e^{-i \omega_z t} + \hat a^\dagger e^{i \omega_z t})) e^{-i \omega t} + (1 - i \eta_z (\hat a e^{-i \omega_z t} + \hat a^\dagger e^{i \omega_z t}))e^{i \omega t} \Big]
 \tag{4.25}
+\]
+</p>
+
+<p>
+It is mostly an algebraic exercise to distribute the terms from here. What is important is that we will end up with several terms that involve $e^{\pm i (\omega_0 + \omega)}$. Typically, $\omega_0 \sim 10^{14}$ Hz, so the sum of $\omega_0 + \omega$ is very large and effectively averages out since it corresponds to frequent oscillation. Dropping these terms is commonly known as the <b>optical rotating wave approximation</b> (RWA). So we are left with six terms:
+</p>
+
+<p>
+\[
+\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ \sigma_+ e^{i(\omega_0 - \omega)t} + i \eta_z \hat a \sigma_+ e^{i (\omega_0 - \omega - \omega_z)t} + i \eta_z \hat a^\dagger \sigma_+ e^{i(\omega_0 - \omega + \omega_z)t} + \sigma_- e^{-i(\omega_0 - \omega)t} - i \eta_z \hat a \sigma_- e^{-i(\omega_0 - \omega + \omega_z)t} - i \eta_z \hat a^\dagger \sigma_- e^{-i(\omega_0 - \omega - \omega_z)t} \Big]
+\tag{4.26}
 \]
 </p>
 
@@ -406,13 +412,20 @@ Now, we define the <b>detuning</b> as $\delta \equiv \omega - \omega_0$, then we
 
 <p>
 \[
-\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ \sigma_+ e^{-i \delta t} + i \eta_z \hat a \sigma_+ e^{-i (\delta + \omega_z)t} + i \eta_z \hat a^\dagger \sigma_+ e^{-i(\delta - \omega_z)t} + \sigma_- e^{-i \delta t} - i \eta_z \hat a \sigma_- e^{i(\delta - \omega_z)t} - i \eta_z \hat a^\dagger \sigma_- e^{i(\delta + \omega_z)t} \Big]
-\tag{4.26}
+\ \hat H_I = \frac{\hbar \Omega}{2} \Big [ \sigma_+ e^{-i \delta t} + i \eta_z \hat a \sigma_+ e^{-i (\delta + \omega_z)t} + i \eta_z \hat a^\dagger \sigma_+ e^{-i(\delta - \omega_z)t} + \sigma_- e^{i \delta t} - i \eta_z \hat a \sigma_- e^{i(\delta - \omega_z)t} - i \eta_z \hat a^\dagger \sigma_- e^{i(\delta + \omega_z)t} \Big]
+\tag{4.27}
 \]
 </p>
 
+<button class="collapsible">Exercise 4.2</button>
+<div class="content-box">
 <p>
-If we carefully select the detuning, the result is are three different transitions. Additionally, the Rabi Frequency $\Omega$ is typically on the order of $10^5$ Hz while $\omega_z$ is on the order of $10^6$ Hz, so we can drop the terms involving $\omega_z$ because they are fast compared to the Rabi Frequency. This is commonly known as the motional RWA. So first we select a detuning to choose a transition, then apply motional RWA to obtain the approximate Hamiltonians.
+Starting from equation 4.27, identify which term becomes time independent for each choice of detuning: $\delta = 0$, $\delta = -\omega_z$, and $\delta = +\omega_z$.
+</p>
+</div>
+
+<p>
+If we carefully select the detuning, as in exercise 4.2, the result gives various terms with or without time dependence. We can eliminate the time dependence by noticing that the Rabi Frequency, $\Omega$, is typically on the order of $10^5$ Hz while $\omega_z$ is on the order of $10^6$ Hz. Meaning we can drop the terms involving $\omega_z$ because they are fast compared to the Rabi Frequency. This is commonly known as the <b>motional RWA</b>. So first we select a detuning to choose a transition, then apply motional RWA to obtain the approximate Hamiltonians.
 </p>
 
 <p>
@@ -422,7 +435,7 @@ When $\delta = 0$, we obtain what's known as the <b>carrier transition</b>:
 <p>
 \[
 \ \hat H_{carrier} = \frac{\hbar \Omega}{2} \Big [ \sigma_+ + \sigma_- \Big]
-\tag{4.27}
+\tag{4.28}
 \]
 </p>
 
@@ -433,7 +446,7 @@ When $\delta = -\omega_z$, we obtain what's known as the <b>red sideband transit
 <p>
 \[
 \ \hat H_{red} = \frac{\hbar \Omega \eta_z}{2} \Big [ \sigma_+ \hat a + \sigma_- \hat a^\dagger \Big]
-\tag{4.28}
+\tag{4.29}
 \]
 </p>
 
@@ -444,11 +457,13 @@ And when $\delta = +\omega_z$, we obtain what's known as the <b>blue sideband tr
 <p>
 \[
 \ \hat H_{blue} = \frac{\hbar \Omega \eta_z}{2} \Big [ \sigma_+ \hat a^\dagger + \sigma_- \hat a \Big]
-\tag{4.29}
+\tag{4.30}
 \]
 </p>
 
-
+<p>
+It is important to reiterate that we applied <b>two</b> different rotating wave approximations. The first being optical which drops terms with $\omega_0 + \omega$ because $\omega \sim 10^14$ Hz, while the second being motional which drops terms, after detuning, related to $\omega_z$ because $\omega_zz \gg \Omega$.
+</p>
 
 <p>
 <b>Rabi Oscillations</b>
@@ -456,7 +471,7 @@ And when $\delta = +\omega_z$, we obtain what's known as the <b>blue sideband tr
 
 
 <p>
-We now examine the dynamics of the carrier transition to demonstrate <b>Rabi Oscillations</b> and explain the physical origin of quantum gates. It is convenient to express the carrier Hamiltonian in terms of $\sigma_x$ rather than $\sigma_+ + \sigma_-$ for this demonstration, however, when we shift to multi-ion systems we will use the Hamiltonians as presented in equations 4.27, 4.28, and 4.29 for clarity.
+We now examine the dynamics of the carrier transition to demonstrate <b>Rabi Oscillations</b> and explain the physical origin of quantum gates. It is convenient to express the carrier Hamiltonian in terms of $\sigma_x$ rather than $\sigma_+ + \sigma_-$ for this demonstration, however, when we shift to multi-ion systems we will use the Hamiltonians as presented in equations 4.28, 4.29, and 4.30 for clarity.
 </p>
 
 <p>
@@ -467,18 +482,18 @@ The carrier Hamiltonian can be written as:
 <p>
 \[
 \ \hat H_{carrier} = \frac{\hbar \Omega}{2} \sigma_x
-\tag{4.30}
+\tag{4.31}
 \]
 </p>
 
 <p>
-The Schrodinger equation tells us that this Hamiltonian evolves according to:
+The Schrödinger equation tells us that this Hamiltonian evolves according to:
 </p>
 
 <p>
 \[
 \ U(t) = e^{-i H t/ \hbar} = e^{-i \frac{\Omega}{2} \sigma_x t}
-\tag{4.31}
+\tag{4.32}
 \]
 </p>
 
@@ -489,18 +504,18 @@ A common identity fully derived in the Appendix, shows that:
 <p>
 \[
 \ e^{-i \frac{\Omega}{2} \sigma_x t} = \cos (\frac{\Omega t}{2}) I - i \sin (\frac{\Omega t}{2}) \sigma_x
-\tag{4.32}
+\tag{4.33}
 \]
 </p>
 
 <p>
-Plugging into Schrodinger, we get:
+Plugging into Schrödinger, we get:
 </p>
 
 <p>
 \[
 \ |\psi(t)\rangle = U |\psi(0)\rangle = \cos (\frac{\Omega t}{2}) I |0\rangle - i \sin (\frac{\Omega t}{2}) \sigma_x |0\rangle
-\tag{4.33}
+\tag{4.34}
 \]
 </p>
 
@@ -511,7 +526,7 @@ where $|\psi(0)\rangle = |0\rangle$ and $\sigma_x |0\rangle = |1\rangle$. Then t
 <p>
 \[
 \ |\psi(t)\rangle = \cos (\frac{\Omega t}{2})|0\rangle - i \sin (\frac{\Omega t}{2}) |1\rangle
-\tag{4.34}
+\tag{4.35}
 \]
 </p>
 
@@ -522,18 +537,18 @@ So our physical qubit is the ground and excited states of the ion which is usual
 <p>
 \[
 \ P_e (t) = |c_e(t)|^2 = \sin^2 (\frac{\Omega t}{2})
-\tag{4.35}
+\tag{4.36}
 \]
 </p>
 
 <p>
-Which is known as <b>Rabi Oscillation</b>. The ion will oscillate between the excited and ground state at the Rabi frequency. In fact, it is possible to control this oscillation depending on the laser pulse time. Notice that the unitary evolution of $\hat H_{carrier}$ performs a rotation on the Bloch sphere:
+Which is known as <b>Rabi Oscillation</b>. The ion will oscillate between ground and excited states at the Rabi frequency. In fact, it is possible to control this oscillation depending on the laser pulse time. Notice that the unitary evolution of $\hat H_{carrier}$ performs a rotation on the Bloch sphere:
 </p>
 
 <p>
 \[
 \ U(t) = e^{-i \frac{\Omega}{2} \sigma_x t} = e^{-i \frac{\theta}{2} \sigma_x}
-\tag{4.36}
+\tag{4.37}
 \]
 </p>
 
@@ -541,7 +556,7 @@ Which is known as <b>Rabi Oscillation</b>. The ion will oscillate between the ex
 where $\theta = \Omega t$. This is the Pauli-$X$ <b>rotation operator</b> and has the same function as the Pauli-$X$ matrix discussed in previous sections. Therefore, the carrier Hamiltonian rotates the state about the $x$-axis of the Bloch sphere. Applying the carrier Hamiltonian for different periods of time can flip the state or produce superposition.
 </p>
 
-<button class="collapsible">Exercise 4.2</button>
+<button class="collapsible">Exercise 4.3</button>
 <div class="content-box">
 <p>
 (a) Consider a system which undergoes carrier Rabi Oscillations for a laser pulse duration of $t_{\pi} = \frac{\pi}{\Omega}$. Calculate the excited state probability.
@@ -552,7 +567,7 @@ where $\theta = \Omega t$. This is the Pauli-$X$ <b>rotation operator</b> and ha
 </div>
 
 <p>
-This section as well as the last exercise has provided us with the <b>physical mechanism</b> by which abstract single-qubit gates are realized in trapped-ion systems. Here we have use the electronic states but most research and industry grade trapped-ion systems use the hyper-fine states instead as they are more stable and typically have longer lifetimes. Nonetheless, the idea is the same.
+This section as well as the last exercise has provided us with the <b>physical mechanism</b> by which abstract single-qubit gates are realized in trapped-ion systems. Here we have used the electronic states but most research and industry grade trapped-ion systems use the hyper-fine states instead as they are more stable and typically have longer lifetimes. Nonetheless, the idea is the same.
 </p>
 
 
@@ -565,28 +580,28 @@ This section as well as the last exercise has provided us with the <b>physical m
 </p>
 
 <p>
-The removal of a phonon during the red sideband transition is important for trapped-ion quantum computing. Before computing we must cool the ion because thermal motion reduces the fidelity of any computations. A standard cooling techniques known as <b>Doppler Cooling</b> cannot by itself reach the motional ground state because it is limited by the natural linewidth of the transition. Sideband cooling overcomes this limit by selectively removing individual phonons. Doppler Cooling and Sideband Cooling are used in conjunction to achieve ground state cooling. We require that $|n\rangle \rightarrow 0$. This is important for entangling gates, described later, as these gates require a well-defined motional state.
+The removal of a phonon during the red sideband transition is important for trapped-ion quantum computing. Before computing we must cool the ion because thermal motion reduces the fidelity of any computations. A standard cooling technique known as <b>Doppler Cooling</b> cannot by itself reach the motional ground state because it is limited by the natural linewidth of the transition. Sideband cooling overcomes this limit by selectively removing individual phonons. Doppler Cooling and Sideband Cooling are used in conjunction to achieve ground state cooling. We require that $|n\rangle \rightarrow 0$. This is important for entangling gates, described later, as these gates require a well-defined motional state.
 </p>
 
 <p>
-We will now show explicitly that exciting the red sideband results in the removal of a phonon. The red sideband Hamiltonian was from equation 4.28 can be written as:
+We will now show explicitly that exciting the red sideband results in the removal of a phonon. The red sideband Hamiltonian was from equation 4.29 can be written as:
 </p>
 
 <p>
 \[
 \ \hat H_{red} = \hbar g \Big [ \sigma_+ \hat a + \sigma_- \hat a^\dagger \Big]
-\tag{4.37}
+\tag{4.38}
 \]
 </p>
 
 <p>
-where we define $g \equiv \frac{\Omega \eta_z}{2}$ for convenience. The Hamiltonian affects both the electronic and motional states of the ion as opposed to the carrier which only affects the electronics states. If we begin in an electronic groundstate with $n$ phonons, $|\psi(0)\rangle = |g,n\rangle = |0, n\rangle $, we want to determine the result of applying the red sideband Hamiltonian.
+where we define $g \equiv \frac{\Omega \eta_z}{2}$ for convenience. The Hamiltonian affects both the electronic and motional states of the ion as opposed to the carrier which only affects the electronics states. If we begin in an electronic ground state with $n$ phonons, $|\psi(0)\rangle = |g,n\rangle = |0, n\rangle $, we want to determine the result of applying the red sideband Hamiltonian.
 </p>
 
 <p>
 \[
-\ \hat H_{red} |g,n\rangle = \hbar g \Big [ \sigma_+ \hat a + \sigma_- \hat a^\dagger \Big] |g,n\rangle
-\tag{4.38}
+\ \hat H_{red} |0,n\rangle = \hbar g \Big [ \sigma_+ \hat a + \sigma_- \hat a^\dagger \Big] |0,n\rangle
+\tag{4.39}
 \]
 </p>
 
@@ -596,8 +611,8 @@ Upon distributing and recognizing that $\sigma_+$ and $\sigma_-$ only act on ele
 
 <p>
 \[
-\ \hat H_{red} |g,n\rangle = \hbar g \Big [ \sigma_+ |g\rangle \otimes \hat a |n\rangle + \sigma_- |g\rangle \otimes \hat a^\dagger |n\rangle \Big]
-\tag{4.39}
+\ \hat H_{red} |0,n\rangle = \hbar g \Big [ \sigma_+ |0\rangle \otimes \hat a |n\rangle + \sigma_- |0\rangle \otimes \hat a^\dagger |n\rangle \Big]
+\tag{4.40}
 \]
 </p>
 
@@ -607,44 +622,57 @@ Applying the definitions of $\sigma_+$, $\sigma_-$, $\hat a$, and $\hat a^\dagge
 
 <p>
 \[
-\ \hat H_{red} |g,n\rangle = \hbar g \sqrt{n} |e, n-1\rangle
-\tag{4.40}
+\ \hat H_{red} |0,n\rangle = \hbar g \sqrt{n} |1, n-1\rangle
+\tag{4.41}
 \]
 </p>
 
+<button class="collapsible">Exercise 4.4</button>
+<div class="content-box">
 <p>
-So, $\hat H_{red}$ can produce and excited electronic state with a reduced motional state. The pupulation dynamics are of course governed by unitary time-evolution just as before.
+Evaluate the following states:
+</p>
+<p>
+(a) $\sigma_+ |g\rangle$ and $\sigma_- |e\rangle$
+</p>
+<p>
+(b) $\sigma_+ \hat a |g,n\rangle$, $\sigma_- \hat a^\dagger |g,n\rangle$, and $\sigma_+ \hat a^\dagger |g, n\rangle$.
+</p>
+</div>
+  
+<p>
+So, $\hat H_{red}$ can produce and excited electronic state with a reduced motional state. The population dynamics are of course governed by unitary time-evolution just as before.
 </p>
 
 <p>
 \[
 \ U(t) = e^{-i \hat H_{red} t / \hbar}
-\tag{4.41}
-\]
-</p>
-
-<p>
-The exponentiation of this Hamiltonian is not as straight forward as the carrier due to inifinite dimensional nature of the ladder operators. Instead, we notice that, in a similar process shown above:
-</p>
-  
-<p>
-\[
-\ \hat H_{red} |e, n-1\rangle = \hbar g \sqrt{n} |g,n\rangle
 \tag{4.42}
 \]
 </p>
 
 <p>
-We encourage you to prove this yourself if it is not clear. Equations 4.40 and 4.42 are used to determine a general $2 \times 2$ matrix which generates these results when $|g,n\rangle = |0\rangle$ and $|e,n-1\rangle = |1\rangle$. The matrix can be expressed as:
+The exponentiation of this Hamiltonian is not as straight forward as the carrier due to infinite-dimensional nature of the ladder operators. Instead, we notice that, in a similar process shown above:
+</p>
+  
+<p>
+\[
+\ \hat H_{red} |1, n-1\rangle = \hbar g \sqrt{n} |0,n\rangle
+\tag{4.43}
+\]
+</p>
+
+<p>
+We encourage you to prove this yourself if it is not clear. Equations 4.41 and 4.43 are used to determine a general $2 \times 2$ matrix which generates these results when $|g,n\rangle = |0\rangle$ and $|e,n-1\rangle = |1\rangle$. The matrix can be expressed as:
 </p>
 
 <p>
 \[
-\ \hat H_{red} = \begin{pmatrix}
+\ \hat H_{red} = \hbar g \sqrt{n} \begin{pmatrix}
 0 & 1 \\
 1 & 0
-\end{pmatrix} \hbar g \sqrt{n} = \hbar g \sqrt{n} \sigma_x
-\tag{4.43}
+\end{pmatrix}  = \hbar g \sqrt{n} \sigma_x
+\tag{4.44}
 \]
 </p>
 
@@ -655,7 +683,7 @@ Now we have a form which is similar to the carrier Hamiltonian so the unitary ev
 <p>
 \[
 \ U(t) = e^{-i g \sqrt{n} \sigma_x t}
-\tag{4.44}
+\tag{4.45}
 \]
 </p>
 
@@ -665,8 +693,8 @@ So that,
 
 <p>
 \[
-\ |\psi(t)\rangle = \cos (g \sqrt{n} t) |g,n\rangle - i \sin(g \sqrt{n} t) |e, n-1\rangle
-\tag{4.45}
+\ |\psi(t)\rangle = \cos (g \sqrt{n} t) |0,n\rangle - i \sin(g \sqrt{n} t) |1, n-1\rangle
+\tag{4.46}
 \]
 </p>
 
@@ -677,32 +705,33 @@ The probability of finding the ion in the excited electronic state with a reduce
 <p>
 \[
 \begin{align}
-\ P_{e,n-1} (t) & = \sin^2 (g \sqrt{n} t) |e, n-1\rangle \\
+\ P_{1,n-1} (t) & = \sin^2 (g \sqrt{n} t) \\
   & = \sin^2 ( \frac{\Omega \eta_z \sqrt{n}}{2} t) \\
   & = \sin^2 ( \frac{\Omega_{red}}{2} t)
 \end{align}
-\tag{4.46}
-\]
-</p>
-
-<p>
-where $\Omega_{red} = \Omega \eta_z \sqrt{n}$. Just as in exercise 4.2 after a pulse duration of $t_{\pi} = \frac{\pi}{\Omega_{red}}$ we find $P_{e,n-1}(t_{\pi}) = 1$. If we now wait some time, <b>spontaneous emission</b> can occur, which only affects the electronic state resulting in $|e, n-1\rangle \longrightarrow |g, n-1\rangle$. This is the first step in the chain of sideband cooling. If we continously apply a $\pi$-pulses at select intervals we will have:
-</p>
-
-<p>
-\[
-\ |g, n\rangle \longrightarrow |e, n-1\rangle \longrightarrow |g, n-1\rangle \longrightarrow |e, n-2\rangle \longrightarrow |g, n-2\rangle \longrightarrow...
 \tag{4.47}
 \]
 </p>
 
 <p>
-and so on. Note that if $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g, 0\rangle \longrightarrow |e, -1\rangle$ because $\hat a |0\rangle = 0$. Therefore motional ground state becomes a dark state of red sideband interaction, and cooling naturally stops. Our major assumption is that spontaneous emission does not causes changes to $|n\rangle$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
+where $\Omega_{red} = \Omega \eta_z \sqrt{n}$. Just as in exercise 4.2 after a pulse duration of $t_{\pi} = \frac{\pi}{\Omega_{red}}$ we find $P_{1,n-1}(t_{\pi}) = 1$. If we now wait some time, <b>spontaneous emission</b> can occur, which primarily resets the internal state while only weakly perturbing the motional state leading to $|e, n-1\rangle \longrightarrow |g, n-1\rangle$. This is the first step in the chain of sideband cooling. In general, if we continuously apply $\pi$-pulses at select intervals, we will have:
+</p>
+
+<p>
+\[
+\ |g, n\rangle \longrightarrow |e, n-1\rangle \longrightarrow |g, n-1\rangle \longrightarrow |e, n-2\rangle \longrightarrow |g, n-2\rangle \longrightarrow...
+\tag{4.48}
+\]
+</p>
+
+<p>
+and so on. Note that if $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g, 0\rangle \longrightarrow |e, -1\rangle$ because $\hat a |0\rangle = 0$. Therefore motional ground state becomes a dark state of red sideband interaction, and cooling naturally stops. Our major assumption is that spontaneous emission does not cause changes to $|n\rangle$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
 </p>
   
   
-<button class="collapsible">Exercise 4.3</button>
+<button class="collapsible">Exercise 4.5</button>
 <div class="content-box">
+<p>
 Show that the excited state probability for the blue sideband is $P_{e,n}(t) = \sin^2 (\frac{\Omega_{blue} t}{2})$ where $\Omega_{blue} = \Omega \eta_z \sqrt{n+1}$
 </p>
 </div>
@@ -725,7 +754,7 @@ However, once a particular transition (e.g., the carrier) has been selected, the
 <button class="collapsible">Carrier and Sideband Transition Origins</button>
 <div class="content-box">  
 <p>
-In this section, we go into a detailed derviation of the carrier transition and the red/blue sideband transitions to fully understand their origin (which technically is just the interaction Hamiltonian). It is highly encouraged to the reader to slow down and perform all necessary steps to reach the final result. We begin by considering the Schrodinger Equation of Postulate 2:
+In this section, we go into a detailed derviation of the carrier transition and the red/blue sideband transitions to fully understand their origin (which technically is just the interaction Hamiltonian). It is highly encouraged to the reader to slow down and perform all necessary steps to reach the final result. We begin by considering the Schrödinger Equation of Postulate 2:
 </p>
 
 <p>
@@ -792,7 +821,7 @@ Focusing on just the first integral, equations 1.60 and 1.62 allows us to write 
 </p>
 
 <p>
-From the Schrodinger equation, $\hat H_0 e^{-i \hat H_0 t'/ \hbar} = i \hbar \frac{d}{dt'} |\psi(t')\rangle$, so:
+From the Schrödinger equation, $\hat H_0 e^{-i \hat H_0 t'/ \hbar} = i \hbar \frac{d}{dt'} |\psi(t')\rangle$, so:
 </p>
 
 <p>
@@ -1355,12 +1384,12 @@ Examining the cases where $\omega = \omega_0 - \omega_z$ and $\omega = \omega_0 
 </p> 
 
 <p>
-So from the Schrodinger equation and a time-dependent interaction, we have shown, to first order, that their are 3 separate processes which can take place. A carrier transition responsible for promotion from ground to excited state with constant phonon number, a red sideband transition responsible for excitation from ground to excited states with a reduction in the phonon number and a blue sideband transition responsible for ground to excited state transitions involving an increase in phonon number. It is important to note that each amplitude clearly depends on the dipole moment operator and the electric field amplitude and polarization. We will not discuss much further about these but in real systems these quantities play an important role for the transition probability.
+So from the Schrödinger equation and a time-dependent interaction, we have shown, to first order, that their are 3 separate processes which can take place. A carrier transition responsible for promotion from ground to excited state with constant phonon number, a red sideband transition responsible for excitation from ground to excited states with a reduction in the phonon number and a blue sideband transition responsible for ground to excited state transitions involving an increase in phonon number. It is important to note that each amplitude clearly depends on the dipole moment operator and the electric field amplitude and polarization. We will not discuss much further about these but in real systems these quantities play an important role for the transition probability.
 </p>
 
 
 <p>
-<b>Two-Level Systems (Schrodinger Picture)</b>
+<b>Two-Level Systems (Schrödinger Picture)</b>
 </p>
 
 <p>
@@ -1405,7 +1434,7 @@ So that:
 </p>
 
 <p>
-The Schrodinger Equation tells us that:
+The Schrödinger Equation tells us that:
 </p>
 
 <p>
@@ -1466,7 +1495,7 @@ Since all other states are irrelevant for the carrier transition, the Hilbert sp
 </p>
 
 <p>
-Plugging this into the Schrodinger equation for our effective Hamiltonian we obtain two coupled differential equations:
+Plugging this into the Schrödinger equation for our effective Hamiltonian we obtain two coupled differential equations:
 </p>
 
 <p>
@@ -1719,7 +1748,7 @@ By repeatedly applying red sideband excitation followed by spontaneous decay, ph
 </p>
 
 <p>
-If $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g,0\rangle \rightarrow |e,-1\rangle$ because $\hat a|0\rangle = 0$. Therefore motional ground state becomes a dark state of red sideband interaction, and cooling naturally stops. Remember, our major assumption is that spontaneous emission does not causes changes to $n$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
+If $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g,0\rangle \rightarrow |e,-1\rangle$ because $\hat a|0\rangle = 0$. Therefore motional ground state becomes a dark state of red sideband interaction, and cooling naturally stops. Remember, our major assumption is that spontaneous emission does not cause changes to $n$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
 </p>
 
 <p>
