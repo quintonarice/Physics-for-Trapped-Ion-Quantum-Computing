@@ -552,7 +552,7 @@ where $\theta = \Omega t$. This is the Pauli-$X$ <b>rotation operator</b> and ha
 </div>
 
 <p>
-The last exercise demonstrate how qubits are manipulated in real trapped-ion systems. Here we have use the electronic states but most research and industry grade trapped-ion systems use the hyper-fine states instead as they are more stable and typically have longer lifetimes. Nonetheless, the idea is the same.
+This section as well as the last exercise has provided us with the <b>physical mechanism</b> by which abstract single-qubit gates are realized in trapped-ion systems. Here we have use the electronic states but most research and industry grade trapped-ion systems use the hyper-fine states instead as they are more stable and typically have longer lifetimes. Nonetheless, the idea is the same.
 </p>
 
 
@@ -618,7 +618,7 @@ So, $\hat H_{red}$ can produce and excited electronic state with a reduced motio
 
 <p>
 \[
-\ \U(t) = e^{-i \hat H_{red} t / \hbar}
+\ U(t) = e^{-i \hat H_{red} t / \hbar}
 \tag{4.41}
 \]
 </p>
@@ -643,7 +643,7 @@ We encourage you to prove this yourself if it is not clear. Equations 4.40 and 4
 \ \hat H_{red} = \begin{pmatrix}
 0 & 1 \\
 1 & 0
-\end{pmatrix} \hbat g \sqrt{n} = \hbar g \sqrt(n) \sigma_x
+\end{pmatrix} \hbar g \sqrt{n} = \hbar g \sqrt{n} \sigma_x
 \tag{4.43}
 \]
 </p>
@@ -654,7 +654,7 @@ Now we have a form which is similar to the carrier Hamiltonian so the unitary ev
 
 <p>
 \[
-\ \U(t) = e^{-i g \sqrt{n} \sigma_x t}
+\ U(t) = e^{-i g \sqrt{n} \sigma_x t}
 \tag{4.44}
 \]
 </p>
@@ -680,23 +680,24 @@ The probability of finding the ion in the excited electronic state with a reduce
 \ P_{e,n-1} (t) & = \sin^2 (g \sqrt{n} t) |e, n-1\rangle \\
   & = \sin^2 ( \frac{\Omega \eta_z \sqrt{n}}{2} t) \\
   & = \sin^2 ( \frac{\Omega_{red}}{2} t)
+\end{align}
 \tag{4.46}
 \]
 </p>
 
 <p>
-where $\Omega_{red} = \Omega \eta_z \sqrt(n)$. Just as in exercise 4.2 after a pulse duration of $t = \frac{\pi}{\Omega_{red}}$ the probability that the ion is found in $|e, n-1\rangle$ is $1$. If we now wait some time, <b>spontaneous emission</b> can occur, which only affects the electronic state resulting in $|e, n-1\rangle \longrightarrow |g, n-1\rangle$. This is the first step in the chain of sideband cooling. If we continously apply a $\pi$-pulses at select intervals we will have:
+where $\Omega_{red} = \Omega \eta_z \sqrt{n}$. Just as in exercise 4.2 after a pulse duration of $t_{\pi} = \frac{\pi}{\Omega_{red}}$ we find $P_{e,n-1}(t_{\pi}) = 1$. If we now wait some time, <b>spontaneous emission</b> can occur, which only affects the electronic state resulting in $|e, n-1\rangle \longrightarrow |g, n-1\rangle$. This is the first step in the chain of sideband cooling. If we continously apply a $\pi$-pulses at select intervals we will have:
 </p>
 
 <p>
 \[
-\ |g, n\rangle \longrightarrow |e, n-1\rangle \longrightarrow |g, n-1\rangle \longrightarrow |e, n-2\rangle \longrightarrow |g, n-2\rangle...
+\ |g, n\rangle \longrightarrow |e, n-1\rangle \longrightarrow |g, n-1\rangle \longrightarrow |e, n-2\rangle \longrightarrow |g, n-2\rangle \longrightarrow...
 \tag{4.47}
 \]
 </p>
 
 <p>
-and so on. Note that if $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g, 0\rangle \longrightarrow |e, -1\rangle$ because $\hat a |0\rangle = 0$. Therefore motional ground state becomes a dark state of red sideband interaction, and cooling naturally stops. Our major assumption is that spontaneous emission does not causes changes to  because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
+and so on. Note that if $n = 0$, then $\Omega_{red} = 0$. The red sideband cannot drive $|g, 0\rangle \longrightarrow |e, -1\rangle$ because $\hat a |0\rangle = 0$. Therefore motional ground state becomes a dark state of red sideband interaction, and cooling naturally stops. Our major assumption is that spontaneous emission does not causes changes to $|n\rangle$ because we are considering the Lamb-Dicke regime, $\eta_z \ll 1$. That is, if the ion’s motion is small compared to the photon wavelength, recoil is suppressed. Otherwise spontaneous emission would reheat the ion.
 </p>
   
   
