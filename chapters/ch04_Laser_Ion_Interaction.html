@@ -390,7 +390,7 @@ The interaction picture removes the free evolution by transforming into a frame 
 </p>
 
 <p>
-It is mostly an algebraic exercise to distribute the terms from here. What is important is that we will end up with several terms that involve $e^{\pm i (\omega_0 + \omega)}$. Typically, $\omega_0 \propto 10^14 Hz$, so the sum of $\omega_0 + \omega$ is very large and effectively averages out since it corresponds to frequent oscillation. Dropping these terms is commonly known as the optical <b>rotating wave approximation</b> (RWA). So we are left with six terms:
+It is mostly an algebraic exercise to distribute the terms from here. What is important is that we will end up with several terms that involve $e^{\pm i (\omega_0 + \omega)}$. Typically, $\omega_0 \sim 10^{14}$ Hz, so the sum of $\omega_0 + \omega$ is very large and effectively averages out since it corresponds to frequent oscillation. Dropping these terms is commonly known as the optical <b>rotating wave approximation</b> (RWA). So we are left with six terms:
 </p>
 
 <p>
@@ -412,7 +412,7 @@ Now, we define the <b>detuning</b> as $\delta \equiv \omega - \omega_0$, then we
 </p>
 
 <p>
-If we carefully select the detuning, the result is are three different transitions. Additionally, the Rabi Frequency $\Omega$ is typically on the order of $10^5 Hz$ while $\omega_z$ is on the order of $10^6 Hz$, so we can drop the terms involving $\omega_z$ because they are fast compared to the Rabi Frequency. This is commonly known as the motional RWA. So first we select a detuning to choose a transition, then apply motional RWA to obtain the approximate Hamiltonians.
+If we carefully select the detuning, the result is are three different transitions. Additionally, the Rabi Frequency $\Omega$ is typically on the order of $10^5$ Hz while $\omega_z$ is on the order of $10^6$ Hz, so we can drop the terms involving $\omega_z$ because they are fast compared to the Rabi Frequency. This is commonly known as the motional RWA. So first we select a detuning to choose a transition, then apply motional RWA to obtain the approximate Hamiltonians.
 </p>
 
 <p>
@@ -450,6 +450,122 @@ And when $\delta = +\omega_z$, we obtain what's known as the <b>blue sideband tr
 
 
 
+<p>
+<b>Rabi Oscillations</b>
+</p>
+
+
+<p>
+We now examine the dynamics of the carrier transition to demonstrate <b>Rabi Oscillations</b> and explain the physical origin of quantum gates. It is convenient to express the carrier Hamiltonian in terms of $\sigma_x$ rather than $\sigma_+ + sigma_-$ for this demonstration, however, when we shift to multi-ion systems we will use the Hamiltonians as presented in equations 4.27, 4.28, and 4.29 for clarity.
+</p>
+
+<p>
+The carrier Hamiltonian can be written as:
+</p>
+
+
+<p>
+\[
+\ \hat H_I = \frac{\hbar \Omega}{2} \sigma_x
+\tag{4.30}
+\]
+</p>
+
+<p>
+The Schrodinger equation tells us that this Hamiltonian evolves according to:
+</p>
+
+<p>
+\[
+\ U(t) = e^{-i H_I t/ \hbar} = e^{-i \frac{\Omega}{2} \sigma_x t}
+\tag{4.31}
+\]
+</p>
+
+<p>
+A common identity fully derived in the Appendix, shows that:
+</p>
+
+<p>
+\[
+\ e^{-i \frac{\Omega}{2} \sigma_x t} = \cos (\frac{\Omega t}{2}) I - i \sin (\frac{\Omega t}{2}) \sigma_x
+\tag{4.32}
+\]
+</p>
+
+<p>
+Plugging into Schrodinger, we get:
+</p>
+
+<p>
+\[
+\ |\psi(t)\rangle = U |\psi(0)\rangle = \cos (\frac{\Omega t}{2}) I |0\rangle - i \sin (\frac{\Omega t}{2}) \sigma_x |0\rangle
+\tag{4.33}
+\]
+</p>
+
+<p>
+where $|\psi(0)\rangle = |0\rangle$ and $\sigma_x |0\rangle = |1\rangle$. Then the wavefunction matches that of the general qubit state from equations 1.14 and 1.37.
+</p>
+
+<p>
+\[
+\ |\psi(t)\rangle = \cos (\frac{\Omega t}{2})|0\rangle - i \sin (\frac{\Omega t}{2}) |1\rangle
+\tag{4.34}
+\]
+</p>
+
+<p>
+So our physical qubit is the ground and excited states of the ion which is usually presented with less mathematical rigor but now it should be clear about its precise origin. If we now compute the probability of finding the ion in the excited state, we find that:
+</p>
+
+<p>
+\[
+\ P_e (t) = |c_e(t)|^2 = \sin^2 (\frac{\Omega t}{2})
+\tag{4.35}
+\]
+</p>
+
+<p>
+Which is known as <b>Rabi Oscillation</b>. The ion will oscillate between the excited and ground state at the Rabi frequency. In fact, it is possible to control this oscillation depending on the laser pulse time. Notice that the unitary evolution of $H_I$ performs a rotation on the Bloch sphere:
+</p>
+
+<p>
+\[
+\ U(t) = e^{-i \frac{\Omega}{2} \sigma_x t} = e^{-i \frac{\theta}{2} \sigma_x}
+\tag{4.36}
+\]
+</p>
+
+<p>
+where $\theta = \Omega t$. This is the Pauli-$X$ <b>rotation operator</b> and has the same function as the Pauli-$X$ matrix discussed in previous sections. Therefore, the carrier Hamiltonian rotates the state about the $x$-axis of the Bloch sphere. Applying the carrier Hamiltonian for different periods of time can flip the state or produce superposition.
+</p>
+
+<button class="collapsible">Exercise 4.1</button>
+<div class="content-box">
+<p>
+(a) Consider a system which undergoes carrier Rabi Oscillations for a laser pulse duration of $t_{\pi} = \frac{\pi}{\Omega}$. Calculate the excited state probability.
+</p>
+<p>
+(b) Consider the same system but now compute the excited state probability if the pulse duration is $t_{\pi/2} = \frac{\pi}{2 \Omega}$
+</p>
+</div>
+
+
+<button class="collapsible">Exercise 4.2</button>
+<div class="content-box">
+<p>
+(a) Show that the excited state probability for the red sideband is $P_{e,n}(t) = \sin^2 (\frac{\Omega_{red} t}{2})$ where $\Omega_{red} = \Omega \eta_z \sqrt{n}$
+</p>
+
+<p>
+(b) Show that the excited state probability for the blue sideband is $P_{e,n}(t) = \sin^2 (\frac{\Omega_{blue} t}{2})$ where $\Omega_{blue} = \Omega \eta_z \sqrt{n+1}$
+</p>
+</div>
+
+<p>
+The last two exercises demonstrate how qubits manipulated in real trapped-ion systems and how exciting the sidebands decreases the Rabi frequency.
+</p>
 
 
 
@@ -469,9 +585,7 @@ And when $\delta = +\omega_z$, we obtain what's known as the <b>blue sideband tr
 
 
 
-
-
-
+  
   
  
 We previously considered detunings chosen to selectively activate the carrier or sideband transitions. In those cases, the detuning was comparable to the motional frequency $\omega_z$ and served to determine which interaction term survives under the rotating wave approximation.
