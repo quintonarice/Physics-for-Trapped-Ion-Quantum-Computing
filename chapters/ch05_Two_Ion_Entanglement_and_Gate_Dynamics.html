@@ -52,7 +52,258 @@ fetch("/Physics-for-Trapped-Ion-Quantum-Computing/includes/sidebar.html")
 <h1>Two-Ion Entanglement and Gate Dynamics</h1>
 
 <p>
+<b>Two Ions in a Linear Trap</b>
+</p>
 
+<p>
+Recall that for a single ion, we found:
+</p>
+
+<p>
+\[
+\ \hat H = \frac{\hat P_Z^2}{2m} + \frac{1}{2} m \omega_z^2 \hat Z^2 = \hbar \omega_z \Big(\hat a^\dagger \hat a + \frac{1}{2} \Big)
+\tag{5.1}
+\]
+</p>
+
+<p>
+where $\omega_z = \sqrt{\frac{2 Q V_{EC} }{m z_0^2}}$. For two ions, we must include the Coulomb potential between them. Therefore, the Hamiltonian for two identical ions becomes:
+</p>
+
+<p>
+\[
+\ \hat H = \frac{\hat P_1^2}{2m} + \frac{\hat P_2^2}{2m} + \frac{1}{2} m \omega_z^2 \hat Z_1^2 + \frac{1}{2} m \omega_z^2 \hat Z_2^2 + \frac{e^2}{4 \pi \epsilon_0 |\hat Z_1 - \hat Z_2|}
+\tag{5.2}
+\]
+</p>
+
+<p>
+where $e$ is the electron charge. The two ions are centered around the origin of the trap and separated by a distance $2 z_0$ as shown in Figure 5.1.
+</p>
+
+<p>Placeholder Figure 5.1</p>
+
+
+<button class="collapsible">Exercise 5.1</button>
+<div class="content-box">
+Determine the equilibrium spacing $z_0$ in terms of the $e$, $m$, and $\omega_z$.
+</div>
+
+<p>
+The multivariable Taylor expansion of the potential around small displacements from equilibrium, $\xi_i$, is fully described in the Appendix. Classically, the result is:
+</p>
+
+<p>
+\[
+\ V = m \omega_z^2 [ \xi_1^2 + \xi_2^2 - \xi_1 \xi_2]
+\tag{5.3}
+\]
+</p>
+
+<p>
+where we notice a coupling term, $\xi_1 \xi_2$ arises from the Coulomb interaction indicating that the ions cannot move independently. Remember, this is the classical result so we did not "hat" the positions. We will quantize at the end of the derivation. Proceeding classically, the equations of motion for the two ions are:
+</p>
+
+<p>
+\[
+\begin{align}
+\ \ddot \xi_1 & = - \omega_z^2 (2 \xi_1 - \xi_2) \\
+  \ddot \xi_2 & = - \omega_z^2 (2 \xi_2 - \xi_1) \\
+\end{align}
+\tag{5.4}
+\]
+</p>
+
+<p>
+which admit harmonic motion with general solution: $\xi_i (t) = A_i e^{i \omega t}$. Using the general solution to solve for $\omega_z$, we find that:
+</p>
+
+<p>
+\[
+\ \pm \omega_z^2 = 2 \omega_z^2 - \omega
+\tag{5.5}
+\]
+</p>
+
+<p>
+For the $+$ and $-$ cases, we have:
+</p>
+
+<p>
+\[
+\begin{align}
+\ \omega_+ & = \omega_z \\
+  \omega_- & = \sqrt{2} \omega_z \\
+\end{align}
+\tag{5.6}
+\]
+</p>
+
+<button class="collapsible">Exercise 5.2</button>
+<div class="content-box">
+(a) Using the general solution provided, verify equation 5.5
+</p>
+<p>
+(b) Show that when $\omega = \omega_z$, the amplidtudes are equal.
+</p>
+<p>
+(c) Show that when $\omega = \sqrt{3} \omega_z$, the amplitudes are opposite in magnitude.
+</p>
+</div>
+
+<p>
+In equation 5.6, $\omega_+$ corresponds to the <b>center-of-mass</b> (COM) mode, with both ions moving together, $\xi_1 = \xi_2$, while $\omega_-$ corresponds to the <b>stretch</b> mode, in which both ions move opposite of each other, $\xi_1 = - \xi_2$, as found in Exercise 5.2.
+</p>
+
+<p>
+The structure of the potential in equation 5.3 invites diagonalization because it is not of the form: $A \xi_1^2 + B \xi_2^2$. In quantum mechanics, we can only quantize independent harmonic oscillators cleanly, therefore we must diagonalize our potential, which amounts to rotating coordinates axes in the 2D space (\xi_1, \xi_2).
+</p>
+
+<p>
+If we define new coordinates such that:
+</p>
+
+<p>
+\[
+\begin{align}
+\ \xi_+ & \equiv \frac{\xi_1 + \xi_2}{\sqrt{2}} \\
+  \xi_- & \equiv \frac{\xi_1 - \xi_2}{\sqrt{2}} \\
+\end{align}
+\tag{5.7}
+\]
+</p>
+
+<p>
+After some algebra, it can be shown that:
+</p>
+
+<p>
+\[
+\begin{align}
+\ \xi_1 & = \frac{\xi_+ + \xi_-}{\sqrt{2}} \\
+  \xi_2 & = \frac{\xi_+ - \xi_-}{\sqrt{2}} \\
+\end{align}
+\tag{5.8}
+\]
+</p>
+
+<p>
+which can be plugged directly into equation 5.3 to get the potential in the new coordintates.
+</p>
+
+<p>
+\[
+\ V = \frac{1}{2} m \omega_z^2 \xi_+^2 + \frac{3}{2} m \omega_z^2 \xi_-^2
+\tag{5.9}
+\]
+</p>
+
+<p>
+which gives the correct form ready for quantization. But first we also change the momentum coordinates in a similar way such that:
+</p>
+
+<p>
+\[
+\begin{align}
+\ \hat P_+ & \equiv \frac{\hat P_1 + \hat P_2}{\sqrt{2}} \\
+  \hat P_- & \equiv \frac{\hat P_1 - \hat P_2}{\sqrt{2}} \\
+\end{align}
+\tag{5.10}
+\]
+</p>
+
+<p>
+which is rearranged to give:
+</p>
+
+<p>
+\[
+\begin{align}
+\ \hat P_1 & = \frac{\hat P_+ + \hat P_-}{\sqrt{2}} \\
+  \hat P_2 & = \frac{\hat P_+ - \hat P_-}{\sqrt{2}} \\
+\end{align}
+\tag{5.11}
+\]
+</p>
+
+<p>
+So our (incomplete) Hamiltonian becomes:
+</p>
+
+<p>
+\[
+\ \hat H = \frac{\hat P_+^2}{2m} + \frac{\hat P_-^2}{2m} + \frac{1}{2} m \omega_z^2 \xi_+^2 + \frac{3}{2} m \omega_z^2 \xi_-^2
+\tag{5.12}
+\]
+</p>
+
+<p>
+Now using the fact that $\omega_+ = \omega_z$ and $\omega_- = \sqrt{3} \omega_z$, we may write:
+</p>
+
+<p>
+\[
+\ \hat H = \frac{\hat P_+^2}{2m} + \frac{\hat P_-^2}{2m} + \frac{1}{2} m \omega_+^2 \xi_+^2 + \frac{1}{2} m \omega_-^2 \xi_-^2
+\tag{5.13}
+\]
+</p>
+
+<p>
+Now, we quantize the positions, $\xi_+ \rightarrow \hat \xi_+$ and $\xi_- \rightarrow \hat \xi_-$ to give the complete Hamiltonian:
+</p>
+
+<p>
+\[
+\ \hat H = \frac{\hat P_+^2}{2m} + \frac{\hat P_-^2}{2m} + \frac{1}{2} m \omega_+^2 \hat \xi_+^2 + \frac{1}{2} m \omega_-^2 \hat \xi_-^2
+\tag{5.14}
+\]
+</p>
+
+<p>
+As is common practice, we wish to write the quantum harmonic oscillator in terms of ladder operators. The coupled quantum harmonic oscillator ladder operators are defined in terms of $\xi_{\pm}$ and $\hat P_{\pm}$.
+</p>
+
+<p>
+\[
+\begin{align}
+\ \hat a_+ & \equiv \frac{1}{\sqrt{2 \hbar m \omega_+}} \Big(m \omega_+ \hat \xi_+ + i \hat P_+ \Big) \\
+  \hat a_+^\dagger & \equiv \frac{1}{\sqrt{2 \hbar m \omega_+}} \Big(m \omega_+ \hat \xi_+ - i \hat P_+ \Big) \\
+  \hat a_- & \equiv \frac{1}{\sqrt{2 \hbar m \omega_-}} \Big(m \omega_- \hat \xi_- + i \hat P_- \Big) \\
+  \hat a_-^\dagger & \equiv \frac{1}{\sqrt{2 \hbar m \omega_-}} \Big(m \omega_- \hat \xi_- - i \hat P_- \Big) \\
+\end{align}
+\tag{5.15}
+\]
+</p>
+
+<p>
+With a bit of algebra, we can use these equations to obtain:
+</p>
+
+<p>
+\[
+\begin{align}
+\ \hat \xi_+ & = \sqrt{\frac{\hbar}{2 m \omega_+}} \Big(\hat a_+ + \hat a_+^\dagger \Big) \\
+  \hat \xi_- & = \sqrt{\frac{\hbar}{2 m \omega_-}} \Big(\hat a_- + \hat a_-^\dagger \Big) \\
+  \hat P_+ & = i \sqrt{\frac{\hbar m \omega_+}{2}} \Big(\hat a_+^\dagger - \hat a_+ \Big) \\
+  \hat P_- & = i \sqrt{\frac{\hbar m \omega_-}{2}} \Big(\hat a_-^\dagger - \hat a_- \Big) \\
+\end{align}
+\tag{5.16}
+\]
+</p>
+
+<p>
+Plugging these into our Hamiltonian of equation 5.14, and applying the commutation relations $[\hat a_{\pm}, \hat a_{\pm}^\dagger] = 1$, we arrive at:
+</p>
+
+<p>
+\[
+\ \hat H_{mot} = \hbar \omega_+ \Big(\hat a_+^\dagger \hat a_+ + \frac{1}{2} \Big) + \hbar \omega_- \Big(\hat a_-^\dagger \hat a_- + \frac{1}{2} \Big)
+\tag{5.16}
+\]
+</p>
+
+<p>
+where we have now labeled the Hamiltonian appropriately as the motional Hamiltonian of the two ions in the linear trap.
 </p>
 
 
@@ -60,28 +311,6 @@ fetch("/Physics-for-Trapped-Ion-Quantum-Computing/includes/sidebar.html")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
+  
+</div>
