@@ -95,13 +95,13 @@ The multivariable Taylor expansion of the potential around small displacements f
 
 <p>
 \[
-\ V = m \omega_z^2 [ \xi_1^2 + \xi_2^2 - \xi_1 \xi_2]
+\ V = m \omega_z^2 \Big[ \xi_1^2 + \xi_2^2 - \xi_1 \xi_2 \Big]
 \tag{5.3}
 \]
 </p>
 
 <p>
-where we notice a coupling term, $\xi_1 \xi_2$ arises from the Coulomb interaction indicating that the ions cannot move independently. Remember, this is the classical result so we did not "hat" the positions. We will quantize at the end of the derivation. Proceeding classically, the equations of motion for the two ions are:
+where we notice a coupling term, $\xi_1 \xi_2$, arises from the Coulomb interaction indicating that the ions cannot move independently. Remember, this is the classical result so we did not "hat" the positions. We will quantize at the end of the derivation. Proceeding classically, the equations of motion for the two ions are:
 </p>
 
 <p>
@@ -133,7 +133,7 @@ For the $+$ and $-$ cases, we have:
 \[
 \begin{align}
 \ \omega_+ & = \omega_z \\
-  \omega_- & = \sqrt{2} \omega_z \\
+  \omega_- & = \sqrt{3} \omega_z \\
 \end{align}
 \tag{5.6}
 \]
@@ -156,7 +156,7 @@ In equation 5.6, $\omega_+$ corresponds to the <b>center-of-mass</b> (COM) mode,
 </p>
 
 <p>
-The structure of the potential in equation 5.3 invites diagonalization because it is not of the form: $A \xi_1^2 + B \xi_2^2$. In quantum mechanics, we can only quantize independent harmonic oscillators cleanly, therefore we must diagonalize our potential, which amounts to rotating coordinates axes in the 2D space (\xi_1, \xi_2).
+The structure of the potential in equation 5.3 invites diagonalization because it is not of the form: $A \xi_1^2 + B \xi_2^2$. In quantum mechanics, we can only quantize independent harmonic oscillators cleanly, therefore we must diagonalize our potential, which amounts to rotating coordinates axes in the 2D space $(\xi_1, \xi_2)$.
 </p>
 
 <p>
@@ -174,7 +174,7 @@ If we define new coordinates such that:
 </p>
 
 <p>
-After some algebra, it can be shown that:
+Then, after some algebra, it can be shown that:
 </p>
 
 <p>
@@ -298,7 +298,7 @@ Plugging these into our Hamiltonian of equation 5.14, and applying the commutati
 <p>
 \[
 \ \hat H_{mot} = \hbar \omega_+ \Big(\hat a_+^\dagger \hat a_+ + \frac{1}{2} \Big) + \hbar \omega_- \Big(\hat a_-^\dagger \hat a_- + \frac{1}{2} \Big)
-\tag{5.16}
+\tag{5.17}
 \]
 </p>
 
@@ -307,7 +307,10 @@ where we have now labeled the Hamiltonian appropriately as the motional Hamilton
 </p>
 
 
-
+<button class="collapsible">Exercise 5.3</button>
+<div class="content-box">
+Show the intermediate steps between equations 5.16 and 5.17.
+</div>
 
 
 
